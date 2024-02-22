@@ -1,0 +1,6 @@
+enum LIQUOR{
+	VODKA,
+	JAG,
+	WHISKEY
+}
+
