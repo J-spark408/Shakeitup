@@ -10,7 +10,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "obj_bottles_selection",
-    "path": "folders/Objects/obj_bottles_selection.yy",
+    "path": "folders/Objects/obj_bottles/obj_bottles_selection.yy",
   },
   "parentObjectId": {
     "name": "o_bottle_selected",

@@ -1,6 +1,8 @@
 enum LIQUOR{
 	VODKA,
 	JAG,
-	WHISKEY
+	WHISKEY,
+	GIN,
+	VERMOUTH
 }
 

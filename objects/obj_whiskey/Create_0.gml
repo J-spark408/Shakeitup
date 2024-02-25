@@ -1,8 +1,15 @@
-flags = phy_particle_flag_water | phy_particle_flag_spring; //| phy_particle_flag_viscous | phy_particle_flag_colourmixing;
+event_inherited();
 
-physics_particle_set_radius(4);
-physics_particle_set_density(0.5);
-physics_particle_set_gravity_scale(10);
+index = 3;
+get_obj = obj_whiskey;
 
-is_grabbed = false;
-is_tilted = false;
+//flags = phy_particle_flag_colormixing
+////flags = phy_particle_flag_water | phy_particle_flag_spring; //| phy_particle_flag_viscous | phy_particle_flag_colourmixing;
+
+//physics_particle_set_radius(4);
+//physics_particle_set_density(0.5);
+//physics_particle_set_gravity_scale(10);
+
+//is_grabbed = false;
+//is_tilted = false;
+

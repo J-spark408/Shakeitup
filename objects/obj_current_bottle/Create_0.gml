@@ -6,5 +6,5 @@
 
 //is_grabbed = false;
 
-bottle_selected = false;
+bottle_selected = noone;
 bottle = noone;

@@ -1,1 +1,0 @@
-global.select_bottle = 0;

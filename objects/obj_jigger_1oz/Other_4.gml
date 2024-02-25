@@ -1,3 +1,4 @@
+leftside = physics_fixture_create();
 physics_fixture_set_polygon_shape(leftside);
 physics_fixture_add_point(leftside,7.52-top_right_origin,-3.23);
 physics_fixture_add_point(leftside,22.15-top_right_origin,0.014);
