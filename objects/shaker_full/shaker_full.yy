@@ -1,18 +1,15 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_vermouth",
+  "name": "shaker_full",
   "eventList": [],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "obj_bottles",
-    "path": "folders/Objects/obj_bottles.yy",
+    "name": "Objects",
+    "path": "folders/Objects.yy",
   },
-  "parentObjectId": {
-    "name": "obj_bottle_func",
-    "path": "objects/obj_bottle_func/obj_bottle_func.yy",
-  },
+  "parentObjectId": null,
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
@@ -29,8 +26,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_vermouth",
-    "path": "sprites/spr_vermouth/spr_vermouth.yy",
+    "name": "spr_shaker_full",
+    "path": "sprites/spr_shaker_full/spr_shaker_full.yy",
   },
   "spriteMaskId": null,
   "visible": true,

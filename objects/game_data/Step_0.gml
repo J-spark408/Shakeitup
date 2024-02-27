@@ -24,6 +24,32 @@ if (keyboard_check_pressed(ord("B"))) {
     room_goto(rm_room_bar_selection);
 }
 
+if (keyboard_check(vk_space) && !shake_start) {
+	timer += delta_time/1000000;
+} else {
+	timer = 0;
+}
+if (timer >= 3 && !shake_start) {
+	
+	show_debug_message(timer);
+	current_pour = physics_particle_count() - prev_occurance_pour;
+    prev_value = ds_map_find_value(liquid_particles_map,obj_current_bottle.bottle_selected);
+    prev_pour = current_pour;
+	prev_occurance_pour += prev_pour;	
+    ds_map_set(liquid_particles_map, obj_current_bottle.bottle_selected, abs(prev_pour) + prev_value);
+    is_poured = false;
+	
+	physics_particle_delete_region_box(0,0,room_width,room_height);
+	instance_create_layer(shaker_bot.x, shaker_bot.y,"Instances",shaker_full);
+	instance_destroy(obj_current_bottle.bottle);
+	if (instance_exists(obj_jigger_2oz)) {
+		instance_destroy(obj_jigger_2oz);
+	} else {
+		instance_destroy(obj_jigger_1oz);	
+	}
+	instance_destroy(shaker_bot);
+	shake_start = true;
+}
 
 //if (ds_map_find_value(liquid_particles_map, LIQUOR.VODKA) >= 580 || 
 //		ds_map_find_value(liquid_particles_map, LIQUOR.VODKA) <= 610 ) {

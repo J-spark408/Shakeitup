@@ -6,7 +6,7 @@ if (is_grabbed && keyboard_check(ord("Q"))) {
 	}
 }
 if (image_angle <= -105 && image_angle >= -150) {
-	global._booze = physics_particle_create(flags, x, y, x+1, x, c_white, 1, index);
+	global._booze = physics_particle_create(flags, x, y, x+1, x, c_white, 1, game_data._index);
 	game_data.is_poured = true;
 }
 
@@ -19,7 +19,7 @@ if (is_grabbed && keyboard_check(ord("E"))) {
 	}
 }
 if (image_angle >= 105 && image_angle <= 150) {
-	global._booze = physics_particle_create(flags, x, y, 1-x, x, c_white, 1, index);
+	global._booze = physics_particle_create(flags, x, y, 1-x, x, c_white, 1, game_data._index);
 	game_data.is_poured = true;
 }
 
@@ -39,7 +39,7 @@ if (image_angle >= 105 && image_angle <= 150) {
 //	}
 //}
 
-if (mouse_check_button(mb_left) && position_meeting(mouse_x,mouse_y,get_obj)) {
+if (mouse_check_button(mb_left) && position_meeting(mouse_x,mouse_y,game_data._get_obj)) {
 	is_grabbed = true;
 }
 

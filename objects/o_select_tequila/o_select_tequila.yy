@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "o_select_jag",
+  "name": "o_select_tequila",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
@@ -32,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_jag",
-    "path": "sprites/spr_jag/spr_jag.yy",
+    "name": "spr_tequila",
+    "path": "sprites/spr_tequila/spr_tequila.yy",
   },
   "spriteMaskId": null,
   "visible": true,

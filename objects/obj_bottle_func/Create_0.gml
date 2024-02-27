@@ -10,5 +10,3 @@ is_grabbed = false;
 relative_x = mouse_x;
 relative_y = mouse_y;
 
-index = 0;
-get_obj = noone;

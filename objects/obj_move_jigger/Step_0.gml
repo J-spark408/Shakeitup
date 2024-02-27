@@ -17,11 +17,11 @@ if (keyboard_check(ord("T"))) {
 	//	dir_x *= 0;	
 	//	dir_y *= 0;
 	//}
-		phy_position_x += horizontal_speed;
-		phy_position_y -= vertical_speed;
-	if (phy_position_x >= position_to_x && phy_position_y <= position_to_y) {
-		horizontal_speed *= 0;
-		vertical_speed *= 0;
+	//	phy_position_x += horizontal_speed;
+	//	phy_position_y -= vertical_speed;
+	//if (phy_position_x >= position_to_x && phy_position_y <= position_to_y) {
+	//	horizontal_speed *= 0;
+	//	vertical_speed *= 0;
 		if (phy_rotation <= 110) {
 			phy_rotation += 1;
 		} else {
@@ -38,15 +38,20 @@ if (keyboard_check(ord("T"))) {
 	//		phy_rotation += 2;
 	//		show_debug_message(phy_position_x)
 	//}
-}
+//}
 
 if (fully_tilted) {
 	if (keyboard_check(ord("R"))) {
 		phy_rotation = 0;
-		phy_position_x = position_from_x;
-		phy_position_y = position_from_y;
-		horizontal_speed = 1;
-		vertical_speed = 1;
+		phy_position_x = position_to_x;
+		phy_position_y = position_to_y;
+		//horizontal_speed = 1;
+		//vertical_speed = 1;
 		fully_tilted = false;
 	}
+}
+
+if (game_data._get_obj != noone) {
+	phy_position_x = position_to_x;
+	phy_position_y = position_to_y;
 }

@@ -1,6 +1,6 @@
 enum LIQUOR{
 	VODKA,
-	JAG,
+	TEQUILA,
 	WHISKEY,
 	GIN,
 	VERMOUTH
