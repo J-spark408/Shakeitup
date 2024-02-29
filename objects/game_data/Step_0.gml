@@ -32,22 +32,26 @@ if (keyboard_check(vk_space) && !shake_start) {
 if (timer >= 3 && !shake_start) {
 	
 	show_debug_message(timer);
-	current_pour = physics_particle_count() - prev_occurance_pour;
-    prev_value = ds_map_find_value(liquid_particles_map,obj_current_bottle.bottle_selected);
-    prev_pour = current_pour;
-	prev_occurance_pour += prev_pour;	
-    ds_map_set(liquid_particles_map, obj_current_bottle.bottle_selected, abs(prev_pour) + prev_value);
-    is_poured = false;
+	if (prev_pour > 0) {
+		current_pour = physics_particle_count() - prev_occurance_pour;
+	    prev_value = ds_map_find_value(liquid_particles_map,obj_current_bottle.bottle_selected);
+	    prev_pour = current_pour;
+		prev_occurance_pour += prev_pour;	
+	    ds_map_set(liquid_particles_map, obj_current_bottle.bottle_selected, abs(prev_pour) + prev_value);
+	    is_poured = false;
+	}
 	
 	physics_particle_delete_region_box(0,0,room_width,room_height);
-	instance_create_layer(shaker_bot.x, shaker_bot.y,"Instances",shaker_full);
+	instance_create_layer(750, 288,"Instances",obj_shaker_full);
+	instance_create_layer(11+352, 156+224,"Instances",obj_hitpoint);
+	instance_create_layer(352, 224,"Instances",obj_hitpoint_bar);
 	instance_destroy(obj_current_bottle.bottle);
 	if (instance_exists(obj_jigger_2oz)) {
 		instance_destroy(obj_jigger_2oz);
 	} else {
 		instance_destroy(obj_jigger_1oz);	
 	}
-	instance_destroy(shaker_bot);
+	instance_destroy(obj_shaker_bot);
 	shake_start = true;
 }
 

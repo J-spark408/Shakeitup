@@ -26,5 +26,6 @@ _index = 0;
 timer = 0;
 
 instance_create_layer(608,544,"Instances",obj_jigger_2oz);
+instance_create_layer(640,416,"Instances",obj_shaker_bot);
 
 shake_start = false;

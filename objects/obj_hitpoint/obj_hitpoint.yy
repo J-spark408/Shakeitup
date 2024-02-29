@@ -1,13 +1,16 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "shaker_full",
-  "eventList": [],
+  "name": "obj_hitpoint",
+  "eventList": [
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
+  ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "obj_hit_target",
+    "path": "folders/Objects/obj_hit_target.yy",
   },
   "parentObjectId": null,
   "persistent": false,
@@ -26,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_shaker_full",
-    "path": "sprites/spr_shaker_full/spr_shaker_full.yy",
+    "name": "spr_hitpoint",
+    "path": "sprites/spr_hitpoint/spr_hitpoint.yy",
   },
   "spriteMaskId": null,
   "visible": true,
