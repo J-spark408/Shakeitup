@@ -8,6 +8,7 @@
     {"name":"obj_bottles","order":9,"path":"folders/Objects/obj_bottles.yy",},
     {"name":"obj_bottles_selection","order":5,"path":"folders/Objects/obj_bottles/obj_bottles_selection.yy",},
     {"name":"obj_buttons","order":10,"path":"folders/Objects/obj_buttons.yy",},
+    {"name":"obj_hit_target","order":21,"path":"folders/Objects/obj_hit_target.yy",},
     {"name":"obj_jiggers","order":13,"path":"folders/Objects/obj_jiggers.yy",},
     {"name":"obj_recipe","order":15,"path":"folders/Objects/obj_recipe.yy",},
     {"name":"obj_stages","order":11,"path":"folders/Objects/obj_stages.yy",},
@@ -24,7 +25,6 @@
     {"name":"spr_stages","order":17,"path":"folders/Sprites/spr_stages.yy",},
     {"name":"Tile Sets","order":1,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":7,"path":"folders/Timelines.yy",},
-    {"name":"obj_hit_target","order":21,"path":"folders/Objects/obj_hit_target.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"spr_vodka","order":1,"path":"sprites/spr_vodka/spr_vodka.yy",},
@@ -102,6 +102,7 @@
     {"name":"spr_old_fashioned","order":1,"path":"sprites/spr_old_fashioned/spr_old_fashioned.yy",},
     {"name":"obj_draggable","order":4,"path":"objects/obj_draggable/obj_draggable.yy",},
     {"name":"obj_tequila","order":1,"path":"objects/obj_tequila/obj_tequila.yy",},
+    {"name":"obj_percentage","order":22,"path":"objects/obj_percentage/obj_percentage.yy",},
     {"name":"obj_shaker_full","order":17,"path":"objects/obj_shaker_full/obj_shaker_full.yy",},
     {"name":"spr_white_background","order":11,"path":"sprites/spr_white_background/spr_white_background.yy",},
     {"name":"spr_vermouth","order":5,"path":"sprites/spr_vermouth/spr_vermouth.yy",},

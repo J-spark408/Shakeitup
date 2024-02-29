@@ -4,7 +4,7 @@
   "name": "spr_hitpoint_bar",
   "bbox_bottom": 311,
   "bbox_left": 0,
-  "bbox_right": 21,
+  "bbox_right": 43,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 22,
+  "width": 44,
 }

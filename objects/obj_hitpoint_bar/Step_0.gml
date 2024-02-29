@@ -1,12 +1,12 @@
 if (keyboard_check_pressed(vk_space)) {
-	if (position_meeting(x + 11, y + 13, obj_hitpoint) ||
-		position_meeting(x + 11, y + 298, obj_hitpoint)) {
+	if (position_meeting(x + 22, y + 13, obj_hitpoint) ||
+		position_meeting(x + 22, y + 298, obj_hitpoint)) {
 		is_shaking = true;
 		obj_shaker_full.vertical_speed += 2;
 		obj_shaker_full.rotate_speed = 1;
 		check_hitpoint = 0;
-	} else if (position_meeting(x + 11, y + 31, obj_hitpoint) ||
-		position_meeting(x + 11, y + 280, obj_hitpoint)) {
+	} else if (position_meeting(x + 22, y + 31, obj_hitpoint) ||
+		position_meeting(x + 22, y + 280, obj_hitpoint)) {
 		is_shaking = true;
 		obj_shaker_full.vertical_speed += 1;
 		obj_shaker_full.rotate_speed = 1;

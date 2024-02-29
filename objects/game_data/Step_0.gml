@@ -43,8 +43,9 @@ if (timer >= 3 && !shake_start) {
 	
 	physics_particle_delete_region_box(0,0,room_width,room_height);
 	instance_create_layer(750, 288,"Instances",obj_shaker_full);
-	instance_create_layer(11+352, 156+224,"Instances",obj_hitpoint);
+	instance_create_layer(22+352, 156+224,"Instances",obj_hitpoint);
 	instance_create_layer(352, 224,"Instances",obj_hitpoint_bar);
+	instance_create_layer(room_width-50, y+50, "Instances", obj_percentage);
 	instance_destroy(obj_current_bottle.bottle);
 	if (instance_exists(obj_jigger_2oz)) {
 		instance_destroy(obj_jigger_2oz);
