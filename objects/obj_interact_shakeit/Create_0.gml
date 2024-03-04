@@ -1,4 +1,4 @@
 
-max_fill_amount = 3;
+max_fill_amount = 1;
 
 is_filling = false;

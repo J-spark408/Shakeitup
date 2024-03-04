@@ -29,7 +29,7 @@ if (keyboard_check(vk_space) && !shake_start) {
 } else {
 	timer = 0;
 }
-if (timer >= 3 && !shake_start) {
+if (timer >= 1 && !shake_start) {
 	
 	show_debug_message(timer);
 	if (prev_pour > 0) {
@@ -40,12 +40,13 @@ if (timer >= 3 && !shake_start) {
 	    ds_map_set(liquid_particles_map, obj_current_bottle.bottle_selected, abs(prev_pour) + prev_value);
 	    is_poured = false;
 	}
-	
+	pour_count = physics_particle_count();
 	physics_particle_delete_region_box(0,0,room_width,room_height);
-	instance_create_layer(750, 288,"Instances",obj_shaker_full);
-	instance_create_layer(22+352, 156+224,"Instances",obj_hitpoint);
-	instance_create_layer(352, 224,"Instances",obj_hitpoint_bar);
-	instance_create_layer(room_width-50, y+50, "Instances", obj_percentage);
+	instance_create_layer(800, 288,"Instances",obj_shaker_full);
+	instance_create_layer(480, 370, "Instances",MartiniGlass);
+	//instance_create_layer(22+352, 156+224,"Instances",obj_hitpoint);
+	//instance_create_layer(352, 224,"Instances",obj_hitpoint_bar);
+	//instance_create_layer(room_width-50, y+50, "Instances", obj_percentage);
 	instance_destroy(obj_current_bottle.bottle);
 	if (instance_exists(obj_jigger_2oz)) {
 		instance_destroy(obj_jigger_2oz);
@@ -54,6 +55,19 @@ if (timer >= 3 && !shake_start) {
 	}
 	instance_destroy(obj_shaker_bot);
 	shake_start = true;
+	shake_done = true;
+}
+
+
+if (shake_done && keyboard_check(vk_space)) {
+	if (obj_shaker_full.image_angle <= 100) {
+		obj_shaker_full.image_angle += 2;
+	} else {
+		obj_shaker_full.image_angle += 0;
+		if (pour_count != physics_particle_count()) {
+			physics_particle_create(flags, 640,250,x,y,c_white,1,1)
+		}
+	}
 }
 
 //if (ds_map_find_value(liquid_particles_map, LIQUOR.VODKA) >= 580 || 

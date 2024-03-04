@@ -12,9 +12,9 @@ if (keyboard_check_pressed(vk_space)) {
 		obj_shaker_full.rotate_speed = 1;
 		check_hitpoint = 1;
 	} else if (is_shaking && obj_shaker_full.vertical_speed > 0) {
-			obj_shaker_full.vertical_speed--;
-			check_hitpoint = 2;
-			miss_count++;
+		obj_shaker_full.vertical_speed--;
+		check_hitpoint = 2;
+		miss_count++;
 		if (obj_shaker_full.vertical_speed == 0) {
 			obj_shaker_full.rotate_speed = 0;
 		}

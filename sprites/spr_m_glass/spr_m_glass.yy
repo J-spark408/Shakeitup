@@ -2,9 +2,9 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "spr_m_glass",
-  "bbox_bottom": 215,
-  "bbox_left": 0,
-  "bbox_right": 143,
+  "bbox_bottom": 383,
+  "bbox_left": 4,
+  "bbox_right": 270,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 0,
@@ -17,7 +17,7 @@
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 216,
+  "height": 413,
   "HTile": false,
   "layers": [
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"bacc5004-86fa-47c7-a088-83074d682f9b","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
@@ -93,5 +93,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 144,
+  "width": 275,
 }

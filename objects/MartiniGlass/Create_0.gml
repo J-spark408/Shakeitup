@@ -1,9 +1,9 @@
 leftside = physics_fixture_create();
 physics_fixture_set_polygon_shape(leftside);
-physics_fixture_add_point(leftside,70.69,72.44);
-physics_fixture_add_point(leftside,-1.54,0.333);
-physics_fixture_add_point(leftside,3.69,0.27);
-physics_fixture_add_point(leftside,71.42,68.54);
+physics_fixture_add_point(leftside,148.98,135.7);
+physics_fixture_add_point(leftside,134.39,137.95);
+physics_fixture_add_point(leftside,4.77,0.69);
+physics_fixture_add_point(leftside,15.63,-0.37);
 physics_fixture_set_collision_group(leftside, 1);
 physics_fixture_set_density(leftside,0)
 physics_fixture_set_awake(leftside,1)
@@ -11,10 +11,10 @@ physics_fixture_bind(leftside, id)
 
 rightside = physics_fixture_create();
 physics_fixture_set_polygon_shape(rightside);
-physics_fixture_add_point(rightside,72.58,72.14);
-physics_fixture_add_point(rightside,72.21,68.42);
-physics_fixture_add_point(rightside,140.99,-0.298);
-physics_fixture_add_point(rightside,146.36,0.0968);
+physics_fixture_add_point(rightside,267.81,0.31);
+physics_fixture_add_point(rightside,128.3,147.44);
+physics_fixture_add_point(rightside,120.04,140.58);
+physics_fixture_add_point(rightside,259.89,-0.78);
 physics_fixture_set_collision_group(rightside, 1);
 physics_fixture_set_density(rightside,0)
 physics_fixture_set_awake(rightside,1)
