@@ -1,1 +1,0 @@
-pouring_speed = 10;

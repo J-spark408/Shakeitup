@@ -1,18 +1,15 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "o_select_gin",
+  "name": "obj_shaker_bot_filled",
   "eventList": [],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "obj_bottles_selection",
-    "path": "folders/Objects/obj_bottles/obj_bottles_selection.yy",
+    "name": "Objects",
+    "path": "folders/Objects.yy",
   },
-  "parentObjectId": {
-    "name": "obj_bottle_func",
-    "path": "objects/obj_bottle_func/obj_bottle_func.yy",
-  },
+  "parentObjectId": null,
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
@@ -29,8 +26,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_gin",
-    "path": "sprites/spr_gin/spr_gin.yy",
+    "name": "spr_shaker_bot_filled",
+    "path": "sprites/spr_shaker_bot_filled/spr_shaker_bot_filled.yy",
   },
   "spriteMaskId": null,
   "visible": true,

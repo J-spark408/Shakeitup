@@ -25,9 +25,12 @@ _index = 0;
 
 timer = 0;
 
-instance_create_layer(608,544,"Instances",obj_jigger_2oz);
-instance_create_layer(640,416,"Instances",obj_shaker_bot);
-instance_create_layer(1056,672,"Instances",obj_interact_shakeit);
+//create jigger/shaker/interact buttons
+//instance_create_layer(608,544,"Instances",obj_jigger_2oz);
+//instance_create_layer(640,416,"Instances",obj_shaker_bot);
+//instance_create_layer(1056,672,"Instances",obj_interact_shakeit);
+//instance_create_layer(640,416,"Instances",obj_shaker_bot_filled);
+
 
 //layer_sprite_create("Assets",0,621,spr_bartop);
 //layer_sprite_create("Assets",950,47,spr_neonlight);
