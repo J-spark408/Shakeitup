@@ -23,6 +23,7 @@ if (keyboard_check_pressed(vk_space)) {
 	//show_debug_message(condition);
 }
 
+
 //if (condition == 2 && is_martini) {
 //		draw_text(x,y+200, "Its a martini");
 //	} else {

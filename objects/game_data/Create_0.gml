@@ -29,9 +29,9 @@ instance_create_layer(608,544,"Instances",obj_jigger_2oz);
 instance_create_layer(640,416,"Instances",obj_shaker_bot);
 instance_create_layer(1056,672,"Instances",obj_interact_shakeit);
 
-layer_sprite_create("Assets",0,621,spr_bartop);
-layer_sprite_create("Assets",950,47,spr_neonlight);
-layer_sprite_create("Assets",x,y,spr_barbackground);
+//layer_sprite_create("Assets",0,621,spr_bartop);
+//layer_sprite_create("Assets",950,47,spr_neonlight);
+//layer_sprite_create("Assets",x,y,spr_barbackground);
 
 
 shake_start = false;
@@ -46,27 +46,32 @@ physics_particle_set_gravity_scale(10);
 pour_count = 0;
 
 
-switch(obj_stage_info.current_stage) {
-	case 0: 	
+switch(global.current_stage) {
+	case 0:
 	layer_sprite_create("Assets",0,621,spr_bartop);
 	layer_sprite_create("Assets",950,47,spr_neonlight);
 	layer_sprite_create("Assets",x,y,spr_barbackground);
 	break;
 	case 1:
 	layer_sprite_create("Assets",0,621,spr_bartop);
-	layer_sprite_create("Assets",950,47,spr_neonlight);
-	layer_sprite_create("Assets",x,y,spr_barbackground);
+	layer_sprite_create("Assets",x,y,spr_asian);
 	break;
+	case 2:
+	layer_sprite_create("Assets",0,621,spr_bartop);
+	case 3:
+	layer_sprite_create("Assets",0,621,spr_bartop);
+	case 4:
+	layer_sprite_create("Assets",0,621,spr_bartop);
 	default:
 	break;
-	
 }
 
-//if (obj_stage_info.stage.stage_level == obj_stage_info.current_stage) {
+
+//if (global.current_stage == 0) {
 //	layer_sprite_create("Assets",0,621,spr_bartop);
 //	layer_sprite_create("Assets",950,47,spr_neonlight);
 //	layer_sprite_create("Assets",x,y,spr_barbackground);
-//} else if (obj_stage_info.stage.stage_level == 1) {
+//} else if (global.current_stage == 1) {
 //	layer_sprite_create("Assets",0,621,spr_bartop);
 //	layer_sprite_create("Assets",x,y,spr_asian);
 //} else if (obj_stage_info.stage.stage_level == stage_data.stage_size) {
