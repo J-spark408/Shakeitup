@@ -24,13 +24,21 @@ _particles = 0;
 _index = 0;
 
 timer = 0;
+start_game_timer = 0;
+dialog_appear = false;
+customer = false;
+has_customer_order = false;
+
+
+
 
 //create jigger/shaker/interact buttons
-//instance_create_layer(608,544,"Instances",obj_jigger_2oz);
-//instance_create_layer(640,416,"Instances",obj_shaker_bot);
-//instance_create_layer(1056,672,"Instances",obj_interact_shakeit);
+instance_create_layer(608,544,"Instances",obj_jigger_2oz);
+instance_create_layer(640,416,"Instances",obj_shaker_bot);
+// if physics particle exists draw interact
+instance_create_layer(1056,672,"Instances",obj_interact_shakeit);
 //instance_create_layer(640,416,"Instances",obj_shaker_bot_filled);
-
+instance_create_layer(0,0,"Instances",obj_DialogLady);
 
 //layer_sprite_create("Assets",0,621,spr_bartop);
 //layer_sprite_create("Assets",950,47,spr_neonlight);

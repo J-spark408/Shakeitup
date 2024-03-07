@@ -1,12 +1,12 @@
-if (position_meeting(352,284,obj_hit_stir)) {
+if (position_meeting(352,284,obj_stir_hand)) {
 	timer_reset = true;
 	full_rotated = false;
-} else if (position_meeting(263,396,obj_hit_stir)) {
+} else if (position_meeting(263,396,obj_stir_hand)) {
 	timer_reset = true;
-} else if (position_meeting(376,483,obj_hit_stir)) {
+} else if (position_meeting(376,483,obj_stir_hand)) {
 	timer = 2;
 	full_rotated = true;
-} else if (full_rotated && position_meeting(463,372,obj_hit_stir)) {
+} else if (full_rotated && position_meeting(463,372,obj_stir_hand)) {
 	timer = 2;
 } 
 

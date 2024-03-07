@@ -23,7 +23,7 @@ if (keyboard_check_pressed(ord("B"))) {
     room_goto(rm_room_bar_selection);
 }
 
-if (keyboard_check(vk_space) && !shake_start) {
+if (keyboard_check(vk_space) && !shake_start && physics_particle_count() != 0) {
 	timer += delta_time/1000000;
 } else {
 	timer = 0;
@@ -39,7 +39,7 @@ if (timer >= 1 && !shake_start) {
 	    ds_map_set(liquid_particles_map, obj_current_bottle.bottle_selected, abs(prev_pour) + prev_value);
 	    is_poured = false;
 	}
-	pour_count = physics_particle_count();
+	
 	physics_particle_delete_region_box(0,0,room_width,room_height);
 	instance_create_layer(800, 288,"Instances",obj_shaker_full);
 	//instance_create_layer(480, 370, "Instances",MartiniGlass);
@@ -55,6 +55,15 @@ if (timer >= 1 && !shake_start) {
 	instance_destroy(obj_shaker_bot);
 	shake_start = true;
 	shake_done = true;
+}
+
+if (!instance_exists(obj_DialogLady)) {
+	start_game_timer += delta_time/1000000;
+}
+if (start_game_timer >= 3 && !has_customer_order) {
+	// Todo create customer instances
+	instance_create_layer(0,0,"Instances",obj_DialogCustomer);
+	has_customer_order = true;
 }
 
 

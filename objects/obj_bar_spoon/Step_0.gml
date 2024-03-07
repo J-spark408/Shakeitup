@@ -13,20 +13,20 @@ if (mouse_check_button(mb_left) && position_meeting(mouse_x,mouse_y,obj_stir_poi
 if (mouse_check_button_released(mb_left)) {
 	is_grabbed = false;
 	draw_hand = false;
-	instance_destroy(obj_hit_stir);	
+	instance_destroy(obj_stir_hand);	
 }
 
 if (is_grabbed && !draw_hand) {
-	instance_create_layer(obj_bar_spoon.x,obj_bar_spoon.y,"Instances",obj_hit_stir);
+	instance_create_layer(obj_bar_spoon.x,obj_bar_spoon.y,"Instances",obj_stir_hand);
 	draw_hand = true;
 }
 
 if (mouse_check_button(mb_left) && position_meeting(mouse_x,mouse_y,obj_stir_point)) {
 	x += 4 * dir;
-	obj_hit_stir.x += 4 * dir;
+	obj_stir_hand.x += 4 * dir;
 	obj_stir_point.x += 4 * dir;
 	image_angle -= 0.4 * dir;
-	if (position_meeting(541,210,obj_hit_stir) || (position_meeting(952,210,obj_hit_stir))) {
+	if (position_meeting(541,210,obj_stir_hand) || (position_meeting(952,210,obj_stir_hand))) {
 		dir *= -1;
 		timed_stir += hit_stir;
 	}
