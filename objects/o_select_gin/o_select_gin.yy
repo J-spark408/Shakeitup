@@ -10,8 +10,8 @@
     "path":"folders/Objects/obj_bottles/obj_bottles_selection.yy",
   },
   "parentObjectId":{
-    "name":"obj_bottle_func",
-    "path":"objects/obj_bottle_func/obj_bottle_func.yy",
+    "name":"o_bottle_selected",
+    "path":"objects/o_bottle_selected/o_bottle_selected.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

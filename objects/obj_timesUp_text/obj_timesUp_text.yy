@@ -1,20 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"obj_DialogLady",
+  "%Name":"obj_timesUp_text",
   "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_DialogLady",
+  "name":"obj_timesUp_text",
   "overriddenProperties":[],
   "parent":{
-    "name":"obj_dialogs",
-    "path":"folders/Objects/obj_dialogs.yy",
+    "name":"obj_gameover",
+    "path":"folders/Objects/obj_gameover.yy",
   },
-  "parentObjectId":{
-    "name":"obj_DialogParent",
-    "path":"objects/obj_DialogParent/obj_DialogParent.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

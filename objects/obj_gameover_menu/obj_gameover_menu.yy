@@ -1,20 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"obj_DialogLady",
-  "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"obj_gameover_menu",
+  "eventList":[],
   "managed":true,
-  "name":"obj_DialogLady",
+  "name":"obj_gameover_menu",
   "overriddenProperties":[],
   "parent":{
-    "name":"obj_dialogs",
-    "path":"folders/Objects/obj_dialogs.yy",
+    "name":"obj_gameover",
+    "path":"folders/Objects/obj_gameover.yy",
   },
-  "parentObjectId":{
-    "name":"obj_DialogParent",
-    "path":"objects/obj_DialogParent/obj_DialogParent.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -32,7 +27,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_gameover_menu",
+    "path":"sprites/spr_gameover_menu/spr_gameover_menu.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

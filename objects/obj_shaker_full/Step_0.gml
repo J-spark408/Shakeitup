@@ -1,5 +1,8 @@
 
-y += vertical_speed * dir_y;
+if (!game_data.shake_done) {
+	y += vertical_speed * dir_y;
+	image_angle -= rotate_speed * dir;
+}
 //image_angle -= rotate_speed * dir_y;
 
 
@@ -8,7 +11,6 @@ if (y < position_from_y || y > position_to_y) {
 	
 }
 
-image_angle -= rotate_speed * dir;
 if (image_angle == 50 || image_angle == -50) {
 	dir *= -1;
 } 

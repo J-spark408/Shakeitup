@@ -1,5 +1,6 @@
 draw_set_font(fnt_pop_message);
 
+
 switch(obj_hitpoint_bar.check_hitpoint) {
 	case 0:
 		draw_set_color(c_green);

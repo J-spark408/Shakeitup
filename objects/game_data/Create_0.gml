@@ -15,8 +15,8 @@ ds_map_add(liquid_particles_map, LIQUOR.WHISKEY, 0);
 ds_map_add(liquid_particles_map, LIQUOR.GIN, 0);
 ds_map_add(liquid_particles_map, LIQUOR.VERMOUTH, 0);
 
-condition = 0;
-is_martini = true;
+//condition = 0;
+//is_martini = true;
 
 _picked = noone;
 _get_obj = noone;
@@ -25,12 +25,12 @@ _index = 0;
 
 timer = 0;
 start_game_timer = 0;
-dialog_appear = false;
-customer = false;
+action_wait_timer = 0;
+game_start = false;
 has_customer_order = false;
+check_drink_condition = false;
 
-
-
+points = 0;
 
 //create jigger/shaker/interact buttons
 instance_create_layer(608,544,"Instances",obj_jigger_2oz);
@@ -55,6 +55,7 @@ physics_particle_set_density(0.5);
 physics_particle_set_gravity_scale(10);
 
 pour_count = 0;
+shaker_position_placed = false;
 
 
 switch(global.current_stage) {
@@ -75,6 +76,47 @@ switch(global.current_stage) {
 	layer_sprite_create("Assets",0,621,spr_bartop);
 	default:
 	break;
+}
+
+first_condition = false;
+second_condition = false;
+checked_all_condition = false;
+
+function check_martini() {
+	if (ds_map_find_value(liquid_particles_map, LIQUOR.VODKA) >= 580 && 
+		ds_map_find_value(liquid_particles_map, LIQUOR.VODKA) <= 610 ) {
+		first_condition = true;
+	} 
+	if (ds_map_find_value(liquid_particles_map, LIQUOR.VERMOUTH) >= 40 && 
+		ds_map_find_value(liquid_particles_map, LIQUOR.VERMOUTH) <= 60 ) {
+		second_condition = true;
+	} 
+}
+drink_given = false;
+round_timer_over = false;
+round_restart = false;
+function reset_round() {
+	current_pour = 0;
+	prev_pour = 0;
+	prev_occurance_pour = 0;
+	prev_value = 0;
+	is_poured = false;
+	timer = 0;
+	start_game_timer = 0;
+	action_wait_timer = 0;
+	shake_start = false;
+	shake_done = false;
+	shaker_position_placed = false;
+	first_condition = false;
+	second_condition = false;
+	checked_all_condition = false;
+	has_customer_order = false;
+	check_drink_condition = false;
+	drink_given = false;
+	instance_create_layer(608,544,"Instances",obj_jigger_2oz);
+	instance_create_layer(640,416,"Instances",obj_shaker_bot);
+	instance_create_layer(1056,672,"Instances",obj_interact_shakeit);
+	show_debug_message("reset_round")
 }
 
 

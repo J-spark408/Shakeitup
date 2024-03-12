@@ -1,20 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"obj_DialogLady",
-  "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"Object58",
+  "eventList":[],
   "managed":true,
-  "name":"obj_DialogLady",
+  "name":"Object58",
   "overriddenProperties":[],
   "parent":{
-    "name":"obj_dialogs",
-    "path":"folders/Objects/obj_dialogs.yy",
+    "name":"Objects",
+    "path":"folders/Objects.yy",
   },
-  "parentObjectId":{
-    "name":"obj_DialogParent",
-    "path":"objects/obj_DialogParent/obj_DialogParent.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
