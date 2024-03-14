@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"Script7",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Script7",
+  "parent":{
+    "name":"obj_bottles",
+    "path":"folders/Objects/obj_bottles.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

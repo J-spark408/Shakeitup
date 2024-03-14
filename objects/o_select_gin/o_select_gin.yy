@@ -6,8 +6,8 @@
   "name":"o_select_gin",
   "overriddenProperties":[],
   "parent":{
-    "name":"obj_bottles_selection",
-    "path":"folders/Objects/obj_bottles/obj_bottles_selection.yy",
+    "name":"zzzz",
+    "path":"folders/Objects/zzzz.yy",
   },
   "parentObjectId":{
     "name":"o_bottle_selected",

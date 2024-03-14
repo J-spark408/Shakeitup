@@ -30,11 +30,11 @@
 //	game_data._picked = -4;
 //} 	
 
-for (var i = 0; i < array_length(liquors); i++) {
-    if (game_data._picked == liquors[i]) {
-        instance_destroy(bottle);
-        bottle = instance_create_layer(x,y,"Instances",game_data._get_obj);
-        bottle_selected = liquors[i];
-        game_data._picked = -4;
-    }
-}
+//for (var i = 0; i < array_length(liquors); i++) {
+//    if (game_data._picked == liquors[i]) {
+//        instance_destroy(bottle);
+//        bottle = instance_create_layer(x,y,"Instances",game_data._get_obj);
+//        bottle_selected = liquors[i];
+//        game_data._picked = -4;
+//    }
+//}

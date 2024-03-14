@@ -1,4 +1,4 @@
 // Inherit the parent event
 event_inherited();
 
-room_goto(rm_room_stage_selection);
+room_goto(rm_stage_selection);

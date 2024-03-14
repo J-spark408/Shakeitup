@@ -1,19 +1,36 @@
-physics_particle_delete_region_box(-200, room_width,room_width+400,room_height/2);
+if (room == rm_game) {
+	physics_particle_delete_region_box(-200, room_width,room_width+400,room_height/2);
+}
 
-if (keyboard_check_pressed(ord("B")) && !instance_exists(obj_start_countdown) &&
-	!instance_exists(obj_DialogLady) && !instance_exists(obj_DialogCustomer)) {
-    if (physics_particle_count() > 0 && obj_current_bottle.bottle_selected != noone && is_poured) {
+if (!new_round) {
+	reset_round();
+	instance_create_layer(0,0,"Instances",obj_DialogLady);
+	new_round = true;
+	round_restart = true;
+	round_timer_over = false;
+}
+
+
+// && !instance_exists(obj_start_countdown) && !instance_exists(obj_DialogLady) && !instance_exists(obj_DialogCustomer)
+
+if (keyboard_check_pressed(ord("B")) && !round_timer_over && !instance_exists(obj_DialogLady) 
+	&& !instance_exists(obj_DialogCustomer) && !instance_exists(obj_start_countdown)) {
+		StageState = STATES.ChoosingIngredients;
+		show_debug_message("State at ");
+		show_debug_message(StageState);
+		
+    if (physics_particle_count() > 0 && BottleHandler.bottle_selected != noone && is_poured) {
         if (prev_pour == 0) {
             prev_pour = physics_particle_count();
-            ds_map_set(liquid_particles_map, obj_current_bottle.bottle_selected, prev_pour)
+            ds_map_set(liquid_particles_map, BottleHandler.bottle_selected, prev_pour)
 			prev_occurance_pour += prev_pour;
             is_poured = false;
         } else {
             current_pour = physics_particle_count() - prev_occurance_pour;
-            prev_value = ds_map_find_value(liquid_particles_map,obj_current_bottle.bottle_selected);
+            prev_value = ds_map_find_value(liquid_particles_map,BottleHandler.bottle_selected);
             prev_pour = current_pour;
 			prev_occurance_pour += prev_pour;	
-            ds_map_set(liquid_particles_map, obj_current_bottle.bottle_selected, abs(prev_pour) + prev_value);
+            ds_map_set(liquid_particles_map, BottleHandler.bottle_selected, abs(prev_pour) + prev_value);
             is_poured = false;
         }
     }
@@ -21,7 +38,7 @@ if (keyboard_check_pressed(ord("B")) && !instance_exists(obj_start_countdown) &&
     //show_debug_message(prev_pour);
 	//show_debug_message(prev_occurance_pour);
 
-    room_goto(rm_room_bar_selection);
+    room_goto(rm_bar_selection);
 }
 
 if (keyboard_check(vk_space) && !shake_start && physics_particle_count() != 0) {
@@ -34,16 +51,16 @@ if (timer >= 1 && !shake_start) {
 	show_debug_message(timer);
 	if (prev_pour == 0) {
             prev_pour = physics_particle_count();
-            ds_map_set(liquid_particles_map, obj_current_bottle.bottle_selected, prev_pour)
+            ds_map_set(liquid_particles_map, BottleHandler.bottle_selected, prev_pour)
 			prev_occurance_pour += prev_pour;
 			pour_count = physics_particle_count();
             is_poured = false;
         } else {
             current_pour = physics_particle_count() - prev_occurance_pour;
-            prev_value = ds_map_find_value(liquid_particles_map,obj_current_bottle.bottle_selected);
+            prev_value = ds_map_find_value(liquid_particles_map,BottleHandler.bottle_selected);
             prev_pour = current_pour;
 			prev_occurance_pour += prev_pour;	
-            ds_map_set(liquid_particles_map, obj_current_bottle.bottle_selected, abs(prev_pour) + prev_value);
+            ds_map_set(liquid_particles_map, BottleHandler.bottle_selected, abs(prev_pour) + prev_value);
             pour_count = physics_particle_count();
 			is_poured = false;
         }
@@ -53,7 +70,7 @@ if (timer >= 1 && !shake_start) {
 	instance_create_layer(22+352, 156+224,"Instances",obj_hitpoint);
 	instance_create_layer(352, 224,"Instances",obj_hitpoint_bar);
 	instance_create_layer(room_width-50, y+50, "Instances", obj_percentage);
-	instance_destroy(obj_current_bottle.bottle);
+	instance_destroy(BottleHandler.bottle);
 	if (instance_exists(obj_jigger_2oz)) {
 		instance_destroy(obj_jigger_2oz);
 	} else {
@@ -63,16 +80,22 @@ if (timer >= 1 && !shake_start) {
 	shake_start = true;
 }
 
-if (!instance_exists(obj_DialogLady) && !round_restart) {
-	start_game_timer += delta_time/1000000;
+if (!instance_exists(obj_DialogLady) && round_restart) {
+	//start_game_timer += delta_time/1000000;
 	if (!game_start) {
 		instance_create_layer(0,0,"Instances",obj_start_countdown);
 		instance_create_layer(0,0,"Instances",obj_round_countdown);
 		game_start = true;
+		round_restart = false;
 	}
 }
+
+if (instance_exists(obj_start_countdown)) {
+	start_game_timer += delta_time/1000000;
+	//show_debug_message(start_game_timer)
+}
+
 if (start_game_timer >= 3 && !has_customer_order) {
-	// Todo create customer instances
 	if (instance_exists(obj_start_countdown)) {
 		instance_destroy(obj_start_countdown);
 	}
@@ -135,6 +158,20 @@ if (!round_timer_over && drink_given) {
 	reset_round();
 }
 
+
+if (round_timer_over && game_start && room == rm_game) {
+	instance_create_layer(683,312,"PopUpMenu",obj_btn_home);
+	instance_create_layer(683,476,"PopUpMenu",obj_btn_retry);
+	instance_create_layer(683,176,"PopUpMenu",obj_timesUp_text);
+	instance_create_layer(483,109,"PopUpMenu",obj_gameover_menu);
+	instance_destroy(obj_round_countdown);
+} else if (instance_exists(obj_btn_retry) && instance_exists(obj_btn_home)
+		 && instance_exists(obj_timesUp_text) && instance_exists(obj_gameover_menu)) {
+		instance_destroy(obj_btn_retry);
+		instance_destroy(obj_btn_home);
+		instance_destroy(obj_timesUp_text);
+		instance_destroy(obj_gameover_menu);
+}
 // show results of how many points were earned and if stage is passed
 //
 //
@@ -143,13 +180,6 @@ if (!round_timer_over && drink_given) {
 
 
 // Create gameover menu 
-//if (round_timer_over && game_start) {
-//	reset_round();
-//	instance_create_layer(683,312,"Instances",obj_btn_home);
-//	instance_create_layer(683,476,"Instances",obj_btn_retry);
-//	instance_create_layer(683,176,"Instances",obj_timesUp_text);
-//	instance_create_layer(483,109,"Instances",obj_gameover_menu);
-//}
 
 
 

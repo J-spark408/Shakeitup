@@ -1,3 +1,4 @@
+StageState = STATES.Intro;
 //_number_bottles = 3;
 flags = phy_particle_flag_water | phy_particle_flag_spring | phy_particle_flag_colormixing;
 
@@ -33,6 +34,7 @@ check_drink_condition = false;
 points = 0;
 
 //create jigger/shaker/interact buttons
+new_round = false;
 instance_create_layer(608,544,"Instances",obj_jigger_2oz);
 instance_create_layer(640,416,"Instances",obj_shaker_bot);
 // if physics particle exists draw interact
@@ -95,6 +97,8 @@ function check_martini() {
 drink_given = false;
 round_timer_over = false;
 round_restart = false;
+
+reset_pressed = false;
 function reset_round() {
 	current_pour = 0;
 	prev_pour = 0;
@@ -113,9 +117,12 @@ function reset_round() {
 	has_customer_order = false;
 	check_drink_condition = false;
 	drink_given = false;
-	instance_create_layer(608,544,"Instances",obj_jigger_2oz);
-	instance_create_layer(640,416,"Instances",obj_shaker_bot);
-	instance_create_layer(1056,672,"Instances",obj_interact_shakeit);
+	round_restart = false;
+	if (!instance_exists(obj_jigger_2oz) && !instance_exists(obj_shaker_bot) && !instance_exists(obj_interact_shakeit)) {
+		instance_create_layer(608,544,"Instances",obj_jigger_2oz);
+		instance_create_layer(640,416,"Instances",obj_shaker_bot);
+		instance_create_layer(1056,672,"Instances",obj_interact_shakeit);
+	}
 	show_debug_message("reset_round")
 }
 

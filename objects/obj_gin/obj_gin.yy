@@ -1,7 +1,10 @@
 {
   "$GMObject":"",
   "%Name":"obj_gin",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"obj_gin",
   "overriddenProperties":[],
@@ -10,8 +13,8 @@
     "path":"folders/Objects/obj_bottles.yy",
   },
   "parentObjectId":{
-    "name":"obj_bottle_func",
-    "path":"objects/obj_bottle_func/obj_bottle_func.yy",
+    "name":"BottleHandler",
+    "path":"objects/BottleHandler/BottleHandler.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

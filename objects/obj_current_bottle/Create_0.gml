@@ -6,8 +6,8 @@
 
 //is_grabbed = false;
 
-bottle_selected = noone;
-bottle = noone;
+//bottle_selected = noone;
+//bottle = noone;
 
-liquors = [LIQUOR.VODKA, LIQUOR.TEQUILA, LIQUOR.WHISKEY,
-            LIQUOR.GIN, LIQUOR.VERMOUTH]
+//liquors = [LIQUOR.VODKA, LIQUOR.TEQUILA, LIQUOR.WHISKEY,
+//            LIQUOR.GIN, LIQUOR.VERMOUTH]

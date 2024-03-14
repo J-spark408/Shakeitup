@@ -1,2 +1,2 @@
-image_alpha = 0.4;
-i = 0;
+//image_alpha = 0.4;
+//i = 0;
