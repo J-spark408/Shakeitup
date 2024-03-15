@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"GlobalBottleVar",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"GlobalBottleVar",
+  "parent":{
+    "name":"Bottles",
+    "path":"folders/Objects/Bottles.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,7 +1,7 @@
 
 if (global.currentBottle != noone) {
 	game_data.StageState = STATES.AddingIngredients;
-	show_debug_message(global.currentBottle);
+	global.bottleChoosen = false;
 	room_goto(rm_game);	
 }
 

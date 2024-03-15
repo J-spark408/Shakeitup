@@ -2,6 +2,10 @@ if (room == rm_game) {
 	physics_particle_delete_region_box(-200, room_width,room_width+400,room_height/2);
 }
 
+if (StageState = STATES.Intro) {
+	
+}
+
 if (!new_round) {
 	reset_round();
 	instance_create_layer(0,0,"Instances",obj_DialogLady);
@@ -15,29 +19,9 @@ if (!new_round) {
 
 if (keyboard_check_pressed(ord("B")) && !round_timer_over && !instance_exists(obj_DialogLady) 
 	&& !instance_exists(obj_DialogCustomer) && !instance_exists(obj_start_countdown)) {
-		StageState = STATES.ChoosingIngredients;
-		show_debug_message("State at ");
-		show_debug_message(StageState);
 		
-    if (physics_particle_count() > 0 && BottleHandler.bottle_selected != noone && is_poured) {
-        if (prev_pour == 0) {
-            prev_pour = physics_particle_count();
-            ds_map_set(liquid_particles_map, BottleHandler.bottle_selected, prev_pour)
-			prev_occurance_pour += prev_pour;
-            is_poured = false;
-        } else {
-            current_pour = physics_particle_count() - prev_occurance_pour;
-            prev_value = ds_map_find_value(liquid_particles_map,BottleHandler.bottle_selected);
-            prev_pour = current_pour;
-			prev_occurance_pour += prev_pour;	
-            ds_map_set(liquid_particles_map, BottleHandler.bottle_selected, abs(prev_pour) + prev_value);
-            is_poured = false;
-        }
-    }
-    //show_debug_message(prev_value);
-    //show_debug_message(prev_pour);
-	//show_debug_message(prev_occurance_pour);
-
+	StageState = STATES.ChoosingIngredients;	
+    GetLiquidCounts()
     room_goto(rm_bar_selection);
 }
 
@@ -47,23 +31,7 @@ if (keyboard_check(vk_space) && !shake_start && physics_particle_count() != 0) {
 	timer = 0;
 }
 if (timer >= 1 && !shake_start) {
-	
-	show_debug_message(timer);
-	if (prev_pour == 0) {
-            prev_pour = physics_particle_count();
-            ds_map_set(liquid_particles_map, BottleHandler.bottle_selected, prev_pour)
-			prev_occurance_pour += prev_pour;
-			pour_count = physics_particle_count();
-            is_poured = false;
-        } else {
-            current_pour = physics_particle_count() - prev_occurance_pour;
-            prev_value = ds_map_find_value(liquid_particles_map,BottleHandler.bottle_selected);
-            prev_pour = current_pour;
-			prev_occurance_pour += prev_pour;	
-            ds_map_set(liquid_particles_map, BottleHandler.bottle_selected, abs(prev_pour) + prev_value);
-            pour_count = physics_particle_count();
-			is_poured = false;
-        }
+	GetLiquidCounts();
 	
 	physics_particle_delete_region_box(0,0,room_width,room_height);
 	instance_create_layer(800, 288,"Instances",obj_shaker_full);
@@ -77,7 +45,8 @@ if (timer >= 1 && !shake_start) {
 		instance_destroy(obj_jigger_1oz);	
 	}
 	instance_destroy(obj_shaker_bot);
-	shake_start = true;
+	instance_destroy(obj_interact_shakeit);
+	StageState = STATES.Shaking;
 }
 
 if (!instance_exists(obj_DialogLady) && round_restart) {
@@ -149,12 +118,12 @@ if (check_drink_condition && !drink_given) {
 	} else if (action_wait_timer >= 2) {
 		physics_particle_delete_region_box(0,0,room_width,room_height);
 	}
-	show_debug_message(action_wait_timer)
 }
 
 if (!round_timer_over && drink_given) {
 	instance_destroy(MartiniGlass);
 	instance_destroy(obj_shaker_full);
+	ResetPreviousPour();
 	reset_round();
 }
 

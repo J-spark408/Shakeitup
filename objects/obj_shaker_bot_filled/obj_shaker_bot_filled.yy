@@ -6,8 +6,8 @@
   "name":"obj_shaker_bot_filled",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Interaction",
+    "path":"folders/Objects/Interaction.yy",
   },
   "parentObjectId":null,
   "persistent":false,

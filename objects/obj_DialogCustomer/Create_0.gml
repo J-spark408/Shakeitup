@@ -7,7 +7,6 @@ event_inherited();
 randomize();
 
 random_dialog = random_range(0,3);
-show_debug_message(int64(random_dialog))
 
 if (!game_data.checked_all_condition) {
 	switch(int64(random_dialog)) {

@@ -9,8 +9,8 @@
   "name":"obj_vodka",
   "overriddenProperties":[],
   "parent":{
-    "name":"obj_bottles",
-    "path":"folders/Objects/obj_bottles.yy",
+    "name":"Bottles",
+    "path":"folders/Objects/Bottles.yy",
   },
   "parentObjectId":{
     "name":"BottleHandler",

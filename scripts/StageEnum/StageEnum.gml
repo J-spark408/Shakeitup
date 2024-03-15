@@ -5,5 +5,14 @@ enum STATES {
 	Shaking,
 	Stirring,
 	ShowCasing,
-	StageOver,
+	StageOver
+}
+
+enum MENUSTATE {
+	MAIN,
+	STAGE,
+	MENU,
+	CONTROL,
+	SETTING,
+	GAME
 }

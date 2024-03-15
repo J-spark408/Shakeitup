@@ -110,6 +110,7 @@ function reset_round() {
 	action_wait_timer = 0;
 	shake_start = false;
 	shake_done = false;
+	round_restart = false;
 	shaker_position_placed = false;
 	first_condition = false;
 	second_condition = false;
@@ -123,7 +124,6 @@ function reset_round() {
 		instance_create_layer(640,416,"Instances",obj_shaker_bot);
 		instance_create_layer(1056,672,"Instances",obj_interact_shakeit);
 	}
-	show_debug_message("reset_round")
 }
 
 

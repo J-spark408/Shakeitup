@@ -9,8 +9,8 @@
   "name":"obj_hitpoint_bar",
   "overriddenProperties":[],
   "parent":{
-    "name":"obj_hit_target",
-    "path":"folders/Objects/obj_hit_target.yy",
+    "name":"Interaction",
+    "path":"folders/Objects/Interaction.yy",
   },
   "parentObjectId":null,
   "persistent":false,

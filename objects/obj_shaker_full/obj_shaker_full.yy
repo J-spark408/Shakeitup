@@ -9,8 +9,8 @@
   "name":"obj_shaker_full",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Interaction",
+    "path":"folders/Objects/Interaction.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -1,12 +1,12 @@
 {
   "$GMScript":"",
-  "%Name":"Script7",
+  "%Name":"GameFunctions",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"Script7",
+  "name":"GameFunctions",
   "parent":{
-    "name":"obj_bottles",
-    "path":"folders/Objects/obj_bottles.yy",
+    "name":"GameControls",
+    "path":"folders/Objects/GameControls.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
