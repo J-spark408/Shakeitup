@@ -1,9 +1,9 @@
 {
   "$GMScript":"",
-  "%Name":"GameKeyControl",
+  "%Name":"GameObjectCreator",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"GameKeyControl",
+  "name":"GameObjectCreator",
   "parent":{
     "name":"GameControls",
     "path":"folders/Objects/GameControls.yy",

@@ -1,10 +1,11 @@
-enum STATES {
+enum GAMESTATE {
 	Intro,
 	AddingIngredients,
 	ChoosingIngredients,
 	Shaking,
 	Stirring,
 	ShowCasing,
+	ResetRound,
 	StageOver
 }
 

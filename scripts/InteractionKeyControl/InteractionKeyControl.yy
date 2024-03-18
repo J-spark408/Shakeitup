@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"InteractionKeyControl",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"InteractionKeyControl",
+  "parent":{
+    "name":"Interaction",
+    "path":"folders/Objects/Interaction.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

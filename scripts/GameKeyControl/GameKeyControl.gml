@@ -9,7 +9,7 @@ function TiltBottleLeft() {
 	}
 	if (image_angle <= -105 && image_angle >= -150) {
 		physics_particle_create(flags, x, y, x+1, x, c_white, 1, game_data._index);
-		game_data.is_poured = true;
+		game_data.isPoured = true;
 	} else if (!instance_exists(game_data._get_obj)) {
 		image_angle = 0;
 	}
@@ -25,8 +25,17 @@ function TiltBottleRight() {
 	}
 	if (image_angle >= 105 && image_angle <= 150) {
 		physics_particle_create(flags, x, y, 1-x, x, c_white, 1, game_data._index);
-		game_data.is_poured = true;
+		game_data.isPoured = true;
 	} else if (!instance_exists(game_data._get_obj)) {
 		image_angle = 0;
+	}
+}
+
+// When key B is pressed, go to bar selection room
+function GoToBarSelection() {
+	if (keyboard_check_pressed(ord("B")) && !instance_exists(obj_DialogLady) && !instance_exists(obj_DialogCustomer) && !instance_exists(obj_start_countdown)) {
+		GetLiquidCounts();
+		StageState = GAMESTATE.ChoosingIngredients;
+	    room_goto(rm_bar_selection);
 	}
 }

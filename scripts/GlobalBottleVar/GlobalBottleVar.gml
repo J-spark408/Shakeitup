@@ -1,2 +1,2 @@
-global.currentBottle = noone;
+currentBottle = noone;
 bottleChoosen = false;

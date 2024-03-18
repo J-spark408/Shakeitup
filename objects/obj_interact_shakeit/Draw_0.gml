@@ -1,4 +1,4 @@
-if ((game_data.timer < 1) && !game_data.shake_start) {
+if (game_data.timer < 1) {
 	draw_self();
 
 	draw_set_font(fnt_menu);

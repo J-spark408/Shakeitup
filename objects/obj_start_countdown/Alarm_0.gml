@@ -13,7 +13,7 @@ if t_sec = -1 {
 if !(t_mil = 0 && t_sec = 1 && t_min = 0) {
 	alarm[0] = 6;
 } 
-if (t_mil = 0 && t_sec = 1 && !dialog_create) {
-	instance_create_layer(0,0,"Instances",obj_DialogCustomer);
-	dialog_create = true;
-}
+//if (t_mil = 0 && t_sec = 1 && !dialog_create) {
+//	instance_create_layer(0,0,"Instances",obj_DialogCustomer);
+//	dialog_create = true;
+//}
