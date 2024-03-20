@@ -41,23 +41,22 @@ if (StageState == GAMESTATE.AddingIngredients) {
 	HoldSpaceToShake();
 }
 
-
 if (StageState == GAMESTATE.ShowCasing && !objectCheckCreate) {
 	CreateShowCasingObjects();
-	if (obj_shaker_full.y > 288) {
-			obj_shaker_full.y--;
-	} else if (obj_shaker_full.y < 288) {
-		obj_shaker_full.y++;
+	if (currentShaker.y > 288) {
+			currentShaker.y--;
+	} else if (currentShaker.y < 288) {
+		currentShaker.y++;
 	} else {
-		if (obj_shaker_full.image_angle >= 120) {
-			obj_shaker_full.image_angle += 0;
+		if (currentShaker.image_angle >= 120) {
+			currentShaker.image_angle += 0;
 			if (occurancePour != physics_particle_count()) {
-				physics_particle_create(flags, 630,280,x-1,x,c_white,1,1);
+				physics_particle_create(flags, 470,280,x-1,x,c_white,1,1);
 			} else {
 				objectCheckCreate = true;	
 			}
 		} else {
-			obj_shaker_full.image_angle += 1;	
+			currentShaker.image_angle += 1;	
 		}
 	}
 }

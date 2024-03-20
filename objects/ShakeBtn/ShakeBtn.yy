@@ -8,10 +8,13 @@
   "name":"ShakeBtn",
   "overriddenProperties":[],
   "parent":{
-    "name":"Interaction",
-    "path":"folders/Objects/Interaction.yy",
+    "name":"MixOption",
+    "path":"folders/Objects/MixOption.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"MixChoiceHandler",
+    "path":"objects/MixChoiceHandler/MixChoiceHandler.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

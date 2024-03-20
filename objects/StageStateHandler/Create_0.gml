@@ -28,6 +28,9 @@ occurancePour = 0;
 prevValue = 0;
 isPoured = false;
 
+mixChoice = noone;
+currentShaker = noone;
+
 liquid_particles_map = ds_map_create();
 
 ds_map_add(liquid_particles_map, LIQUOR.VODKA, 0);

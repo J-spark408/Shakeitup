@@ -25,6 +25,7 @@ if (mouse_check_button(mb_left) && position_meeting(mouse_x,mouse_y,obj_stir_poi
 }
 
 if (timed_stir >= 100) {
+	instance_destroy(obj_stir_hand);
 	StageStateHandler.StageState = GAMESTATE.ShowCasing;
 	StageStateHandler.objectCheckCreate = false;
 }

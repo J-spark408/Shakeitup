@@ -39,6 +39,7 @@ function DeleteObjsStateStirring() {
 
 function DeleteObjsStateShowCasing() {
 	instance_destroy(obj_shaker_full);
+	instance_destroy(obj_shaker_bot_filled);
 	instance_destroy(MartiniGlass);
 }
 
@@ -51,14 +52,17 @@ function ResetRoundMode() {
 	StageStateHandler.StageState = GAMESTATE.AddingIngredients;
 }
 
-function ChooseShakeOrStirOption() {
+function CreateShakeOrStirOption() {
+	DeleteObjsStateAddIngredients();
+	physics_particle_delete_region_box(0,0,room_width,room_height);
+	StageState = GAMESTATE.ChoiceOption;
 	instance_create_layer(288, 234,"Instances",ShakeBtn);
 	instance_create_layer(758, 234,"Instances",StirBtn);
 }
 
 function CreateShakerMode(){
-	physics_particle_delete_region_box(0,0,room_width,room_height);
-	instance_create_layer(800, 288,"Instances",obj_shaker_full);
+	//physics_particle_delete_region_box(0,0,room_width,room_height);
+	instance_create_layer(640, 288,"Instances",obj_shaker_full);
 	instance_create_layer(22+352, 156+224,"Instances",obj_hitpoint);
 	instance_create_layer(352, 224,"Instances",obj_hitpoint_bar);
 	//instance_create_layer(room_width-50, y+50, "Instances", obj_percentage);
@@ -67,7 +71,7 @@ function CreateShakerMode(){
 }
 
 function CreateStirringMode() {
-	physics_particle_delete_region_box(0,0,room_width,room_height);
+	//physics_particle_delete_region_box(0,0,room_width,room_height);
 	instance_create_layer(640, 416,"Instances",obj_shaker_bot_filled);
 	instance_create_layer(726, 301,"Instances",obj_bar_spoon);
 	instance_create_layer(705, 297,"Instances",obj_stir_point);
@@ -76,10 +80,14 @@ function CreateStirringMode() {
 }
 
 function CreateShowCasingObjects() {
-	DeleteObjsStateShaking();
-	DeleteObjsStateStirring();
+	if (mixChoice == MixChoiceHandler.shaking) {
+		DeleteObjsStateShaking();
+	}
+	if (mixChoice == MixChoiceHandler.stirring) {
+		DeleteObjsStateStirring();
+	}
 	if (!instance_exists(MartiniGlass)) {
-		instance_create_layer(480,352,"Instances",MartiniGlass);
+		instance_create_layer(320,352,"Instances",MartiniGlass);
 	}
 }
 
