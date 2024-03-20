@@ -1,7 +1,10 @@
+currentState = MENUSTATE.MAIN;
+
 enum GAMESTATE {
 	Intro,
 	AddingIngredients,
 	ChoosingIngredients,
+	ChoiceOption,
 	Shaking,
 	Stirring,
 	ShowCasing,
@@ -12,7 +15,7 @@ enum GAMESTATE {
 enum MENUSTATE {
 	MAIN,
 	STAGE,
-	MENU,
+	RECIPE,
 	CONTROL,
 	SETTING,
 	GAME

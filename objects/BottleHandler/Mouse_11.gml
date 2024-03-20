@@ -1,3 +1,3 @@
-if (game_data.StageState == GAMESTATE.ChoosingIngredients) {
+if (StageStateHandler.StageState == GAMESTATE.ChoosingIngredients) {
 	image_alpha = 0.4
 }

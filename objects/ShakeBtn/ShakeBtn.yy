@@ -1,11 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"obj_stir_point",
+  "%Name":"ShakeBtn",
   "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_stir_point",
+  "name":"ShakeBtn",
   "overriddenProperties":[],
   "parent":{
     "name":"Interaction",
@@ -30,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"Sprite50",
-    "path":"sprites/Sprite50/Sprite50.yy",
+    "name":"spr_btn_shake",
+    "path":"sprites/spr_btn_shake/spr_btn_shake.yy",
   },
   "spriteMaskId":null,
   "visible":true,

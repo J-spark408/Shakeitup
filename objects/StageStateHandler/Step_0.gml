@@ -3,15 +3,18 @@ if (room == rm_game) {
 }
 
 // Intro state Dialog lady, customer, and timer is created.
-if (StageState == GAMESTATE.Intro) {
+if (StageState == GAMESTATE.Intro && global.currentState == MENUSTATE.GAME) {
 	if (!gameStart) {
-		CreateJigAndShaker();
+		points = 0;	
+		CreateStageBackground();
+		if (!instance_exists(obj_shaker_bot)) {
+			CreateJigAndShaker();
+		}
 		instance_create_layer(0,0,"Instances",obj_DialogLady);
 		gameStart = true;
 	}
 	if (!instance_exists(obj_DialogLady) && !timerStart) {
 		instance_create_layer(0,0,"Instances",obj_start_countdown);
-		instance_create_layer(0,0,"Instances",obj_round_countdown);
 		timerStart = true;
 	}
 	if (instance_exists(obj_start_countdown)) {
@@ -21,12 +24,14 @@ if (StageState == GAMESTATE.Intro) {
 	if (startGameTimer >= 3) {
 		if (instance_exists(obj_start_countdown)) {
 			instance_destroy(obj_start_countdown);
+			instance_create_layer(0,0,"Instances",obj_round_countdown);
 			StageState = GAMESTATE.AddingIngredients;
 		}
 	}
 }
 
 // Keyboard B press, go too bar selection room. Hold Space to go to Shake State
+// At Shaking state, destroy previous instances and create shaking objects
 if (StageState == GAMESTATE.AddingIngredients) {
 	if (!objectCheckCreate) {
 		instance_create_layer(0,0,"Instances",obj_DialogCustomer);
@@ -35,12 +40,6 @@ if (StageState == GAMESTATE.AddingIngredients) {
 	GoToBarSelection();
 	HoldSpaceToShake();
 }
-
-// At Shaking state, destroy previous instances and create shaking objects
-if (StageState == GAMESTATE.Shaking && !objectCheckCreate) {
-	CreateShakerMode();
-}
-
 
 
 if (StageState == GAMESTATE.ShowCasing && !objectCheckCreate) {
@@ -79,8 +78,9 @@ if (StageState == GAMESTATE.ShowCasing && objectCheckCreate) {
 }
 
 if (StageState == GAMESTATE.ResetRound && !objectCheckCreate) {
-	instance_destroy(obj_shaker_full);
-	instance_destroy(MartiniGlass);
+	//instance_destroy(obj_shaker_full);
+	//instance_destroy(MartiniGlass);
+	DeleteObjsStateShowCasing();
 	if (!instance_exists(obj_DialogCustomer)) {
 		ResetVariables();
 		ResetPreviousPour();
@@ -88,6 +88,11 @@ if (StageState == GAMESTATE.ResetRound && !objectCheckCreate) {
 	}
 }
 
+if (StageState == GAMESTATE.StageOver && global.currentState == MENUSTATE.GAME) {
+	RoundOver();
+	ResetVariables();
+	CreateGameOverMenu();
+}
 
 
 

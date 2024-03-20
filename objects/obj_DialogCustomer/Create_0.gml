@@ -8,7 +8,7 @@ randomize();
 
 random_dialog = random_range(0,3);
 
-if (!game_data.checkedAllCondition) {
+if (!StageStateHandler.checkedAllCondition) {
 	switch(int64(random_dialog)) {
 		case 0:	
 			dialog.add(spr_customer1, "I can use some Martini.");
@@ -25,18 +25,18 @@ if (!game_data.checkedAllCondition) {
 	}
 }
 
-if (game_data.checkedAllCondition) {
-	if (game_data.firstCondition && game_data.secondCondition) {
+if (StageStateHandler.checkedAllCondition) {
+	if (StageStateHandler.firstCondition && StageStateHandler.secondCondition) {
 		dialog.add(spr_customer1, "Thank you, this martini is great");
-		game_data.points += int64(random_range(6,11));
-	} else if (game_data.firstCondition && !game_data.secondCondition) {
+		StageStateHandler.points += int64(random_range(6,11));
+	} else if (StageStateHandler.firstCondition && !StageStateHandler.secondCondition) {
 		dialog.add(spr_customer1, "Vermouth needs adjusting!");	
-		game_data.points += int64(random_range(2,5));
-	} else if (!game_data.firstCondition && game_data.secondCondition) {
+		StageStateHandler.points += int64(random_range(2,5));
+	} else if (!StageStateHandler.firstCondition && StageStateHandler.secondCondition) {
 		dialog.add(spr_customer1, "Vodka needs adjusting!");
-		game_data.points += int64(random_range(2,5));
+		StageStateHandler.points += int64(random_range(2,5));
 	} else {
 		dialog.add(spr_customer1, "This martini is not good");	
-		game_data.points += int64(random_range(0,1));
+		StageStateHandler.points += int64(random_range(0,1));
 	}
 }

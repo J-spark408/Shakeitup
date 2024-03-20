@@ -1,4 +1,4 @@
-if (game_data.timer < 1) {
+if (StageStateHandler.timer < 1) {
 	draw_self();
 
 	draw_set_font(fnt_menu);
@@ -12,5 +12,5 @@ if (game_data.timer < 1) {
 	draw_set_valign(fa_top);
 
 
-	draw_sprite_stretched(spr_button, image_index, x , y, (game_data.timer/max_fill_amount)*sprite_width,sprite_height)
+	draw_sprite_stretched(spr_button, image_index, x , y, (StageStateHandler.timer/max_fill_amount)*sprite_width,sprite_height)
 }

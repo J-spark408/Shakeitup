@@ -1,7 +1,7 @@
-if (game_data.StageState == GAMESTATE.AddingIngredients) {
+if (StageStateHandler.StageState == GAMESTATE.AddingIngredients) {
 	TiltBottleLeft();
 	TiltBottleRight();
-	if (mouse_check_button(mb_left) && position_meeting(mouse_x,mouse_y,game_data._get_obj)) {
+	if (mouse_check_button(mb_left) && position_meeting(mouse_x,mouse_y,StageStateHandler._get_obj)) {
 		is_grabbed = true;
 	}
 	if (mouse_check_button_released(mb_left)) {
@@ -13,7 +13,7 @@ if (game_data.StageState == GAMESTATE.AddingIngredients) {
 	}
 }
 
-if (game_data.StageState == GAMESTATE.AddingIngredients && !global.bottleChoosen) {
+if (StageStateHandler.StageState == GAMESTATE.AddingIngredients && !global.bottleChoosen) {
 	setCurrentBottle();
 }	
 

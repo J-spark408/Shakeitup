@@ -51,7 +51,7 @@ if (fully_tilted) {
 	}
 }
 
-if (game_data._get_obj != noone) {
+if (StageStateHandler._get_obj != noone) {
 	phy_position_x = position_to_x;
 	phy_position_y = position_to_y;
 }

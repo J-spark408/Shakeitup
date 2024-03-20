@@ -37,25 +37,29 @@ ds_map_add(liquid_particles_map, LIQUOR.GIN, 0);
 ds_map_add(liquid_particles_map, LIQUOR.VERMOUTH, 0);
 
 
-switch(global.current_stage) {
-	case 0:
-	layer_sprite_create("Assets",0,621,spr_bartop);
-	layer_sprite_create("Assets",950,47,spr_neonlight);
-	layer_sprite_create("Assets",x,y,spr_barbackground);
-	break;
-	case 1:
-	layer_sprite_create("Assets",0,621,spr_bartop);
-	layer_sprite_create("Assets",x,y,spr_asian);
-	break;
-	case 2:
-	layer_sprite_create("Assets",0,621,spr_bartop);
-	case 3:
-	layer_sprite_create("Assets",0,621,spr_bartop);
-	case 4:
-	layer_sprite_create("Assets",0,621,spr_bartop);
-	default:
-	break;
-}
+backgroundSprite = noone;
+barTop = noone;
+misc = noone;
+
+//switch(global.current_stage) {
+//	case 0:
+//	layer_sprite_create("Assets",0,621,spr_bartop);
+//	layer_sprite_create("Assets",950,47,spr_neonlight);
+//	layer_sprite_create("Assets",x,y,spr_barbackground);
+//	break;
+//	case 1:
+//	layer_sprite_create("Assets",0,621,spr_bartop);
+//	layer_sprite_create("Assets",x,y,spr_asian);
+//	break;
+//	case 2:
+//	layer_sprite_create("Assets",0,621,spr_bartop);
+//	case 3:
+//	layer_sprite_create("Assets",0,621,spr_bartop);
+//	case 4:
+//	layer_sprite_create("Assets",0,621,spr_bartop);
+//	default:
+//	break;
+//}
 
 
 function check_martini() {
@@ -69,31 +73,35 @@ function check_martini() {
 	} 
 }
 
-function ResetVariables() {
-	objectCheckCreate = false;
-	global.currentBottle = noone;
-	_get_obj = noone;
+//function ResetVariables() {
+//	objectCheckCreate = false;
+//	global.currentBottle = noone;
+//	_get_obj = noone;
 
-	waitTimer = 0;
-	timer = 0;
+//	waitTimer = 0;
+//	timer = 0;
 
-	firstCondition = false;
-	secondCondition = false;
-	checkedAllCondition = false;
+//	firstCondition = false;
+//	secondCondition = false;
+//	checkedAllCondition = false;
 
-	currentPour = 0;
-	prevPour = 0;
-	occurancePour = 0;
-	prevValue = 0;
-	isPoured = false;
-}
+//	currentPour = 0;
+//	prevPour = 0;
+//	occurancePour = 0;
+//	prevValue = 0;
+//	isPoured = false;
+//}
 
-function RoundOver() {
-	points = 0;	
-	gameStart = false;
-	timerStart = false;
-	startGameTimer = 0;
-}
+//function RoundOver() {
+//	DeleteObjsStateAddIngredients();
+//	DeleteObjsStateShaking();
+//	DeleteObjsStateShowCasing();
+//	instance_destroy(obj_DialogCustomer);
+//	points = 0;	
+//	gameStart = false;
+//	timerStart = false;
+//	startGameTimer = 0;
+//}
 
 
 

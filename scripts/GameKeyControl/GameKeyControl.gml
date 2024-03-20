@@ -8,9 +8,9 @@ function TiltBottleLeft() {
 		}
 	}
 	if (image_angle <= -105 && image_angle >= -150) {
-		physics_particle_create(flags, x, y, x+1, x, c_white, 1, game_data._index);
-		game_data.isPoured = true;
-	} else if (!instance_exists(game_data._get_obj)) {
+		physics_particle_create(flags, x, y, x+1, x, c_white, 1, StageStateHandler._index);
+		StageStateHandler.isPoured = true;
+	} else if (!instance_exists(StageStateHandler._get_obj)) {
 		image_angle = 0;
 	}
 }
@@ -24,9 +24,9 @@ function TiltBottleRight() {
 		}
 	}
 	if (image_angle >= 105 && image_angle <= 150) {
-		physics_particle_create(flags, x, y, 1-x, x, c_white, 1, game_data._index);
-		game_data.isPoured = true;
-	} else if (!instance_exists(game_data._get_obj)) {
+		physics_particle_create(flags, x, y, 1-x, x, c_white, 1, StageStateHandler._index);
+		StageStateHandler.isPoured = true;
+	} else if (!instance_exists(StageStateHandler._get_obj)) {
 		image_angle = 0;
 	}
 }

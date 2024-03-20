@@ -6,4 +6,4 @@ dir_rot = choose(-1,1)
 
 randomize();
 timed_stir = 0;
-hit_stir = random_range(2.9,5.8);
+hit_stir = random_range(0.15,0.25);

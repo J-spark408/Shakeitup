@@ -10,6 +10,8 @@ function HoldSpaceToShake() { // AddingIngredients State
 		GetLiquidCounts();
 		StageState = GAMESTATE.Shaking;	
 		objectCheckCreate = false;
+		CreateShakerMode();
+		//CreateStirringMode();
 	}
 }
 

@@ -8,7 +8,7 @@ flags = phy_particle_flag_colormixing
 is_grabbed = false;
 
 
-if (game_data.StageState == GAMESTATE.ChoosingIngredients) {
+if (StageStateHandler.StageState == GAMESTATE.ChoosingIngredients) {
 	image_alpha = 0.4;
 }
 
@@ -23,7 +23,7 @@ function setCurrentBottle() {
 	for (var i = 0; i < array_length(liquors); i++) {
 		if (global.currentBottle == liquors[i] && !global.bottleChoosen) {
 			instance_destroy(bottle);
-		    bottle = instance_create_layer(x,y,"Instances",game_data._get_obj);
+		    bottle = instance_create_layer(x,y,"Instances",StageStateHandler._get_obj);
 		    bottle_selected = liquors[i];
 		    global.bottleChoosen = true;
 		}

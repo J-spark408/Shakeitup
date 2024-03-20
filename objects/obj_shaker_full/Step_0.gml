@@ -1,5 +1,5 @@
 
-if (game_data.StageState == GAMESTATE.Shaking) {
+if (StageStateHandler.StageState == GAMESTATE.Shaking) {
 	y += vertical_speed * dir_y;
 	image_angle -= rotate_speed * dir;
 }
