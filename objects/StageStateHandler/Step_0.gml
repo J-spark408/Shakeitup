@@ -1,5 +1,6 @@
 if (room == rm_game) {
 	physics_particle_delete_region_box(-200, room_width,room_width+400,room_height/2);
+	show_debug_message(LiquidTracker.prevPour);
 }
 
 // Intro state Dialog lady, customer, and timer is created.

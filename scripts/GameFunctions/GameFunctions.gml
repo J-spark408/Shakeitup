@@ -27,29 +27,30 @@ function CreateStageBackground() {
 
 // Updates the particle count into map everytime pour has been made into the shaker
 function GetLiquidCounts(){
-	if (physics_particle_count() > 0 && BottleHandler.bottle_selected != noone && isPoured) {
-        if (prevPour == 0) {
-            prevPour = physics_particle_count();
-            ds_map_set(liquid_particles_map, BottleHandler.bottle_selected, prevPour)
-			occurancePour += prevPour;
+	if (physics_particle_count() > 0 && BottleHandler.bottle_selected != noone && LiquidTracker.isPoured) {
+        if (LiquidTracker.prevPour == 0) {
+            LiquidTracker.prevPour = physics_particle_count();
+			show_debug_message(LiquidTracker.prevPour);
+            ds_map_set(LiquidTracker.liquid_particles_map, BottleHandler.bottle_selected, LiquidTracker.prevPour)
+			LiquidTracker.occurancePour += LiquidTracker.prevPour;
 			//pour_count = physics_particle_count();
-            isPoured = false;
+            LiquidTracker.isPoured = false;
         } else {
-            currentPour = physics_particle_count() - occurancePour;
-            prevValue = ds_map_find_value(liquid_particles_map,BottleHandler.bottle_selected);
-            prevPour = currentPour;
-			occurancePour += prevPour;	
-            ds_map_set(liquid_particles_map, BottleHandler.bottle_selected, abs(prevPour) + prevValue);
+            LiquidTracker.currentPour = physics_particle_count() - LiquidTracker.occurancePour;
+            LiquidTracker.prevValue = ds_map_find_value(LiquidTracker.liquid_particles_map,BottleHandler.bottle_selected);
+            LiquidTracker.prevPour = LiquidTracker.currentPour;
+			LiquidTracker.occurancePour += LiquidTracker.prevPour;	
+            ds_map_set(LiquidTracker.liquid_particles_map, BottleHandler.bottle_selected, abs(LiquidTracker.prevPour) + LiquidTracker.prevValue);
 			//pour_count = physics_particle_count();
-            isPoured = false;
+            LiquidTracker.isPoured = false;
         }
     }
 }
 
 // For loop through the map and reset all values for new round/game.
 function ResetPreviousPour() {
-	for (numOfBottles = 0; numOfBottles < ds_map_size(liquid_particles_map); numOfBottles++) {
-		ds_map_set(liquid_particles_map, numOfBottles, 0);
+	for (numOfBottles = 0; numOfBottles < ds_map_size(LiquidTracker.liquid_particles_map); numOfBottles++) {
+		ds_map_set(LiquidTracker.liquid_particles_map, numOfBottles, 0);
 	}
 }
 
@@ -66,11 +67,11 @@ function ResetVariables() {
 	secondCondition = false;
 	checkedAllCondition = false;
 
-	currentPour = 0;
-	prevPour = 0;
-	occurancePour = 0;
-	prevValue = 0;
-	isPoured = false;
+	LiquidTracker.currentPour = 0;
+	LiquidTracker.prevPour = 0;
+	LiquidTracker.occurancePour = 0;
+	LiquidTracker.prevValue = 0;
+	LiquidTracker.isPoured = false;
 }
 
 // Timer is at 0 and round is over, delete all instances and set game start variables to default

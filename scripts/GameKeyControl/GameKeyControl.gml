@@ -9,7 +9,7 @@ function TiltBottleLeft() {
 	}
 	if (image_angle <= -105 && image_angle >= -150) {
 		physics_particle_create(flags, x, y, x+1, x, c_white, 1, StageStateHandler._index);
-		StageStateHandler.isPoured = true;
+		LiquidTracker.isPoured = true;
 	} else if (!instance_exists(StageStateHandler._get_obj)) {
 		image_angle = 0;
 	}
@@ -25,7 +25,7 @@ function TiltBottleRight() {
 	}
 	if (image_angle >= 105 && image_angle <= 150) {
 		physics_particle_create(flags, x, y, 1-x, x, c_white, 1, StageStateHandler._index);
-		StageStateHandler.isPoured = true;
+		LiquidTracker.isPoured = true;
 	} else if (!instance_exists(StageStateHandler._get_obj)) {
 		image_angle = 0;
 	}

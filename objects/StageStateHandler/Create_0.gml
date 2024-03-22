@@ -65,12 +65,12 @@ misc = noone;
 
 
 function check_martini() {
-	if (ds_map_find_value(liquid_particles_map, LIQUOR.VODKA) >= 600 && 
-		ds_map_find_value(liquid_particles_map, LIQUOR.VODKA) <= 670 ) {
+	if (ds_map_find_value(LiquidTracker.liquid_particles_map, LIQUOR.VODKA) >= 600 && 
+		ds_map_find_value(LiquidTracker.liquid_particles_map, LIQUOR.VODKA) <= 670 ) {
 		firstCondition = true;
 	} 
-	if (ds_map_find_value(liquid_particles_map, LIQUOR.VERMOUTH) >= 35 && 
-		ds_map_find_value(liquid_particles_map, LIQUOR.VERMOUTH) <= 70 ) {
+	if (ds_map_find_value(LiquidTracker.liquid_particles_map, LIQUOR.VERMOUTH) >= 35 && 
+		ds_map_find_value(LiquidTracker.liquid_particles_map, LIQUOR.VERMOUTH) <= 70 ) {
 		secondCondition = true;
 	} 
 }
