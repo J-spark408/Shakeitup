@@ -24,6 +24,7 @@ if (!StageStateHandler.checkedAllCondition) {
 			break;
 	}
 }
+request = "Martini";
 
 if (StageStateHandler.checkedAllCondition) {
 	if (StageStateHandler.firstCondition && StageStateHandler.secondCondition) {

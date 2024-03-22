@@ -15,7 +15,7 @@ enum GAMESTATE {
 enum MENUSTATE {
 	MAIN,
 	STAGE,
-	RECIPE,
+	RecipePage,
 	CONTROL,
 	SETTING,
 	GAME

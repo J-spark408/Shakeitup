@@ -41,23 +41,19 @@ if (StageState == GAMESTATE.AddingIngredients) {
 	HoldSpaceToShake();
 }
 
+if (StageState == GAMESTATE.Shaking || StageState == GAMESTATE.Stirring) {
+	if (!instance_exists(MixOptionBtn)) {
+		instance_create_layer(room_width - 300,room_height - 100,"Instances",MixOptionBtn);	
+	}
+}
+
 if (StageState == GAMESTATE.ShowCasing && !objectCheckCreate) {
 	CreateShowCasingObjects();
-	if (currentShaker.y > 288) {
-			currentShaker.y--;
-	} else if (currentShaker.y < 288) {
-		currentShaker.y++;
-	} else {
-		if (currentShaker.image_angle >= 120) {
-			currentShaker.image_angle += 0;
-			if (occurancePour != physics_particle_count()) {
-				physics_particle_create(flags, 470,280,x-1,x,c_white,1,1);
-			} else {
-				objectCheckCreate = true;	
-			}
-		} else {
-			currentShaker.image_angle += 1;	
-		}
+	if (mixChoice == MixChoiceHandler.shaking) {
+		MoveShakerAfterShaking();
+	}
+	if (mixChoice == MixChoiceHandler.stirring) {
+		MoveShakerAfterStirring();
 	}
 }
 
@@ -90,6 +86,7 @@ if (StageState == GAMESTATE.ResetRound && !objectCheckCreate) {
 if (StageState == GAMESTATE.StageOver && global.currentState == MENUSTATE.GAME) {
 	RoundOver();
 	ResetVariables();
+	ResetPreviousPour();;
 	CreateGameOverMenu();
 }
 

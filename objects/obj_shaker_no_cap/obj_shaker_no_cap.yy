@@ -1,13 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"shaker_top",
+  "%Name":"obj_shaker_no_cap",
   "eventList":[],
   "managed":true,
-  "name":"shaker_top",
+  "name":"obj_shaker_no_cap",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Interaction",
+    "path":"folders/Objects/Interaction.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -28,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_shaker_top",
-    "path":"sprites/spr_shaker_top/spr_shaker_top.yy",
+    "name":"spr_shaker_top_no_cap",
+    "path":"sprites/spr_shaker_top_no_cap/spr_shaker_top_no_cap.yy",
   },
   "spriteMaskId":null,
   "visible":true,

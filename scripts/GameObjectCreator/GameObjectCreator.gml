@@ -35,12 +35,25 @@ function DeleteObjsStateShaking() {
 function DeleteObjsStateStirring() {
 	instance_destroy(obj_bar_spoon);
 	instance_destroy(obj_stir_point);
+	instance_destroy(obj_stir_hand);
 }
 
 function DeleteObjsStateShowCasing() {
-	instance_destroy(obj_shaker_full);
-	instance_destroy(obj_shaker_bot_filled);
+	instance_destroy(obj_shaker_full_no_cap);
+	instance_destroy(obj_shaker_cap);
+	instance_destroy(MixOptionBtn);
 	instance_destroy(MartiniGlass);
+}
+
+function DeleteAllForStageOver() {
+	instance_destroy(obj_shaker_bot_filled);
+	instance_destroy(obj_shaker_full);
+	DeleteObjsStateAddIngredients()
+	DeleteObjsStateChoice();
+	DeleteObjsStateShaking();
+	DeleteObjsStateStirring();
+	DeleteObjsStateStirring();
+	DeleteObjsStateShowCasing();
 }
 
 function ResetRoundMode() {

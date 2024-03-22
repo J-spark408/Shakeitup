@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"Recipe",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Recipe",
+  "parent":{
+    "name":"Liquids",
+    "path":"folders/Objects/Liquids.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

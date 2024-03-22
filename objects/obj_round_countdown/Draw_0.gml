@@ -19,7 +19,10 @@ if (t_sec > 9) {
 		game_countdown += "." + string(t_mil);
 	}
 }
-if (t_sec < 10) {
+if (t_min >= 1 && t_sec < 10) {
+	game_countdown += "0";
+	game_countdown += string(t_sec);
+} else if (t_sec < 10 && t_min == 0) {
 	game_countdown += string(t_sec);
 	game_countdown += "." + string(t_mil);
 }

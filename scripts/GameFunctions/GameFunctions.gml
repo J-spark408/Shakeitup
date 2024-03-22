@@ -76,9 +76,7 @@ function ResetVariables() {
 // Timer is at 0 and round is over, delete all instances and set game start variables to default
 function RoundOver() {
 	physics_particle_delete_region_box(0,0,room_width,room_height);
-	DeleteObjsStateAddIngredients();
-	DeleteObjsStateShaking();
-	DeleteObjsStateShowCasing();
+	DeleteAllForStageOver();
 	instance_destroy(obj_DialogCustomer);
 	gameStart = false;
 	timerStart = false;
