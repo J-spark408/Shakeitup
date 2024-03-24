@@ -9,6 +9,7 @@ if (room == rm_game) {
 	physics_particle_draw(flags, 1, spr_clear, 0);
 	physics_particle_draw(flags, 2, spr_light_brown, 0);
 	physics_particle_draw(flags, 3, spr_brown, 0);
+	physics_particle_draw(flags, 4, spr_bitter, 0);
 	draw_text(room_width - 150, y, "Tips $" + string(points));
 }
 

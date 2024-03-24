@@ -22,6 +22,8 @@ firstCondition = false;
 secondCondition = false;
 checkedAllCondition = false;
 
+request = "";
+random_customer = noone;
 //currentPour = 0;
 //prevPour = 0;
 //occurancePour = 0;

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"StageStruct",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"StageStruct",
+  "parent":{
+    "name":"obj_stages",
+    "path":"folders/Objects/obj_stages.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

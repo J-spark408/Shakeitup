@@ -30,7 +30,6 @@ function GetLiquidCounts(){
 	if (physics_particle_count() > 0 && BottleHandler.bottle_selected != noone && LiquidTracker.isPoured) {
         if (LiquidTracker.prevPour == 0) {
             LiquidTracker.prevPour = physics_particle_count();
-			show_debug_message(LiquidTracker.prevPour);
             ds_map_set(LiquidTracker.liquid_particles_map, BottleHandler.bottle_selected, LiquidTracker.prevPour)
 			LiquidTracker.occurancePour += LiquidTracker.prevPour;
 			//pour_count = physics_particle_count();
@@ -78,7 +77,7 @@ function ResetVariables() {
 function RoundOver() {
 	physics_particle_delete_region_box(0,0,room_width,room_height);
 	DeleteAllForStageOver();
-	instance_destroy(obj_DialogCustomer);
+	instance_destroy(DialogCustomers);
 	gameStart = false;
 	timerStart = false;
 	startGameTimer = 0;

@@ -3,7 +3,7 @@ draw_self();
 //draw_sprite(spr_martini_img, 0, 448, 352)
 //draw_text(400,570,obj_page_detail.RecipePage_name);
 
-recipepage = ds_list_find_value(obj_page_detail.RecipePage_list,current_page);
+var recipepage = ds_list_find_value(obj_page_detail.RecipePage_list,current_page);
 if (!is_flipping) {
 	//for (var i = 0; i < ds_list_size(obj_page_detail.RecipePage_list); i += 1) {
 		//RecipePage = ds_list_find_value(obj_page_detail.RecipePage_list,current_page);

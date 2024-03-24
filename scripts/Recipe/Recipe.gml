@@ -4,7 +4,7 @@ function Recipe(rName,rMap) constructor{
 	IngredientsMap = rMap;
 	
 	
-	//USAGE: Recipe.checkLiquid(LIQUOR.VODKA)
+	//USAGE: Recipe.getLiquidValue(LIQUOR.VODKA)
 	getLiquidValue = function(liquidTocheck) {
 		return ds_map_find_value(IngredientsMap,liquidTocheck);
 	}
@@ -13,14 +13,14 @@ function Recipe(rName,rMap) constructor{
 
 function martiniRecipe(){
 	ingredients = ds_map_create()
-	ds_map_add(ingredients,LIQUOR.VODKA, 700);
-	ds_map_add(ingredients,LIQUOR.VERMOUTH, 40);
+	ds_map_add(ingredients,LIQUOR.VODKA, 600);
+	ds_map_add(ingredients,LIQUOR.VERMOUTH, 100);
 	return new Recipe("Martini",ingredients);
 }
 
 function oldFashionedRecipe(){
 	ingredients = ds_map_create()
 	ds_map_add(ingredients,LIQUOR.WHISKEY, 700);
-	//TODO add bitters
-	return new Recipe("Whiskey",ingredients);
+	ds_map_add(ingredients,LIQUOR.BITTER, 4);
+	return new Recipe("Old Fashioned",ingredients);
 }

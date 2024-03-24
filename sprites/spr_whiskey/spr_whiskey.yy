@@ -2,7 +2,7 @@
   "$GMSprite":"",
   "%Name":"spr_whiskey",
   "bboxMode":0,
-  "bbox_bottom":433,
+  "bbox_bottom":469,
   "bbox_left":0,
   "bbox_right":139,
   "bbox_top":0,
@@ -16,7 +16,7 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":435,
+  "height":470,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"0d2db84e-17ba-41dc-8560-0f84e917f105","blendMode":0,"displayName":"default","isLocked":false,"name":"0d2db84e-17ba-41dc-8560-0f84e917f105","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},

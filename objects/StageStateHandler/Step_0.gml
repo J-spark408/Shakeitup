@@ -1,6 +1,5 @@
 if (room == rm_game) {
 	physics_particle_delete_region_box(-200, room_width,room_width+400,room_height/2);
-	show_debug_message(LiquidTracker.prevPour);
 }
 
 // Intro state Dialog lady, customer, and timer is created.
@@ -11,10 +10,10 @@ if (StageState == GAMESTATE.Intro && global.currentState == MENUSTATE.GAME) {
 		if (!instance_exists(obj_shaker_bot)) {
 			CreateJigAndShaker();
 		}
-		instance_create_layer(0,0,"Instances",obj_DialogLady);
+		instance_create_layer(0,0,"Instances",DialogLady);
 		gameStart = true;
 	}
-	if (!instance_exists(obj_DialogLady) && !timerStart) {
+	if (!instance_exists(DialogLady) && !timerStart) {
 		instance_create_layer(0,0,"Instances",obj_start_countdown);
 		timerStart = true;
 	}
@@ -35,7 +34,9 @@ if (StageState == GAMESTATE.Intro && global.currentState == MENUSTATE.GAME) {
 // At Shaking state, destroy previous instances and create shaking objects
 if (StageState == GAMESTATE.AddingIngredients) {
 	if (!objectCheckCreate) {
-		instance_create_layer(0,0,"Instances",obj_DialogCustomer);
+		randomize();
+		random_customer = random_range(0,ds_map_size(CustomerList.customers));
+		instance_create_layer(0,0,"Instances",DialogCustomers);
 		objectCheckCreate = true;
 	}
 	GoToBarSelection();
@@ -65,7 +66,7 @@ if (StageState == GAMESTATE.ShowCasing && objectCheckCreate) {
 	if (waitTimer >= 3) {
 		check_martini();
 		checkedAllCondition = true;
-		instance_create_layer(0,0,"Instances",obj_DialogCustomer);
+		instance_create_layer(0,0,"Instances",DialogCustomers);
 		StageState = GAMESTATE.ResetRound;
 		objectCheckCreate = false;
 	} else if (waitTimer >= 2) {
@@ -77,7 +78,7 @@ if (StageState == GAMESTATE.ResetRound && !objectCheckCreate) {
 	//instance_destroy(obj_shaker_full);
 	//instance_destroy(MartiniGlass);
 	DeleteObjsStateShowCasing();
-	if (!instance_exists(obj_DialogCustomer)) {
+	if (!instance_exists(DialogCustomers)) {
 		ResetVariables();
 		ResetPreviousPour();
 		ResetRoundMode();

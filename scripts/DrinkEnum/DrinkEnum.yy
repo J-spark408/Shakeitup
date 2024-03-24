@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"DrinkEnum",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"DrinkEnum",
+  "parent":{
+    "name":"Bottles",
+    "path":"folders/Objects/Bottles.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

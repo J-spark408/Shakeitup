@@ -10,6 +10,7 @@ function HoldSpaceToShake() { // AddingIngredients State
 		GetLiquidCounts();
 		StageState = GAMESTATE.ChoiceOption;	
 		objectCheckCreate = false;
+		RecipeChecker.checkRecipe();
 		CreateShakeOrStirOption();
 		//CreateShakerMode();
 		//CreateStirringMode();

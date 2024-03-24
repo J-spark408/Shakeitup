@@ -1,8 +1,0 @@
-enum LIQUOR{
-	VODKA,
-	TEQUILA,
-	WHISKEY,
-	GIN,
-	VERMOUTH
-}
-

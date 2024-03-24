@@ -6,7 +6,7 @@ flags = phy_particle_flag_colormixing
 //physics_particle_set_gravity_scale(10);
 
 is_grabbed = false;
-
+show_text = false;
 
 if (StageStateHandler.StageState == GAMESTATE.ChoosingIngredients) {
 	image_alpha = 0.4;
@@ -16,12 +16,13 @@ bottle_selected = noone;
 bottle = noone;
 
 liquors = [LIQUOR.VODKA, LIQUOR.TEQUILA, LIQUOR.WHISKEY,
-            LIQUOR.GIN, LIQUOR.VERMOUTH]
+            LIQUOR.GIN, LIQUOR.VERMOUTH, LIQUOR.BITTER]
 
 
 function setCurrentBottle() {
 	for (var i = 0; i < array_length(liquors); i++) {
 		if (global.currentBottle == liquors[i] && !global.bottleChoosen) {
+			show_debug_message(global.currentBottle);
 			instance_destroy(bottle);
 		    bottle = instance_create_layer(x,y,"Instances",StageStateHandler._get_obj);
 		    bottle_selected = liquors[i];

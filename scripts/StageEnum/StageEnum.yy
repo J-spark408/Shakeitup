@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"StageEnum",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"obj_stages",
+    "path":"folders/Objects/obj_stages.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"RecipePageStruct",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"RecipePageStruct",
+  "parent":{
+    "name":"obj_recipe",
+    "path":"folders/Objects/obj_recipe.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
