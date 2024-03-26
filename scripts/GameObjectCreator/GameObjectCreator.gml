@@ -9,8 +9,8 @@ function CreateJigAndShaker() {
 }
 
 function DeleteObjsStateAddIngredients() {
-	if (instance_exists(BottleHandler.bottle)) {
-		instance_destroy(BottleHandler.bottle);
+	if (instance_exists(BottleHandler.bottleObj)) {
+		instance_destroy(BottleHandler.bottleObj);
 	}
 	if (instance_exists(obj_jigger_2oz)) {
 		instance_destroy(obj_jigger_2oz);

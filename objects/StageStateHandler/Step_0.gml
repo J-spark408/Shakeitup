@@ -35,7 +35,7 @@ if (StageState == GAMESTATE.Intro && global.currentState == MENUSTATE.GAME) {
 if (StageState == GAMESTATE.AddingIngredients) {
 	if (!objectCheckCreate) {
 		randomize();
-		random_customer = random_range(0,ds_map_size(CustomerList.customers));
+		random_customer = random_range(0,ds_list_size(CustomerList.customers));
 		instance_create_layer(0,0,"Instances",DialogCustomers);
 		objectCheckCreate = true;
 	}

@@ -57,7 +57,7 @@ function ResetPreviousPour() {
 function ResetVariables() {
 	objectCheckCreate = false;
 	global.currentBottle = noone;
-	_get_obj = noone;
+	BottleHandler.bottleObj = noone;
 
 	waitTimer = 0;
 	timer = 0;

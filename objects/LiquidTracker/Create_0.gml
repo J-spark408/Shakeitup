@@ -12,4 +12,5 @@ ds_map_add(liquid_particles_map, LIQUOR.WHISKEY, 0);
 ds_map_add(liquid_particles_map, LIQUOR.GIN, 0);
 ds_map_add(liquid_particles_map, LIQUOR.VERMOUTH, 0);
 ds_map_add(liquid_particles_map, LIQUOR.BITTER, 0);
+ds_map_add(liquid_particles_map, LIQUOR.BARSYRUP, 0);
 

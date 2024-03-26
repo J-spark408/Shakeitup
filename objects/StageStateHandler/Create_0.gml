@@ -5,11 +5,9 @@ deleteParticles = physics_particle_delete_region_box(0,0,room_width,room_height)
 physics_particle_set_radius(4);
 physics_particle_set_density(0.5);
 physics_particle_set_gravity_scale(10);
+
 objectCheckCreate = false;
-_picked = noone;
-_get_obj = noone;
-_particles = 0;
-_index = 0;
+particleIndex = noone;
 points = 0;
 
 gameStart = false;
@@ -22,7 +20,7 @@ firstCondition = false;
 secondCondition = false;
 checkedAllCondition = false;
 
-request = "";
+//request = "";
 random_customer = noone;
 //currentPour = 0;
 //prevPour = 0;
@@ -80,7 +78,7 @@ function check_martini() {
 //function ResetVariables() {
 //	objectCheckCreate = false;
 //	global.currentBottle = noone;
-//	_get_obj = noone;
+//	 = noone;
 
 //	waitTimer = 0;
 //	timer = 0;

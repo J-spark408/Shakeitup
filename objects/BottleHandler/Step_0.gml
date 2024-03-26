@@ -1,7 +1,7 @@
 if (StageStateHandler.StageState == GAMESTATE.AddingIngredients) {
 	TiltBottleLeft();
 	TiltBottleRight();
-	if (mouse_check_button(mb_left) && position_meeting(mouse_x,mouse_y,StageStateHandler._get_obj)) {
+	if (mouse_check_button(mb_left) && position_meeting(mouse_x,mouse_y,BottleHandler.bottleObj)) {
 		is_grabbed = true;
 	}
 	if (mouse_check_button_released(mb_left)) {
@@ -13,16 +13,16 @@ if (StageStateHandler.StageState == GAMESTATE.AddingIngredients) {
 	}
 }
 
-if (StageStateHandler.StageState == GAMESTATE.AddingIngredients && !global.bottleChoosen) {
+if (StageStateHandler.StageState == GAMESTATE.ChoosingIngredients) {
 	for (var liquid_index = 0; liquid_index < ds_map_size(liquidList); liquid_index++) {
-        var selectedBottle = ds_map_find_value(liquidList, liquid_index);
-        if (global.currentBottle == liquid_index && !global.bottleChoosen) {
-            instance_destroy(bottle);
-            show_debug_message(global.currentBottle);
-            show_debug_message(liquid_index);
-            bottle = instance_create_layer(BottleHandler.x,BottleHandler.y,"Instances",StageStateHandler._get_obj);
-            bottle_selected = liquid_index;
-            global.bottleChoosen = true;
-        }
-    }
-}	
+		if (mouse_check_button_released(mb_left)) {
+			if (global.currentBottle != liquid_index) {
+				image_alpha = 0.4;
+			}
+		}
+		if (global.currentBottle == liquid_index) {
+			var selectedBottle = ds_map_find_value(liquidList, liquid_index);
+			selectedBottle.image_alpha = 1;	
+		}
+	}
+}

@@ -5,7 +5,8 @@
 event_inherited();
 randomize();
 currentCustomer = StageStateHandler.random_customer;
-getCustomer = ds_map_find_value(CustomerList.customers,int64(currentCustomer));
+show_debug_message(currentCustomer);
+getCustomer = ds_list_find_value(CustomerList.customers,int64(currentCustomer));
 
 chooseDialog = random_range(0,ds_map_size(DialogList.dialogs));
 getDialog = ds_map_find_value(DialogList.dialogs,int64(chooseDialog));

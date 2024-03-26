@@ -1,3 +1,3 @@
 global.currentBottle = LIQUOR.GIN;
-StageStateHandler._get_obj = Gin;
-StageStateHandler._index = 1;
+//StageStateHandler. = Gin;
+StageStateHandler.particleIndex = 1;

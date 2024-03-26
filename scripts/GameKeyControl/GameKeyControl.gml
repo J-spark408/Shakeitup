@@ -1,23 +1,26 @@
 // Pouring liquid when its tilted to required angle
 // Liquid except bitters will pour automatically when its tilted, for bitters hit right mouse key to pour
-function pourLiquid() {
+function pourLeft() {
 	if (global.currentBottle == LIQUOR.BITTER) {
 		if (mouse_check_button_pressed(mb_right)) {
-			physics_particle_create(flags, x, y, x+1, x, c_white, 1, StageStateHandler._index);
+			physics_particle_create(flags, x, y, x+1, x, c_white, 1, StageStateHandler.particleIndex);
 		}
 	} else {
-		physics_particle_create(flags, x, y, x+1, x, c_white, 0.3, StageStateHandler._index);
+		physics_particle_create(flags, x, y, x+1, x, c_white, 0.3, StageStateHandler.particleIndex);
 	}
 }
 
-// If previously tilted and go in bottle selection room, set its angle back to 0 and set x and y to the same spot
-function setPlaceBottle() {
-	image_angle = 0;
-	x = BottleHandler.x;
-	y = BottleHandler.y;
+function pourRight() {
+	if (global.currentBottle == LIQUOR.BITTER) {
+		if (mouse_check_button_pressed(mb_right)) {
+			physics_particle_create(flags, x, y, 1-x, x, c_white, 1, StageStateHandler.particleIndex);
+		}
+	} else {
+		physics_particle_create(flags, x, y, 1-x, x, c_white, 0.3, StageStateHandler.particleIndex);
+	}
 }
 
-// Key controls for bottle tilting 
+// Key controls for bottleObj tilting 
 function TiltBottleLeft() {
 	if (is_grabbed && keyboard_check(ord("Q"))) {
 		if (image_angle == -150) {
@@ -27,11 +30,9 @@ function TiltBottleLeft() {
 		}
 	}
 	if (image_angle <= -105 && image_angle >= -150) {
-		pourLiquid();
+		pourLeft();
 		LiquidTracker.isPoured = true;
-	} else if (!instance_exists(StageStateHandler._get_obj)) {
-		setPlaceBottle();
-	}
+	} 
 }
 
 function TiltBottleRight() {
@@ -43,18 +44,26 @@ function TiltBottleRight() {
 		}
 	}
 	if (image_angle >= 105 && image_angle <= 150) {
-		pourLiquid();
+		pourRight();
 		LiquidTracker.isPoured = true;
-	} else if (!instance_exists(StageStateHandler._get_obj)) {
-		setPlaceBottle();
-	}
+	} 
 }
 
 // When key B is pressed, go to bar selection room
 function GoToBarSelection() {
 	if (keyboard_check_pressed(ord("B")) && !instance_exists(DialogLady) && !instance_exists(DialogCustomers) && !instance_exists(obj_start_countdown)) {
+		if (BottleHandler.image_angle <= 30 && BottleHandler.image_angle >= -30) {
 		GetLiquidCounts();
+		BottleHandler.checkedBottle = true;
 		StageState = GAMESTATE.ChoosingIngredients;
-	    room_goto(rm_bar_selection);
+		room_goto(rm_bar_selection); 
+			if (BottleHandler.bottleObj != noone) {
+				instance_destroy(BottleHandler.bottleObj);
+				// set bottle angle back to 0
+				BottleHandler.image_angle = 0;	
+			}
+		} else {
+			show_debug_message("Bad angle");	
+		}
 	}
 }

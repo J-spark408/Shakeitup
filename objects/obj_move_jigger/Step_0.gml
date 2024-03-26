@@ -51,7 +51,7 @@ if (fully_tilted) {
 	}
 }
 
-if (StageStateHandler._get_obj != noone) {
+if (BottleHandler.bottleObj != noone) {
 	phy_position_x = position_to_x;
 	phy_position_y = position_to_y;
 }

@@ -1,4 +1,4 @@
-t_min = 0;
+t_min = 1;
 t_sec = 31;
 t_mil = 5;
 

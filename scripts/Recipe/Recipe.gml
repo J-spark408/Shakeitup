@@ -20,7 +20,8 @@ function martiniRecipe(){
 
 function oldFashionedRecipe(){
 	ingredients = ds_map_create()
-	ds_map_add(ingredients,LIQUOR.WHISKEY, 700);
+	ds_map_add(ingredients,LIQUOR.WHISKEY, 400);
 	ds_map_add(ingredients,LIQUOR.BITTER, 4);
+	ds_map_add(ingredients,LIQUOR.BARSYRUP, 60);
 	return new Recipe("Old Fashioned",ingredients);
 }
