@@ -39,8 +39,9 @@ if (StageState == GAMESTATE.AddingIngredients) {
 		instance_create_layer(0,0,"Instances",DialogCustomers);
 		objectCheckCreate = true;
 	}
+	
 	GoToBarSelection();
-	HoldSpaceToShake();
+	HoldSpaceToShake(); 
 }
 
 if (StageState == GAMESTATE.Shaking || StageState == GAMESTATE.Stirring) {
@@ -64,6 +65,7 @@ if (StageState == GAMESTATE.ShowCasing && objectCheckCreate) {
 		waitTimer += delta_time/1000000;
 	}
 	if (waitTimer >= 3) {
+		RecipeChecker.checkRecipe();
 		check_martini();
 		checkedAllCondition = true;
 		instance_create_layer(0,0,"Instances",DialogCustomers);
@@ -88,7 +90,7 @@ if (StageState == GAMESTATE.ResetRound && !objectCheckCreate) {
 if (StageState == GAMESTATE.StageOver && global.currentState == MENUSTATE.GAME) {
 	RoundOver();
 	ResetVariables();
-	ResetPreviousPour();;
+	ResetPreviousPour();
 	CreateGameOverMenu();
 }
 

@@ -65,7 +65,7 @@ function ResetVariables() {
 	firstCondition = false;
 	secondCondition = false;
 	checkedAllCondition = false;
-
+	BottleHandler.checkedBottle = false;
 	LiquidTracker.currentPour = 0;
 	LiquidTracker.prevPour = 0;
 	LiquidTracker.occurancePour = 0;

@@ -1,5 +1,5 @@
 StageState = GAMESTATE.Intro;
-flags = phy_particle_flag_water | phy_particle_flag_spring | phy_particle_flag_colormixing;
+flags = phy_particle_flag_spring | phy_particle_flag_colormixing;
 deleteParticles = physics_particle_delete_region_box(0,0,room_width,room_height);
 
 physics_particle_set_radius(4);
@@ -28,7 +28,7 @@ random_customer = noone;
 //prevValue = 0;
 //isPoured = false;
 
-mixChoice = noone;
+mixChoice = "";
 
 //liquid_particles_map = ds_map_create();
 

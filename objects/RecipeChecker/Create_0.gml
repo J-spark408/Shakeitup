@@ -29,6 +29,11 @@ function checkRecipe() {
 					else if (liquidParticlesPlayerInputed < ingredientsValue - (ingredientsValue * .1)) {
 						conditionMessage += string(liquidToCompare) + " is poured, and poured " + string(liquidParticlesPlayerInputed - ingredientsValue) + " less compared to value of " + string(ingredientsValue);
 					}
+					if (matchingRecipe.MixChoice == StageStateHandler.mixChoice) {
+						conditionMessage += " It is nicely " + string(matchingRecipe.MixChoice);	
+					} else {
+						conditionMessage += " This should'nt have been " + string(matchingRecipe.MixChoice) + "...";	
+					}
 					show_debug_message(conditionMessage);
 					conditionMessage = "";
 				}

@@ -1,13 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"Object58",
+  "%Name":"Martini",
   "eventList":[],
   "managed":true,
-  "name":"Object58",
+  "name":"Martini",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Glass",
+    "path":"folders/Objects/Glass.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -27,7 +27,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_martini",
+    "path":"sprites/spr_martini/spr_martini.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

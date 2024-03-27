@@ -1,2 +1,5 @@
-shaking = 1;
-stirring = 2;
+shaking = "shaken";
+stirring = "stirred";
+
+squareSizeX = 300;
+squareSizeY = 300;

@@ -17,6 +17,12 @@ if (!StageStateHandler.checkedAllCondition && instance_exists(DialogCustomers)) 
 }
 
 
+
+
+
+
+
+
 if (StageStateHandler.checkedAllCondition) {
 	if (StageStateHandler.firstCondition && StageStateHandler.secondCondition) {
 		dialog.add(getCustomer, "Thank you, this martini is great");

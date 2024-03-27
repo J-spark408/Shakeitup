@@ -1,2 +1,1 @@
 currentBottle = noone;
-bottleChoosen = false;

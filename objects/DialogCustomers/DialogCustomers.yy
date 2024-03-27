@@ -8,8 +8,8 @@
   "name":"DialogCustomers",
   "overriddenProperties":[],
   "parent":{
-    "name":"obj_dialogs",
-    "path":"folders/Objects/obj_dialogs.yy",
+    "name":"Dialog",
+    "path":"folders/Objects/Dialog.yy",
   },
   "parentObjectId":{
     "name":"DialogHandler",

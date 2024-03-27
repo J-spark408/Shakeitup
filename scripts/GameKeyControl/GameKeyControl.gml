@@ -23,13 +23,13 @@ function pourRight() {
 // Key controls for bottleObj tilting 
 function TiltBottleLeft() {
 	if (is_grabbed && keyboard_check(ord("Q"))) {
-		if (image_angle == -150) {
+		if (image_angle == -165) {
 			image_angle -= 0;	
 		} else {
-			image_angle -= 3;	
+			image_angle -= 3;
 		}
 	}
-	if (image_angle <= -105 && image_angle >= -150) {
+	if (image_angle <= -105 && image_angle >= -165) {
 		pourLeft();
 		LiquidTracker.isPoured = true;
 	} 
@@ -37,14 +37,14 @@ function TiltBottleLeft() {
 
 function TiltBottleRight() {
 	if (is_grabbed && keyboard_check(ord("E"))) {
-		if (image_angle == 150) {
+		if (image_angle == 160) {
 			image_angle += 0;	
 		} else {
 			image_angle += 3;	
 		}
 	}
-	if (image_angle >= 105 && image_angle <= 150) {
-		pourRight();
+	if (image_angle >= 105 && image_angle <= 165) {
+		pourRight()
 		LiquidTracker.isPoured = true;
 	} 
 }

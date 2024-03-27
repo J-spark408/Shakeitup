@@ -2,7 +2,11 @@
 // After adding all required ingredients, hold space for 1 second to enter shaking state
 function HoldSpaceToShake() { // AddingIngredients State
 	if (keyboard_check(vk_space) && physics_particle_count() != 0) {
-		timer += delta_time/1000000;
+		if (BottleHandler.image_angle <= 30 && BottleHandler.image_angle >= -30) {
+			timer += delta_time/1000000;
+		} else {
+			show_debug_message("Bad angle");	
+		}
 	} else {
 		timer = 0;
 	}
@@ -10,7 +14,6 @@ function HoldSpaceToShake() { // AddingIngredients State
 		GetLiquidCounts();
 		StageState = GAMESTATE.ChoiceOption;	
 		objectCheckCreate = false;
-		RecipeChecker.checkRecipe();
 		CreateShakeOrStirOption();
 		//CreateShakerMode();
 		//CreateStirringMode();

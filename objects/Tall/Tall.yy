@@ -1,15 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"DialogList",
-  "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"Tall",
+  "eventList":[],
   "managed":true,
-  "name":"DialogList",
+  "name":"Tall",
   "overriddenProperties":[],
   "parent":{
-    "name":"Dialog",
-    "path":"folders/Objects/Dialog.yy",
+    "name":"Glass",
+    "path":"folders/Objects/Glass.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -29,7 +27,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_tall",
+    "path":"sprites/spr_tall/spr_tall.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
