@@ -21,21 +21,25 @@ function Dialogue() constructor {
 }
 
 function Customer() constructor {
-	customerOrder = cOrder; //WHISKEY
+	customerOrder = ""; //WHISKEY
 
 	customerScore = cScore;
 	sprite = cSprite;
-	introCustomerMessage = cIntroMessage
+	introCustomerMessage = ds_list_create();
 	customerSatisfactionMessage = cSatisf;
 	dialog = new Dialogue(); //Customer.dialog to access add/pop/count or _dialogs
 	
-	drawDialogBoxForRequest = function(){
-		dialog.add(sprite, introCustomerMessage);
-		instance_create_layer(0,0,"Instances",DialogCustomers); //TODO figure out what object to create
+	drawDialogBoxForIntro = function(){
+		randomIndex = 0; //random index based on size
+		dialog.add(sprite, ds_list_find_value(introCustomerMessage,randomIndex));
+		//instance_create_layer(0,0,"Instances",DialogCustomers); //TODO figure out what object to create
 	}
 	
 	drawDialogBoxForSatisfaction = function(){
 		dialog.add(sprite, customerSatisfactionMessage);
 		instance_create_layer(0,0,"Instances",DialogCustomers);
 	}
+	
+	//create function to randomly grab a introcustomermessage
+	
 }
