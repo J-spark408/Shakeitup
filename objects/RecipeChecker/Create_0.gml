@@ -10,8 +10,9 @@ function checkRecipe() {
 	// Get Customer request and find the matching recipe
 	for (var recipe_index = 0; recipe_index < ds_list_size(recipe_list); recipe_index++) {
 		matchingRecipe =  ds_list_find_value(recipe_list, recipe_index);
+		show_debug_message(matchingRecipe);
 		//Recipe Found
-		if (DialogList.currentDrink.RecipeName == matchingRecipe.RecipeName) {		
+		if (CustomerList.currentDrink.RecipeName == matchingRecipe.RecipeName) {		
 			LiquidPourList = [];
 			ds_map_keys_to_array(LiquidTracker.liquid_particles_map,LiquidPourList)
 			// Loop through LiquidTracker liquid particles map to compare against the recipe map

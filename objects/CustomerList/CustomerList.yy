@@ -11,7 +11,10 @@
     "name":"Dialog",
     "path":"folders/Objects/Dialog.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"DialogHandler",
+    "path":"objects/DialogHandler/DialogHandler.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

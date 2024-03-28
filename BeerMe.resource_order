@@ -113,6 +113,7 @@
     {"name":"InteractionKeyControl","order":8,"path":"scripts/InteractionKeyControl/InteractionKeyControl.yy",},
     {"name":"LiquidEnum","order":3,"path":"scripts/LiquidEnum/LiquidEnum.yy",},
     {"name":"RecipePageStruct","order":4,"path":"scripts/RecipePageStruct/RecipePageStruct.yy",},
+    {"name":"Customer","order":7,"path":"scripts/Customer/Customer.yy",},
     {"name":"ShakerFunctions","order":13,"path":"scripts/ShakerFunctions/ShakerFunctions.yy",},
     {"name":"StageEnum","order":6,"path":"scripts/StageEnum/StageEnum.yy",},
     {"name":"StageStruct","order":5,"path":"scripts/StageStruct/StageStruct.yy",},

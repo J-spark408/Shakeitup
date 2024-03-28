@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"Customer",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Customer",
+  "parent":{
+    "name":"Dialog",
+    "path":"folders/Objects/Dialog.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

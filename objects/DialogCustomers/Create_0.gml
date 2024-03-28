@@ -3,18 +3,18 @@
 
 // Inherit the parent event
 event_inherited();
-randomize();
-currentCustomer = StageStateHandler.random_customer;
-show_debug_message(currentCustomer);
-getCustomer = ds_list_find_value(CustomerList.customers,int64(currentCustomer));
+//randomize();
+//currentCustomer = StageStateHandler.random_customer;
+//show_debug_message(currentCustomer);
+//getCustomer = ds_list_find_value(CustomerList.customers,int64(currentCustomer));
 
-chooseDialog = random_range(0,ds_map_size(DialogList.dialogs));
-getDialog = ds_map_find_value(DialogList.dialogs,int64(chooseDialog));
+//chooseDialog = random_range(0,ds_map_size(DialogList.dialogs));
+//getDialog = ds_map_find_value(DialogList.dialogs,int64(chooseDialog));
 
 
-if (!StageStateHandler.checkedAllCondition && instance_exists(DialogCustomers)) {
-	dialog.add(getCustomer, getDialog);
-}
+//if (!StageStateHandler.checkedAllCondition && instance_exists(DialogCustomers)) {
+//	dialog.add(getCustomer, getDialog);
+//}
 
 
 
