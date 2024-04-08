@@ -10,7 +10,6 @@ if (timed_stir >= 0 && timer >= 3) {
 if (mouse_check_button(mb_left) && position_meeting(mouse_x,mouse_y,obj_stir_point)) {
 	is_grabbed = true;
 	timed_stir += hit_stir;
-	show_debug_message(timed_stir);
 }
 if (mouse_check_button_released(mb_left)) {
 	is_grabbed = false;

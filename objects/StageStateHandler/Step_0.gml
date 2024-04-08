@@ -32,7 +32,7 @@ if (StageState == GAMESTATE.Intro && global.currentState == MENUSTATE.GAME) {
 
 // Keyboard B press, go too bar selection room. Hold Space to go to Shake State
 // At Shaking state, destroy previous instances and create shaking objects
-if (StageState == GAMESTATE.AddingIngredients) {
+if (StageState == GAMESTATE.AddingIngredients && !instance_exists(CustomerList)) {
 	if (!objectCheckCreate) {
 		randomize();
 		//random_customer = random_range(0,ds_list_size(CustomerList.customers));
@@ -66,10 +66,11 @@ if (StageState == GAMESTATE.ShowCasing && objectCheckCreate) {
 		waitTimer += delta_time/1000000;
 	}
 	if (waitTimer >= 3) {
+		instance_create_layer(0,0,"Instances",CustomerList);
 		RecipeChecker.checkRecipe();
-		check_martini();
+		CustomerList.satisfactionDialog();
+		//check_martini();
 		checkedAllCondition = true;
-		instance_create_layer(0,0,"Instances",DialogCustomers);
 		StageState = GAMESTATE.ResetRound;
 		objectCheckCreate = false;
 	} else if (waitTimer >= 2) {

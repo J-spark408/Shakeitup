@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"RateEnum",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"RateEnum",
+  "parent":{
+    "name":"Dialog",
+    "path":"folders/Objects/Dialog.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,17 +1,17 @@
-function Customer(cSprite, cIntroList) constructor {
+function Customer(cSprite, cIntroList, cSatisfiedList) constructor {
 	sprite = cSprite;
 	introCustomerMessage = cIntroList;
+	satisfactedMessage = cSatisfiedList;
 	//dialog = new Dialogue(); //Customer.dialog to access add/pop/count or _dialogs
 	
 	drawDialogBoxForIntro = function() {
-		DialogHandler.dialog.add(sprite, ds_list_find_value(introCustomerMessage,irandom(CustomerList.numOfDialogs-1)));
+		DialogHandler.dialog.add(sprite, ds_list_find_value(introCustomerMessage,irandom_range(0,CustomerList.numOfDialogs-1)));
 	}
 	
 	
-	//drawDialogBoxForSatisfaction = function(){
-	//	dialog.add(sprite, customerSatisfactionMessage);
-	//	//instance_create_layer(0,0,"Instances",DialogCustomers);
-	//}
+	drawDialogBoxForSatisfaction = function(){
+		DialogHandler.dialog.add(sprite, ds_map_find_value(satisfactedMessage,RATE.GREAT));
+	}
 	
 	//create function to randomly grab a introcustomermessage
 //	getRandomDialog = function () {
@@ -23,29 +23,41 @@ function Customer(cSprite, cIntroList) constructor {
 
 function Bob() {
 	introMessage = ds_list_create();
-	ds_list_add(introMessage, "Hello, can I get a " + string(CustomerList.currentDrink.RecipeName));
-	ds_list_add(introMessage, "Hello, Imma get a " + string(CustomerList.currentDrink.RecipeName));
-	//ds_list_add(introMessage, "Hello, can I get a " + drinkOrder);
-	return new Customer(spr_customer1, introMessage);
+	ds_list_add(introMessage, "Hello *hiccups*, can I get a " + string_lower(StageStateHandler.currentDrink.RecipeName));
+	ds_list_add(introMessage, "How is it going, can I order a " + string_lower(StageStateHandler.currentDrink.RecipeName));
+	ds_list_add(introMessage, "Howdy, one " + string_lower(StageStateHandler.currentDrink.RecipeName) + " please");
+	endMessage = ds_map_create();
+	ds_map_add(endMessage, RATE.GREAT, "This " + string_lower(StageStateHandler.currentDrink.RecipeName) + " sucks");
+	ds_map_add(endMessage, RATE.GOOD, "This " + string_lower(StageStateHandler.currentDrink.RecipeName) + " sucks");
+	ds_map_add(endMessage, RATE.BAD, "This " + string_lower(StageStateHandler.currentDrink.RecipeName) + " sucks");
+	ds_map_add(endMessage, RATE.TERRIBLE, "This " + string_lower(StageStateHandler.currentDrink.RecipeName) + " sucks");
+	ds_map_add(endMessage, RATE.WRONGMIX, "This " + string_lower(StageStateHandler.currentDrink.RecipeName) + " sucks");
+	return new Customer(spr_customer1, introMessage,endMessage);
 }
 
 function Alejandro() {
 	introMessage = ds_list_create();
-	ds_list_add(introMessage, "Hola, can I get a " + string(CustomerList.currentDrink.RecipeName));
-	ds_list_add(introMessage, "Hola, can I get a " + string(CustomerList.currentDrink.RecipeName));
-	return new Customer(spr_customer2, introMessage);
+	ds_list_add(introMessage, "Hey there, may I get a " + string_lower(StageStateHandler.currentDrink.RecipeName));
+	ds_list_add(introMessage, "Hello, let me get a " + string_lower(StageStateHandler.currentDrink.RecipeName));
+	endMessage = ds_list_create();
+	ds_list_add(endMessage, "This " + string_lower(StageStateHandler.currentDrink.RecipeName) + " sucks");
+	return new Customer(spr_customer2, introMessage,endMessage);
 }
 
 function Sally() {
 	introMessage = ds_list_create();
-	ds_list_add(introMessage, "HI, can I get a " + string(CustomerList.currentDrink.RecipeName));
-	ds_list_add(introMessage, "HI, can I get a " + string(CustomerList.currentDrink.RecipeName));
-	return new Customer(spr_customer3, introMessage);
+	ds_list_add(introMessage, "Hi, how are you. May I please get a " + string_lower(StageStateHandler.currentDrink.RecipeName));
+	ds_list_add(introMessage, "Hey, I would love a " + string_lower(StageStateHandler.currentDrink.RecipeName) + ", thank you");
+	endMessage = ds_list_create();
+	ds_list_add(endMessage, "This " + string_lower(StageStateHandler.currentDrink.RecipeName) + " sucks");
+	return new Customer(spr_customer3, introMessage,endMessage);
 }
 
 function Michelle() {
 	introMessage = ds_list_create();
-	ds_list_add(introMessage, "Hey, can I get a " + string(CustomerList.currentDrink.RecipeName));
-	ds_list_add(introMessage, "Hey, can I get a " + string(CustomerList.currentDrink.RecipeName));
-	return new Customer(spr_customer4, introMessage);
+	ds_list_add(introMessage, "Hi there, I would like a " + string_lower(StageStateHandler.currentDrink.RecipeName));
+	ds_list_add(introMessage, "Hello, could I get a " + string_lower(StageStateHandler.currentDrink.RecipeName));
+	endMessage = ds_list_create();
+	ds_list_add(endMessage, "This " + string_lower(StageStateHandler.currentDrink.RecipeName) + " sucks");
+	return new Customer(spr_customer4, introMessage,endMessage);
 }

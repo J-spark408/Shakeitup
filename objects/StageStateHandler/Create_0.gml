@@ -21,7 +21,11 @@ secondCondition = false;
 checkedAllCondition = false;
 
 //request = "";
-random_customer = noone;
+
+currentCustomer = noone;
+currentDrink = noone;
+//getRating = ds_list_create();
+
 //currentPour = 0;
 //prevPour = 0;
 //occurancePour = 0;

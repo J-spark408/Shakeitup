@@ -3,7 +3,6 @@ is_shaking = false;
 check_hitpoint = 0;
 miss_count = 0;
 shaking_done = false;
-randomize();
 set_goal_shake = random_range(30,45);
 
 function CheckHitPoint() {
