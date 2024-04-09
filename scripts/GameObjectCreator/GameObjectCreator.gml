@@ -42,7 +42,8 @@ function DeleteObjsStateShowCasing() {
 	instance_destroy(obj_shaker_full_no_cap);
 	instance_destroy(obj_shaker_cap);
 	instance_destroy(MixOptionBtn);
-	instance_destroy(MartiniGlass);
+	instance_destroy(Martini);
+	instance_destroy(RockGlass)
 }
 
 function DeleteAllForStageOver() {
@@ -99,8 +100,11 @@ function CreateShowCasingObjects() {
 	if (mixChoice == MixChoiceHandler.stirring) {
 		DeleteObjsStateStirring();
 	}
-	if (!instance_exists(MartiniGlass)) {
-		instance_create_layer(320,352,"Instances",MartiniGlass);
+	if (currentDrink.RecipeName == "Martini" && !instance_exists(Martini)) {
+		instance_create_layer(320,352,"Instances",Martini);
+	}
+	if (currentDrink.RecipeName == "Old Fashioned" && !instance_exists(RockGlass)) {
+		instance_create_layer(370,352,"Instances",RockGlass);
 	}
 }
 

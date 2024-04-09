@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"RecipePageStruct",
   "parent":{
-    "name":"obj_recipe",
-    "path":"folders/Objects/obj_recipe.yy",
+    "name":"RecipeBook",
+    "path":"folders/Objects/RecipeBook.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

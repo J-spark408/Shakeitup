@@ -20,4 +20,6 @@ ds_map_add(liquidList, LIQUOR.GIN, Gin);
 ds_map_add(liquidList, LIQUOR.VERMOUTH, Vermouth);
 ds_map_add(liquidList, LIQUOR.BITTER, Bitter);
 ds_map_add(liquidList, LIQUOR.BARSYRUP, Barsyrup);
+//ds_map_add(liquidList, LIQUOR.ORANGELIQ, OrangeLiqueur);
+//ds_map_add(liquidList, LIQUOR.LIMEJUICE, LimeJuice);
 ds_map_add(liquidList, LIQUOR.END, zEnd);

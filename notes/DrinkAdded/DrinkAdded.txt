@@ -1,0 +1,2 @@
+When a drink is added:
+Add into RecipeBook/PageDetailList, Liquids/LiquidEnum&LiquidTracker&Recipe, Bottles/BottleHandler-Create

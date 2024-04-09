@@ -1,11 +1,10 @@
 if (room == rm_game) {
 	physics_particle_delete_region_box(-200, room_width,room_width+400,room_height/2);
 }
-
 // Intro state Dialog lady, customer, and timer is created.
 if (StageState == GAMESTATE.Intro && global.currentState == MENUSTATE.GAME) {
 	if (!gameStart) {
-		points = 0;	
+		stageScore = 0;	
 		CreateStageBackground();
 		if (!instance_exists(obj_shaker_bot)) {
 			CreateJigAndShaker();
@@ -29,12 +28,10 @@ if (StageState == GAMESTATE.Intro && global.currentState == MENUSTATE.GAME) {
 		}
 	}
 }
-
 // Keyboard B press, go too bar selection room. Hold Space to go to Shake State
 // At Shaking state, destroy previous instances and create shaking objects
 if (StageState == GAMESTATE.AddingIngredients && !instance_exists(CustomerList)) {
 	if (!objectCheckCreate) {
-		randomize();
 		//random_customer = random_range(0,ds_list_size(CustomerList.customers));
 		instance_create_layer(0,0,"Instances",CustomerList);
 		CustomerList.introDialog();
@@ -82,7 +79,7 @@ if (StageState == GAMESTATE.ResetRound && !objectCheckCreate) {
 	//instance_destroy(obj_shaker_full);
 	//instance_destroy(MartiniGlass);
 	DeleteObjsStateShowCasing();
-	if (!instance_exists(DialogCustomers)) {
+	if (!instance_exists(CustomerList)) {
 		ResetVariables();
 		ResetPreviousPour();
 		ResetRoundMode();
@@ -93,6 +90,7 @@ if (StageState == GAMESTATE.StageOver && global.currentState == MENUSTATE.GAME) 
 	RoundOver();
 	ResetVariables();
 	ResetPreviousPour();
+	checkStagePassed();
 	CreateGameOverMenu();
 }
 

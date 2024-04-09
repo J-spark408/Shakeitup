@@ -1,4 +1,8 @@
 function CreateStageBackground() {
+	backgroundSprite = noone;
+	barTop = noone;
+	misc = noone;
+
 	layer_sprite_destroy(backgroundSprite)
 	layer_sprite_destroy(misc);
 	layer_sprite_destroy(barTop);	
@@ -55,6 +59,7 @@ function ResetPreviousPour() {
 
 // After making a drink, reset drink variables to default
 function ResetVariables() {
+	randomize();
 	objectCheckCreate = false;
 	global.currentBottle = noone;
 	BottleHandler.bottleObj = noone;
@@ -71,14 +76,26 @@ function ResetVariables() {
 	LiquidTracker.occurancePour = 0;
 	LiquidTracker.prevValue = 0;
 	LiquidTracker.isPoured = false;
+	RatingFunctions.correctMix = false;
+	RatingFunctions.messageState = noone;
+	RatingFunctions.rateScore = 10000;
+	RatingFunctions.wrongLiquidPoured = false;
 }
 
 // Timer is at 0 and round is over, delete all instances and set game start variables to default
 function RoundOver() {
 	physics_particle_delete_region_box(0,0,room_width,room_height);
 	DeleteAllForStageOver();
-	instance_destroy(DialogCustomers);
+	instance_destroy(CustomerList);
 	gameStart = false;
 	timerStart = false;
 	startGameTimer = 0;
+}
+
+function checkStagePassed() {
+	if (stageScore >= 5) {
+		//ds_list_set(StageData.stage_list,global.current_stage+1,true);
+		nextStage = (ds_list_find_value(StageData.stage_list,global.current_stage+1))
+		nextStage.stage_unlocked = true;
+	}
 }

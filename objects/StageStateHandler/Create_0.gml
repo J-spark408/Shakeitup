@@ -8,7 +8,6 @@ physics_particle_set_gravity_scale(10);
 
 objectCheckCreate = false;
 particleIndex = noone;
-points = 0;
 
 gameStart = false;
 timerStart = false;
@@ -24,6 +23,9 @@ checkedAllCondition = false;
 
 currentCustomer = noone;
 currentDrink = noone;
+stageScore = 0;
+
+
 //getRating = ds_list_create();
 
 //currentPour = 0;
@@ -43,9 +45,6 @@ mixChoice = "";
 //ds_map_add(liquid_particles_map, LIQUOR.VERMOUTH, 0);
 
 
-backgroundSprite = noone;
-barTop = noone;
-misc = noone;
 
 //switch(global.current_stage) {
 //	case 0:
@@ -68,16 +67,16 @@ misc = noone;
 //}
 
 
-function check_martini() {
-	if (ds_map_find_value(LiquidTracker.liquid_particles_map, LIQUOR.VODKA) >= 600 && 
-		ds_map_find_value(LiquidTracker.liquid_particles_map, LIQUOR.VODKA) <= 670 ) {
-		firstCondition = true;
-	} 
-	if (ds_map_find_value(LiquidTracker.liquid_particles_map, LIQUOR.VERMOUTH) >= 35 && 
-		ds_map_find_value(LiquidTracker.liquid_particles_map, LIQUOR.VERMOUTH) <= 70 ) {
-		secondCondition = true;
-	} 
-}
+//function check_martini() {
+//	if (ds_map_find_value(LiquidTracker.liquid_particles_map, LIQUOR.VODKA) >= 600 && 
+//		ds_map_find_value(LiquidTracker.liquid_particles_map, LIQUOR.VODKA) <= 670 ) {
+//		firstCondition = true;
+//	} 
+//	if (ds_map_find_value(LiquidTracker.liquid_particles_map, LIQUOR.VERMOUTH) >= 35 && 
+//		ds_map_find_value(LiquidTracker.liquid_particles_map, LIQUOR.VERMOUTH) <= 70 ) {
+//		secondCondition = true;
+//	} 
+//}
 
 //function ResetVariables() {
 //	objectCheckCreate = false;

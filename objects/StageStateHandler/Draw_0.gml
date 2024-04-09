@@ -11,8 +11,13 @@ if (room == rm_game) {
 	physics_particle_draw(flags, 3, spr_brown, 0);
 	physics_particle_draw(flags, 4, spr_yellow, 0);
 	physics_particle_draw(flags, 5, spr_bitter_liquid, 0);
-	draw_text(room_width - 150, y, "Tips $" + string(points));
+	draw_text(room_width - 150, y, "Tips $" + string(stageScore));
 }
+if (StageStateHandler.StageState == GAMESTATE.AddingIngredients && !instance_exists(CustomerList)) {
+		draw_text(x+25,room_height-50, string(currentDrink.RecipeName));
+}
+
+
 
 
 

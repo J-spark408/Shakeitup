@@ -11,10 +11,16 @@ function checkRecipeConditions() {
 		if (liquidParticlesPlayerInputed <= ingredientsValue + (ingredientsValue * .1) && liquidParticlesPlayerInputed >= ingredientsValue - (ingredientsValue * .1)) {
 			ds_list_add(getRating, RATE.GREAT) // Pour perfectly within the range
 		} else if (liquidParticlesPlayerInputed > ingredientsValue + (ingredientsValue * .1)) { 
-			ds_list_add(getRating,RATE.GOOD); // Pour more than recipe amount
-		}
-		else if (liquidParticlesPlayerInputed < ingredientsValue - (ingredientsValue * .1)) {
-			ds_list_add(getRating,RATE.BAD); // Pour less than recipe amount}
+			ds_list_add(getRating,RATE.GOOD); // Pour more than 10% recipe amount
+		} else if (liquidParticlesPlayerInputed > ingredientsValue + (ingredientsValue * .4)) {
+			ds_list_add(getRating,RATE.TOOMUCH); // Pour more than 40% of recipe amount
+		} else if (liquidParticlesPlayerInputed < ingredientsValue - (ingredientsValue * .1) &&
+				   liquidParticlesPlayerInputed >= ingredientsValue - (ingredientsValue * .4)) {
+			ds_list_add(getRating,RATE.BAD); // Pour less than 10% recipe amount
+		} else if (liquidParticlesPlayerInputed <= ingredientsValue - (ingredientsValue * .4)) {
+			ds_list_add(getRating,RATE.TERRIBLE); // Pour less than 40% of recipe amount
+		} else if (liquidParticlesPlayerInputed == 0) {
+			ds_list_add(getRating,RATE.MISSING);	
 		}
 	} else { //These Liquids that should not be in this drink
 		//print out the count of the liquid type and how much of it there was
