@@ -1,6 +1,6 @@
 flags = phy_particle_flag_colormixing
-initial_position_x = 330;
-initial_position_y = 680;
+initial_position_x = 1000;
+initial_position_y = 700;
 is_grabbed = false;
 
 if (StageStateHandler.StageState == GAMESTATE.ChoosingIngredients) {

@@ -37,7 +37,7 @@ function TiltBottleLeft() {
 
 function TiltBottleRight() {
 	if (is_grabbed && keyboard_check(ord("E"))) {
-		if (image_angle == 160) {
+		if (image_angle == 165) {
 			image_angle += 0;	
 		} else {
 			image_angle += 3;	

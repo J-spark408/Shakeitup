@@ -11,6 +11,7 @@ if (StageState == GAMESTATE.Intro && global.currentState == MENUSTATE.GAME) {
 			CreateJigAndShaker();
 		}
 		instance_create_layer(0,0,"Instances",IntroLady);
+		instance_create_layer(room_width-64, y, "Instances", PauseBtn);	
 		gameStart = true;
 	}
 	if (!instance_exists(IntroLady) && !timerStart) {
@@ -26,6 +27,7 @@ if (StageState == GAMESTATE.Intro && global.currentState == MENUSTATE.GAME) {
 			instance_destroy(obj_start_countdown);
 			instance_create_layer(0,0,"Instances",obj_round_countdown);
 			StageState = GAMESTATE.AddingIngredients;
+			timerStart = false;
 		}
 	}
 }
@@ -60,7 +62,7 @@ if (StageState == GAMESTATE.ShowCasing && !objectCheckCreate) {
 }
 
 if (StageState == GAMESTATE.ShowCasing && objectCheckCreate) {
-	if (!checkedAllCondition) {
+	if (!timerStart) {
 		waitTimer += delta_time/1000000;
 	}
 	if (waitTimer >= 3) {
@@ -68,7 +70,7 @@ if (StageState == GAMESTATE.ShowCasing && objectCheckCreate) {
 		RecipeChecker.checkRecipe();
 		CustomerList.satisfactionDialog();
 		//check_martini();
-		checkedAllCondition = true;
+		timerStart = true;
 		StageState = GAMESTATE.ResetRound;
 		objectCheckCreate = false;
 	} else if (waitTimer >= 2) {

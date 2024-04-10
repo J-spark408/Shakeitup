@@ -1,5 +1,5 @@
 
-if (global.currentBottle != noone) {
+if (global.currentBottle != noone && StageStateHandler.StageState != GAMESTATE.Pause) {
 	StageStateHandler.StageState = GAMESTATE.AddingIngredients;
 	room_goto(rm_game);	
 }

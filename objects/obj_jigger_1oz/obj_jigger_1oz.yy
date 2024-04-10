@@ -11,8 +11,8 @@
   "name":"obj_jigger_1oz",
   "overriddenProperties":[],
   "parent":{
-    "name":"obj_jiggers",
-    "path":"folders/Objects/obj_jiggers.yy",
+    "name":"Jiggers",
+    "path":"folders/Objects/Jiggers.yy",
   },
   "parentObjectId":{
     "name":"obj_move_jigger",

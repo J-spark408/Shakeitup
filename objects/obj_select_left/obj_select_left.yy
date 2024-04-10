@@ -9,8 +9,8 @@
   "name":"obj_select_left",
   "overriddenProperties":[],
   "parent":{
-    "name":"obj_stages",
-    "path":"folders/Objects/obj_stages.yy",
+    "name":"Stages",
+    "path":"folders/Objects/Stages.yy",
   },
   "parentObjectId":null,
   "persistent":false,

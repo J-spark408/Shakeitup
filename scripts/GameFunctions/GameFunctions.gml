@@ -1,11 +1,9 @@
 function CreateStageBackground() {
-	backgroundSprite = noone;
-	barTop = noone;
-	misc = noone;
 
 	layer_sprite_destroy(backgroundSprite)
 	layer_sprite_destroy(misc);
-	layer_sprite_destroy(barTop);	
+	layer_sprite_destroy(barTop);
+	show_debug_message(global.current_stage);
 	switch(global.current_stage) {
 		case 0:
 		barTop = layer_sprite_create("Assets",0,621,spr_bartop);
@@ -94,17 +92,17 @@ function RoundOver() {
 
 function checkStagePassed() {
 	next = 1;
-	if (stageScore >= 10) {
+	if (stageScore >= 7) { // Score more than 10 points
 		nextStage = (ds_list_find_value(StageData.stage_list,global.current_stage + next))
 		nextStage.stage_unlocked = true;
 		
 		instance_create_layer(starEmpty1.x,starEmpty1.y,"Instances",starFill);
 		instance_create_layer(starEmpty2.x,starEmpty2.y,"Instances",starFill);
 		instance_create_layer(starEmpty3.x,starEmpty3.y,"Instances",starFill);
-	} else if (stageScore >= 5 && stageScore < 10) {
+	} else if (stageScore >= 5 && stageScore < 7) { // Score range 5-9
 		instance_create_layer(starEmpty1.x,starEmpty1.y,"Instances",starFill);
 		instance_create_layer(starEmpty2.x,starEmpty2.y,"Instances",starFill);
-	} else {
+	} else if (stageScore >= 1 && stageScore < 5) { // Score range 1-4
 		instance_create_layer(starEmpty1.x,starEmpty1.y,"Instances",starFill);	
 	}
 }

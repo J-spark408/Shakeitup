@@ -1,0 +1,2 @@
+paused = false;
+gameState = noone;

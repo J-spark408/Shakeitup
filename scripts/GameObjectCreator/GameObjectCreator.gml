@@ -53,6 +53,7 @@ function DeleteObjsStateShowCasing() {
 function DeleteAllForStageOver() {
 	instance_destroy(obj_shaker_bot_filled);
 	instance_destroy(obj_shaker_full);
+	instance_destroy(PauseBtn);
 	DeleteObjsStateAddIngredients()
 	DeleteObjsStateChoice();
 	DeleteObjsStateShaking();
@@ -129,7 +130,7 @@ function CreateShowCasingObjects() {
 //}
 
 function DeleteGameOverMenu() {
-	instance_destroy(HomeBtn);
+	instance_destroy(homeBtn);
 	instance_destroy(retryBtn);
 	instance_destroy(menuText);
 	instance_destroy(menuBoard);
