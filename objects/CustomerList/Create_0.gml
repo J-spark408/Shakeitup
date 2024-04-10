@@ -29,8 +29,6 @@ function introDialog() {
 function satisfactionDialog() {
 	//numOfDialogs = ds_list_size(StageStateHandler.currentCustomer.satisfactedMessage);
 	StageStateHandler.currentCustomer.drawDialogBoxForSatisfaction();
-	StageStateHandler.currentCustomer = noone;
-	StageStateHandler.currentDrink = noone;
 }
 
 //function gradeRatingSwitchCase() {

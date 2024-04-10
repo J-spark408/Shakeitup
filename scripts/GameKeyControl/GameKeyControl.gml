@@ -51,7 +51,7 @@ function TiltBottleRight() {
 
 // When key B is pressed, go to bar selection room
 function GoToBarSelection() {
-	if (keyboard_check_pressed(ord("B")) && !instance_exists(DialogLady) && !instance_exists(CustomerList) && !instance_exists(obj_start_countdown)) {
+	if (keyboard_check_pressed(ord("B")) && !instance_exists(IntroLady) && !instance_exists(CustomerList) && !instance_exists(obj_start_countdown)) {
 		if (BottleHandler.image_angle <= 30 && BottleHandler.image_angle >= -30) {
 		GetLiquidCounts();
 		BottleHandler.checkedBottle = true;

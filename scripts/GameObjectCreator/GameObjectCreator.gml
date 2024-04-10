@@ -42,8 +42,12 @@ function DeleteObjsStateShowCasing() {
 	instance_destroy(obj_shaker_full_no_cap);
 	instance_destroy(obj_shaker_cap);
 	instance_destroy(MixOptionBtn);
-	instance_destroy(Martini);
-	instance_destroy(RockGlass)
+	for (var numOfRecipe = 0; numOfRecipe < ds_list_size(RecipeChecker.recipe_list); numOfRecipe++) {
+		currentRecipe = ds_list_find_value(RecipeChecker.recipe_list, numOfRecipe);
+		if (currentDrink.RecipeName = currentRecipe.RecipeName && instance_exists(currentRecipe.GlassType)) {
+			instance_destroy(currentRecipe.GlassType);
+		}
+	}
 }
 
 function DeleteAllForStageOver() {
@@ -100,24 +104,37 @@ function CreateShowCasingObjects() {
 	if (mixChoice == MixChoiceHandler.stirring) {
 		DeleteObjsStateStirring();
 	}
-	if (currentDrink.RecipeName == "Martini" && !instance_exists(Martini)) {
-		instance_create_layer(320,352,"Instances",Martini);
-	}
-	if (currentDrink.RecipeName == "Old Fashioned" && !instance_exists(RockGlass)) {
-		instance_create_layer(370,352,"Instances",RockGlass);
+	//if (currentDrink.RecipeName == "Martini" && !instance_exists(MartiniGlass)) {
+	//	instance_create_layer(320,352,"Instances",MartiniGlass);
+	//}
+	//if (currentDrink.RecipeName == "Old Fashioned" && !instance_exists(RockGlass)) {
+	//	instance_create_layer(370,352,"Instances",RockGlass);
+	//}
+	for (var numOfRecipe = 0; numOfRecipe < ds_list_size(RecipeChecker.recipe_list); numOfRecipe++) {
+		currentRecipe = ds_list_find_value(RecipeChecker.recipe_list, numOfRecipe);
+		if (currentDrink.RecipeName = currentRecipe.RecipeName && !instance_exists(currentRecipe.GlassType)) {
+			instance_create_layer(355,352,"Instances",currentRecipe.GlassType);
+			StageStateHandler.currentDrinkGlass = currentRecipe.GlassType;
+			StageStateHandler.currentDrinkColor = currentRecipe.LiquidColor;
+		}
 	}
 }
 
-function CreateGameOverMenu() {
-	instance_create_layer(683,312,"PopUpMenu",obj_btn_home);
-	instance_create_layer(683,476,"PopUpMenu",obj_btn_retry);
-	instance_create_layer(683,176,"PopUpMenu",obj_timesUp_text);
-	instance_create_layer(483,109,"PopUpMenu",obj_gameover_menu);	
-}
+//function CreateGameOverMenu() {
+//	//instance_create_layer(683,312,"PopUpMenu",HomeBtn);
+//	//instance_create_layer(683,476,"PopUpMenu",retryBtn);
+//	//instance_create_layer(683,176,"PopUpMenu",menuText);
+//	//instance_create_layer(483,109,"PopUpMenu",menuBoard);	
+//	instance_create_layer(room_width/2,room_height/2,"PopUpMenu",GameOverMenuCreate);
+//}
 
 function DeleteGameOverMenu() {
-	instance_destroy(obj_btn_home);
-	instance_destroy(obj_btn_retry);
-	instance_destroy(obj_timesUp_text);
-	instance_destroy(obj_gameover_menu);
+	instance_destroy(HomeBtn);
+	instance_destroy(retryBtn);
+	instance_destroy(menuText);
+	instance_destroy(menuBoard);
+	instance_destroy(starEmpty1);
+	instance_destroy(starEmpty2);
+	instance_destroy(starEmpty3);
+	instance_destroy(starFill);
 }

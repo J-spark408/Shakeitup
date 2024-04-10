@@ -1,15 +1,20 @@
 {
   "$GMObject":"",
-  "%Name":"obj_gameover_menu",
-  "eventList":[],
+  "%Name":"LimeJuice",
+  "eventList":[
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"obj_gameover_menu",
+  "name":"LimeJuice",
   "overriddenProperties":[],
   "parent":{
-    "name":"obj_gameover",
-    "path":"folders/Objects/obj_gameover.yy",
+    "name":"BottleObjs",
+    "path":"folders/Objects/Bottles/BottleObjs.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"BottleHandler",
+    "path":"objects/BottleHandler/BottleHandler.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -28,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_gameover_menu",
-    "path":"sprites/spr_gameover_menu/spr_gameover_menu.yy",
+    "name":"spr_limejuice",
+    "path":"sprites/spr_limejuice/spr_limejuice.yy",
   },
   "spriteMaskId":null,
   "visible":true,

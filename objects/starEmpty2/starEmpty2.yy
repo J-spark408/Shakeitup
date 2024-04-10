@@ -1,15 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"obj_timesUp_text",
-  "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"starEmpty2",
+  "eventList":[],
   "managed":true,
-  "name":"obj_timesUp_text",
+  "name":"starEmpty2",
   "overriddenProperties":[],
   "parent":{
-    "name":"obj_gameover",
-    "path":"folders/Objects/obj_gameover.yy",
+    "name":"GameOver",
+    "path":"folders/Objects/GameOver.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -29,7 +27,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_starEmpty",
+    "path":"sprites/spr_starEmpty/spr_starEmpty.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

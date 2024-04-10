@@ -1,20 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"DialogLady",
+  "%Name":"GameOverMenuCreate",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"DialogLady",
+  "name":"GameOverMenuCreate",
   "overriddenProperties":[],
   "parent":{
-    "name":"Dialog",
-    "path":"folders/Objects/Dialog.yy",
+    "name":"GameOver",
+    "path":"folders/Objects/GameOver.yy",
   },
-  "parentObjectId":{
-    "name":"DialogHandler",
-    "path":"objects/DialogHandler/DialogHandler.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

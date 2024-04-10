@@ -1,3 +1,3 @@
 global.currentBottle = LIQUOR.GIN;
 //StageStateHandler. = Gin;
-StageStateHandler.particleIndex = 1;
+StageStateHandler.particleIndex = LIQUIDCOLOR.CLEAR;

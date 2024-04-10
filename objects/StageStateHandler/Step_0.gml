@@ -1,6 +1,7 @@
 if (room == rm_game) {
 	physics_particle_delete_region_box(-200, room_width,room_width+400,room_height/2);
 }
+
 // Intro state Dialog lady, customer, and timer is created.
 if (StageState == GAMESTATE.Intro && global.currentState == MENUSTATE.GAME) {
 	if (!gameStart) {
@@ -9,10 +10,10 @@ if (StageState == GAMESTATE.Intro && global.currentState == MENUSTATE.GAME) {
 		if (!instance_exists(obj_shaker_bot)) {
 			CreateJigAndShaker();
 		}
-		instance_create_layer(0,0,"Instances",DialogLady);
+		instance_create_layer(0,0,"Instances",IntroLady);
 		gameStart = true;
 	}
-	if (!instance_exists(DialogLady) && !timerStart) {
+	if (!instance_exists(IntroLady) && !timerStart) {
 		instance_create_layer(0,0,"Instances",obj_start_countdown);
 		timerStart = true;
 	}
@@ -90,8 +91,8 @@ if (StageState == GAMESTATE.StageOver && global.currentState == MENUSTATE.GAME) 
 	RoundOver();
 	ResetVariables();
 	ResetPreviousPour();
+	instance_create_layer(room_width/2,room_height/2,"PopUpMenu",GameOverMenuCreate);
 	checkStagePassed();
-	CreateGameOverMenu();
 }
 
 

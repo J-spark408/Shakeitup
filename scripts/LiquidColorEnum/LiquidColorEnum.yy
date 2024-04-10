@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"LiquidColorEnum",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"LiquidColorEnum",
+  "parent":{
+    "name":"Liquids",
+    "path":"folders/Objects/Liquids.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

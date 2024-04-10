@@ -3,6 +3,37 @@ correctMix = false;
 wrongLiquidPoured = false;
 rateScore = 10000;
 
+function getRateState() {
+	ds_list_sort(RecipeChecker.getRating,false)
+	if (ds_list_find_value(RecipeChecker.getRating,0) == RATE.RIGHTMIX) {
+		correctMix = true;
+	} else {
+		correctMix = false;
+	}
+	for (numOfRates = 1; numOfRates < ds_list_size(RecipeChecker.getRating); numOfRates++) {
+		show_debug_message(ds_list_find_value(RecipeChecker.getRating,numOfRates))
+		if (correctMix) {
+			gradeRatingSwitchCase();
+		}
+		//} else {
+		//	flip *= -1;
+		//	gradeRatingSwitchCase();
+		//}
+	}
+	if (!wrongLiquidPoured) {
+		setRateState();
+	} else {
+		messageState = MESSAGE.WRONGDRINK;
+	}
+	
+	return messageState;
+	//show_debug_message(ds_list_find_value(RecipeChecker.getRating,0));
+	//for (var numOfRates = 0; numOfRates < ds_list_size(RecipeChecker.getRating); numOfRates++) {
+	//	show_debug_message(ds_list_find_value(RecipeChecker.getRating,numOfRates));
+	//}
+	
+}
+
 function gradeRatingSwitchCase() {
 	switch(ds_list_find_value(RecipeChecker.getRating,numOfRates)) {
 		case RATE.GREAT:
@@ -50,32 +81,3 @@ function setRateState() {
 	}
 }
 
-function getRateState() {
-	ds_list_sort(RecipeChecker.getRating,false)
-	if (ds_list_find_value(RecipeChecker.getRating,0) == RATE.RIGHTMIX) {
-		correctMix = true;
-	} else {
-		correctMix = false;
-	}
-	for (numOfRates = 1; numOfRates < ds_list_size(RecipeChecker.getRating); numOfRates++) {
-		if (correctMix) {
-			gradeRatingSwitchCase();
-		}
-		//} else {
-		//	flip *= -1;
-		//	gradeRatingSwitchCase();
-		//}
-	}
-	if (!wrongLiquidPoured) {
-		setRateState();
-	} else {
-		messageState = MESSAGE.WRONGDRINK;
-	}
-	
-	return messageState;
-	//show_debug_message(ds_list_find_value(RecipeChecker.getRating,0));
-	//for (var numOfRates = 0; numOfRates < ds_list_size(RecipeChecker.getRating); numOfRates++) {
-	//	show_debug_message(ds_list_find_value(RecipeChecker.getRating,numOfRates));
-	//}
-	
-}

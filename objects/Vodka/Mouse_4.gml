@@ -1,3 +1,3 @@
 global.currentBottle = LIQUOR.VODKA;
 //StageStateHandler. = Vodka;
-StageStateHandler.particleIndex = 1;
+StageStateHandler.particleIndex = LIQUIDCOLOR.CLEAR;

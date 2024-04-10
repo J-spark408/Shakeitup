@@ -1,3 +1,3 @@
 global.currentBottle = LIQUOR.TEQUILA;
 //StageStateHandler. = Tequila;
-StageStateHandler.particleIndex = 2;
+StageStateHandler.particleIndex = LIQUIDCOLOR.LIGHTBROWN;

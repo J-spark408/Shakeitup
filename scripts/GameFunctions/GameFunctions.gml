@@ -93,9 +93,18 @@ function RoundOver() {
 }
 
 function checkStagePassed() {
-	if (stageScore >= 5) {
-		//ds_list_set(StageData.stage_list,global.current_stage+1,true);
-		nextStage = (ds_list_find_value(StageData.stage_list,global.current_stage+1))
+	next = 1;
+	if (stageScore >= 10) {
+		nextStage = (ds_list_find_value(StageData.stage_list,global.current_stage + next))
 		nextStage.stage_unlocked = true;
+		
+		instance_create_layer(starEmpty1.x,starEmpty1.y,"Instances",starFill);
+		instance_create_layer(starEmpty2.x,starEmpty2.y,"Instances",starFill);
+		instance_create_layer(starEmpty3.x,starEmpty3.y,"Instances",starFill);
+	} else if (stageScore >= 5 && stageScore < 10) {
+		instance_create_layer(starEmpty1.x,starEmpty1.y,"Instances",starFill);
+		instance_create_layer(starEmpty2.x,starEmpty2.y,"Instances",starFill);
+	} else {
+		instance_create_layer(starEmpty1.x,starEmpty1.y,"Instances",starFill);	
 	}
 }

@@ -35,6 +35,10 @@ stageScore = 0;
 //isPoured = false;
 
 mixChoice = "";
+currentDrinkGlass = noone;
+currentDrinkColor = noone;
+
+
 
 //liquid_particles_map = ds_map_create();
 

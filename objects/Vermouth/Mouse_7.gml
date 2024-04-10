@@ -1,3 +1,3 @@
 global.currentBottle = LIQUOR.VERMOUTH;
 //StageStateHandler. = Vermouth;
-StageStateHandler.particleIndex = 4;
+StageStateHandler.particleIndex = LIQUIDCOLOR.YELLOW;
