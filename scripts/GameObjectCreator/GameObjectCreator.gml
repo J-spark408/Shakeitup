@@ -2,8 +2,8 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 
 function CreateJigAndShaker() {
-	instance_create_layer(608,544,"Instances",obj_jigger_2oz);
-	instance_create_layer(640,416,"Instances",obj_shaker_bot);
+	instance_create_layer(508,544,"Instances",obj_jigger_2oz);
+	instance_create_layer(540,416,"Instances",obj_shaker_bot);
 	// if physics particle exists draw interact
 	instance_create_layer(1056,672,"Instances",obj_interact_shakeit);
 }
@@ -42,10 +42,12 @@ function DeleteObjsStateShowCasing() {
 	instance_destroy(obj_shaker_full_no_cap);
 	instance_destroy(obj_shaker_cap);
 	instance_destroy(MixOptionBtn);
-	for (var numOfRecipe = 0; numOfRecipe < ds_list_size(RecipeChecker.recipe_list); numOfRecipe++) {
-		currentRecipe = ds_list_find_value(RecipeChecker.recipe_list, numOfRecipe);
-		if (currentDrink.RecipeName = currentRecipe.RecipeName && instance_exists(currentRecipe.GlassType)) {
-			instance_destroy(currentRecipe.GlassType);
+	if (StageStateHandler.StageState == GAMESTATE.ResetRound || StageStateHandler.StageState == GAMESTATE.StageOver) {
+		for (var numOfRecipe = 0; numOfRecipe < ds_list_size(RecipeChecker.recipe_list); numOfRecipe++) {
+			currentRecipe = ds_list_find_value(RecipeChecker.recipe_list, numOfRecipe);
+			if (currentDrink.RecipeName = currentRecipe.RecipeName && instance_exists(currentRecipe.GlassType)) {
+				instance_destroy(currentRecipe.GlassType);
+			}
 		}
 	}
 }
@@ -53,19 +55,21 @@ function DeleteObjsStateShowCasing() {
 function DeleteAllForStageOver() {
 	instance_destroy(obj_shaker_bot_filled);
 	instance_destroy(obj_shaker_full);
-	instance_destroy(PauseBtn);
 	DeleteObjsStateAddIngredients()
 	DeleteObjsStateChoice();
 	DeleteObjsStateShaking();
 	DeleteObjsStateStirring();
 	DeleteObjsStateStirring();
 	DeleteObjsStateShowCasing();
+	
+	instance_destroy(PauseBtn);
+
 }
 
 function ResetRoundMode() {
 	physics_particle_delete_region_box(0,0,room_width,room_height);
-	instance_create_layer(608,544,"Instances",obj_jigger_2oz);
-	instance_create_layer(640,416,"Instances",obj_shaker_bot);
+	instance_create_layer(508,544,"Instances",obj_jigger_2oz);
+	instance_create_layer(540,416,"Instances",obj_shaker_bot);
 	// if physics particle exists draw interact
 	instance_create_layer(1056,672,"Instances",obj_interact_shakeit);
 	StageStateHandler.StageState = GAMESTATE.AddingIngredients;
@@ -114,20 +118,16 @@ function CreateShowCasingObjects() {
 	for (var numOfRecipe = 0; numOfRecipe < ds_list_size(RecipeChecker.recipe_list); numOfRecipe++) {
 		currentRecipe = ds_list_find_value(RecipeChecker.recipe_list, numOfRecipe);
 		if (currentDrink.RecipeName = currentRecipe.RecipeName && !instance_exists(currentRecipe.GlassType)) {
-			instance_create_layer(355,352,"Instances",currentRecipe.GlassType);
+			if (currentDrink.RecipeName == "Martini") {
+				instance_create_layer(325,352,"Instances",currentRecipe.GlassType);
+			} else {
+				instance_create_layer(325,502,"Instances",currentRecipe.GlassType);
+			}
 			StageStateHandler.currentDrinkGlass = currentRecipe.GlassType;
 			StageStateHandler.currentDrinkColor = currentRecipe.LiquidColor;
 		}
 	}
 }
-
-//function CreateGameOverMenu() {
-//	//instance_create_layer(683,312,"PopUpMenu",HomeBtn);
-//	//instance_create_layer(683,476,"PopUpMenu",retryBtn);
-//	//instance_create_layer(683,176,"PopUpMenu",menuText);
-//	//instance_create_layer(483,109,"PopUpMenu",menuBoard);	
-//	instance_create_layer(room_width/2,room_height/2,"PopUpMenu",GameOverMenuCreate);
-//}
 
 function DeleteGameOverMenu() {
 	instance_destroy(homeBtn);
@@ -138,4 +138,12 @@ function DeleteGameOverMenu() {
 	instance_destroy(starEmpty2);
 	instance_destroy(starEmpty3);
 	instance_destroy(starFill);
+}
+
+function DeletePauseMenu() {	
+	instance_destroy(continueBtn);
+	instance_destroy(resetBtn);
+	instance_destroy(goHomeBtn);
+	instance_destroy(pauseText);
+	instance_destroy(menuBoard);
 }

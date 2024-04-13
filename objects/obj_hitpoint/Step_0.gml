@@ -1,4 +1,4 @@
-if (!obj_hitpoint_bar.shaking_done) {
+if (!obj_hitpoint_bar.shaking_done && StageStateHandler.StageState != GAMESTATE.Pause) {
 	y += vertical_speed * dir;
 }
 

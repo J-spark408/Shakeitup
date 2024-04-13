@@ -32,9 +32,9 @@
   ],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"","%Name":"position_from_x","filters":[],"listItems":[],"multiselect":false,"name":"position_from_x","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"608","varType":0,},
+    {"$GMObjectProperty":"","%Name":"position_from_x","filters":[],"listItems":[],"multiselect":false,"name":"position_from_x","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"508","varType":0,},
     {"$GMObjectProperty":"","%Name":"position_from_y","filters":[],"listItems":[],"multiselect":false,"name":"position_from_y","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"544","varType":0,},
-    {"$GMObjectProperty":"","%Name":"position_to_x","filters":[],"listItems":[],"multiselect":false,"name":"position_to_x","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"640","varType":0,},
+    {"$GMObjectProperty":"","%Name":"position_to_x","filters":[],"listItems":[],"multiselect":false,"name":"position_to_x","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"540","varType":0,},
     {"$GMObjectProperty":"","%Name":"position_to_y","filters":[],"listItems":[],"multiselect":false,"name":"position_to_y","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"384","varType":0,},
     {"$GMObjectProperty":"","%Name":"horizontal_speed","filters":[],"listItems":[],"multiselect":false,"name":"horizontal_speed","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
     {"$GMObjectProperty":"","%Name":"vertical_speed","filters":[],"listItems":[],"multiselect":false,"name":"vertical_speed","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},

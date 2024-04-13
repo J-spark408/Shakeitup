@@ -30,7 +30,7 @@ if (showing_dialog) {
 	}
 	
 	draw_set_color(c_white);
-	draw_text_ext(text_x,text_y,current_dialog.message,16,display_get_gui_width() - 192);
+	draw_text_ext(text_x,text_y,textDisplayed,16,display_get_gui_width() - 192);
 	
 	alpha = lerp(alpha, 1, 0.06);
 }

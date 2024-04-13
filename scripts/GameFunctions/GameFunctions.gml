@@ -3,7 +3,6 @@ function CreateStageBackground() {
 	layer_sprite_destroy(backgroundSprite)
 	layer_sprite_destroy(misc);
 	layer_sprite_destroy(barTop);
-	show_debug_message(global.current_stage);
 	switch(global.current_stage) {
 		case 0:
 		barTop = layer_sprite_create("Assets",0,621,spr_bartop);
@@ -11,7 +10,6 @@ function CreateStageBackground() {
 		backgroundSprite = layer_sprite_create("Assets",x,y,spr_barbackground);	
 		break;
 		case 1:
-		show_debug_message("Stage 2")
 		barTop = layer_sprite_create("Assets",0,621,spr_bartop);
 		backgroundSprite = layer_sprite_create("Assets",x,y,spr_asian);
 		misc = noone;
@@ -61,34 +59,52 @@ function ResetVariables() {
 	objectCheckCreate = false;
 	global.currentBottle = noone;
 	BottleHandler.bottleObj = noone;
-
 	waitTimer = 0;
 	timer = 0;
+	timerStart = false;
 
-	firstCondition = false;
-	secondCondition = false;
-	checkedAllCondition = false;
 	BottleHandler.checkedBottle = false;
+	BottleHandler.bottle_selected = noone;
+	BottleHandler.image_angle = 0;
 	LiquidTracker.currentPour = 0;
 	LiquidTracker.prevPour = 0;
 	LiquidTracker.occurancePour = 0;
 	LiquidTracker.prevValue = 0;
 	LiquidTracker.isPoured = false;
-	RatingFunctions.correctMix = false;
-	RatingFunctions.messageState = noone;
-	RatingFunctions.rateScore = 10000;
-	RatingFunctions.wrongLiquidPoured = false;
+	if (instance_exists(RatingFunctions)) {
+		RatingFunctions.correctMix = false;
+		RatingFunctions.messageState = noone;
+		RatingFunctions.rateScore = 10000;
+		RatingFunctions.wrongLiquidPoured = false;
+	}
 }
 
 // Timer is at 0 and round is over, delete all instances and set game start variables to default
 function RoundOver() {
+	randomize();
 	physics_particle_delete_region_box(0,0,room_width,room_height);
-	DeleteAllForStageOver();
 	instance_destroy(CustomerList);
-	gameStart = false;
-	timerStart = false;
-	startGameTimer = 0;
+	StageStateHandler.gameStart = false;
+	StageStateHandler.timerStart = false;
+	StageStateHandler.startGameTimer = 0;
+	StageStateHandler.objectCheckCreate = false;
 }
+
+// Reset game functions after clicking reset or home button in pause menu button
+function ResetGameForResetHomeMenu() {	
+	StageStateHandler.StageState = GAMESTATE.Intro;
+	if (StageStateHandler.StageState == GAMESTATE.Pause) {
+		PauseBtn.gamePaused = false;	
+	}
+	DeleteAllForStageOver();
+	RoundOver();
+	instance_destroy(obj_round_countdown);
+	ResetVariables();
+	ResetPreviousPour();
+	DeletePauseMenu();
+	DeleteGameOverMenu();
+}
+
 
 function checkStagePassed() {
 	next = 1;

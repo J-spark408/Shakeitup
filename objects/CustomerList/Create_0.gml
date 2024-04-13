@@ -29,6 +29,9 @@ function introDialog() {
 function satisfactionDialog() {
 	//numOfDialogs = ds_list_size(StageStateHandler.currentCustomer.satisfactedMessage);
 	StageStateHandler.currentCustomer.drawDialogBoxForSatisfaction();
+	//if (ds_map_size(StageStateHandler.currentCustomer.additionalMessage) != 0) {//is empty
+	//	StageStateHandler.currentCustomer.drawDialogBoxAdditionalComments();
+	//}
 }
 
 //function gradeRatingSwitchCase() {

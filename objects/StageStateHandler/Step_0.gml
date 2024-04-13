@@ -1,5 +1,5 @@
 if (room == rm_game) {
-	physics_particle_delete_region_box(-200, room_width,room_width+400,room_height/2);
+	physics_particle_delete_region_box(room_width/2, room_height+500, room_width,500);
 }
 
 // Intro state Dialog lady, customer, and timer is created.
@@ -11,7 +11,6 @@ if (StageState == GAMESTATE.Intro && global.currentState == MENUSTATE.GAME) {
 			CreateJigAndShaker();
 		}
 		instance_create_layer(0,0,"Instances",IntroLady);
-		instance_create_layer(room_width-64, y, "Instances", PauseBtn);	
 		gameStart = true;
 	}
 	if (!instance_exists(IntroLady) && !timerStart) {
@@ -27,6 +26,7 @@ if (StageState == GAMESTATE.Intro && global.currentState == MENUSTATE.GAME) {
 			instance_destroy(obj_start_countdown);
 			instance_create_layer(0,0,"Instances",obj_round_countdown);
 			StageState = GAMESTATE.AddingIngredients;
+			instance_create_layer(room_width-64, y, "Instances", PauseBtn);	
 			timerStart = false;
 		}
 	}
@@ -34,6 +34,7 @@ if (StageState == GAMESTATE.Intro && global.currentState == MENUSTATE.GAME) {
 // Keyboard B press, go too bar selection room. Hold Space to go to Shake State
 // At Shaking state, destroy previous instances and create shaking objects
 if (StageState == GAMESTATE.AddingIngredients && !instance_exists(CustomerList)) {
+	
 	if (!objectCheckCreate) {
 		//random_customer = random_range(0,ds_list_size(CustomerList.customers));
 		instance_create_layer(0,0,"Instances",CustomerList);
@@ -42,7 +43,7 @@ if (StageState == GAMESTATE.AddingIngredients && !instance_exists(CustomerList))
 	}
 	
 	GoToBarSelection();
-	HoldSpaceToShake(); 
+	HoldSpaceToMix(); 
 }
 
 if (StageState == GAMESTATE.Shaking || StageState == GAMESTATE.Stirring) {
@@ -89,17 +90,11 @@ if (StageState == GAMESTATE.ResetRound && !objectCheckCreate) {
 	}
 }
 
-if (StageState == GAMESTATE.StageOver && global.currentState == MENUSTATE.GAME) {
-	RoundOver();
-	ResetVariables();
-	ResetPreviousPour();
+if ((StageState == GAMESTATE.StageOver && global.currentState == MENUSTATE.GAME)) {
+	DeleteAllForStageOver();
 	instance_create_layer(room_width/2,room_height/2,"PopUpMenu",GameOverMenuCreate);
 	checkStagePassed();
 }
-
-
-
-
 
 //if (!new_round) {
 //	reset_round();

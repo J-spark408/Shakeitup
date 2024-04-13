@@ -1,4 +1,4 @@
-if (StageStateHandler.StageState == GAMESTATE.ShowCasing) {
+if (StageStateHandler.StageState == GAMESTATE.ShowCasing || StageStateHandler.StageState == GAMESTATE.Pause) {
 	t_mil -= 0;	
 } else {
 	t_mil -= 1;

@@ -14,7 +14,7 @@
   ],
   "parent":{
     "name":"GameOver",
-    "path":"folders/Objects/GameOver.yy",
+    "path":"folders/Objects/RestartOption/GameOver.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"PauseMenu",
-    "path":"folders/Objects/Buttons/PauseMenu.yy",
+    "path":"folders/Objects/RestartOption/PauseMenu.yy",
   },
   "parentObjectId":null,
   "persistent":true,

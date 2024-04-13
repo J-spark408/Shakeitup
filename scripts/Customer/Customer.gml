@@ -1,16 +1,20 @@
-function Customer(cSprite, cIntroList, cSatisfiedList) constructor {
+function Customer(cSprite, cIntroList, cSatisfiedList, cAdditionalMessage) constructor {
 	sprite = cSprite;
 	introCustomerMessage = cIntroList;
-	satisfactedMessage = cSatisfiedList;
+	satisfactedMessage = cSatisfiedList;	
+	additionalMessage = cAdditionalMessage
 	//dialog = new Dialogue(); //Customer.dialog to access add/pop/count or _dialogs
 	
 	drawDialogBoxForIntro = function() {
 		DialogHandler.dialog.add(sprite, ds_list_find_value(introCustomerMessage,irandom_range(0,CustomerList.numOfDialogs-1)));
-	}
-	
+	}	
 	
 	drawDialogBoxForSatisfaction = function(){
 		DialogHandler.dialog.add(sprite, ds_map_find_value(satisfactedMessage,RatingFunctions.getRateState()));
+	}
+	
+	drawDialogBoxAdditionalComments = function() {
+		DialogHandler.dialog.add(sprite, ds_map_find_value(additionalMessage,RatingFunctions.getRateState()));
 	}
 	
 	//create function to randomly grab a introcustomermessage
@@ -32,9 +36,12 @@ function Bob() {
 	ds_map_add(endMessage, MESSAGE.DECENT, "This " + string_lower(StageStateHandler.currentDrink.RecipeName) + " is decent");
 	ds_map_add(endMessage, MESSAGE.NOTGOOD, "This " + string_lower(StageStateHandler.currentDrink.RecipeName) + " is not good");
 	ds_map_add(endMessage, MESSAGE.TOOSTRONG, "This " + string_lower(StageStateHandler.currentDrink.RecipeName) + " is too strong");
-	ds_map_add(endMessage, MESSAGE.GREATBUTWRONGMIX, "This " + string_lower(StageStateHandler.currentDrink.RecipeName) + " is great but shouldnt " + StageStateHandler.mixChoice + " it");
+	
 	ds_map_add(endMessage, MESSAGE.WRONGDRINK, "This " + string_lower(StageStateHandler.currentDrink.RecipeName) + " is wrong");
-	return new Customer(spr_customer1, introMessage,endMessage);
+	
+	additionalMessage = ds_map_create();
+	ds_map_add(additionalMessage, MESSAGE.GREATBUTWRONGMIX, "This " + string_lower(StageStateHandler.currentDrink.RecipeName) + " is great but shouldnt " + StageStateHandler.mixChoice + " it");
+	return new Customer(spr_customer1, introMessage,endMessage,additionalMessage);
 }
 
 function Alejandro() {
@@ -49,7 +56,7 @@ function Alejandro() {
 	ds_map_add(endMessage, MESSAGE.TOOSTRONG, "This " + string_lower(StageStateHandler.currentDrink.RecipeName) + " is too strong");
 	ds_map_add(endMessage, MESSAGE.GREATBUTWRONGMIX, "This " + string_lower(StageStateHandler.currentDrink.RecipeName) + " is great but shouldnt " + StageStateHandler.mixChoice + " it");
 	ds_map_add(endMessage, MESSAGE.WRONGDRINK, "This " + string_lower(StageStateHandler.currentDrink.RecipeName) + " is wrong");
-	return new Customer(spr_customer2, introMessage,endMessage);
+	return new Customer(spr_customer2, introMessage,endMessage,additionalMessage);
 }
 
 function Sally() {
@@ -64,7 +71,7 @@ function Sally() {
 	ds_map_add(endMessage, MESSAGE.TOOSTRONG, "This " + string_lower(StageStateHandler.currentDrink.RecipeName) + " is too strong");
 	ds_map_add(endMessage, MESSAGE.GREATBUTWRONGMIX, "This " + string_lower(StageStateHandler.currentDrink.RecipeName) + " is great but shouldnt " + StageStateHandler.mixChoice + " it");
 	ds_map_add(endMessage, MESSAGE.WRONGDRINK, "This " + string_lower(StageStateHandler.currentDrink.RecipeName) + " is wrong");
-	return new Customer(spr_customer3, introMessage,endMessage);
+	return new Customer(spr_customer3, introMessage,endMessage,additionalMessage);
 }
 
 function Michelle() {
@@ -79,5 +86,5 @@ function Michelle() {
 	ds_map_add(endMessage, MESSAGE.TOOSTRONG, "This " + string_lower(StageStateHandler.currentDrink.RecipeName) + " is too strong");
 	ds_map_add(endMessage, MESSAGE.GREATBUTWRONGMIX, "This " + string_lower(StageStateHandler.currentDrink.RecipeName) + " is great but shouldnt " + StageStateHandler.mixChoice + " it");
 	ds_map_add(endMessage, MESSAGE.WRONGDRINK, "This " + string_lower(StageStateHandler.currentDrink.RecipeName) + " is wrong");
-	return new Customer(spr_customer4, introMessage,endMessage);
+	return new Customer(spr_customer4, introMessage,endMessage,additionalMessage);
 }

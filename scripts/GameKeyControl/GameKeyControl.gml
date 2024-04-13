@@ -63,7 +63,7 @@ function GoToBarSelection() {
 				BottleHandler.image_angle = 0;	
 			}
 		} else {
-			show_debug_message("Bad angle");	
+			instance_create_layer(BottleHandler.bottleObj.x,BottleHandler.bottleObj.y,"Instances",placeBottleText);
 		}
 	}
 }
