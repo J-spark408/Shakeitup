@@ -41,6 +41,9 @@ if (StageState == GAMESTATE.AddingIngredients && !instance_exists(CustomerList))
 		CustomerList.introDialog();
 		objectCheckCreate = true;
 	}
+	if (!instance_exists(CustomerList) && !instance_exists(IceBucket)) {
+		instance_create_layer(132,610,"Instances",IceBucket);	
+	}
 	
 	GoToBarSelection();
 	HoldSpaceToMix(); 

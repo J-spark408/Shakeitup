@@ -6,8 +6,8 @@
   "name":"menuBoard",
   "overriddenProperties":[],
   "parent":{
-    "name":"GameOver",
-    "path":"folders/Objects/RestartOption/GameOver.yy",
+    "name":"RestartOption",
+    "path":"folders/Objects/RestartOption.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -1,9 +1,12 @@
 {
   "$GMObject":"",
-  "%Name":"Ice",
-  "eventList":[],
+  "%Name":"IceScoop",
+  "eventList":[
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"Ice",
+  "name":"IceScoop",
   "overriddenProperties":[],
   "parent":{
     "name":"Interaction",
@@ -28,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_ice",
-    "path":"sprites/spr_ice/spr_ice.yy",
+    "name":"spr_ice_scoop",
+    "path":"sprites/spr_ice_scoop/spr_ice_scoop.yy",
   },
   "spriteMaskId":null,
   "visible":true,

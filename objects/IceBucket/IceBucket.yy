@@ -1,9 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"Ice",
-  "eventList":[],
+  "%Name":"IceBucket",
+  "eventList":[
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"Ice",
+  "name":"IceBucket",
   "overriddenProperties":[],
   "parent":{
     "name":"Interaction",
@@ -28,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_ice",
-    "path":"sprites/spr_ice/spr_ice.yy",
+    "name":"spr_ice_bucket",
+    "path":"sprites/spr_ice_bucket/spr_ice_bucket.yy",
   },
   "spriteMaskId":null,
   "visible":true,

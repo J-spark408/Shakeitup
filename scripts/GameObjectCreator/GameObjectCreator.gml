@@ -19,6 +19,7 @@ function DeleteObjsStateAddIngredients() {
 	}
 	instance_destroy(obj_shaker_bot);
 	instance_destroy(obj_interact_shakeit);
+	instance_destroy(IceBucket);
 }
 
 function DeleteObjsStateChoice() {
@@ -129,7 +130,7 @@ function CreateShowCasingObjects() {
 	}
 }
 
-function DeleteGameOverMenu() {
+function DeletePopupMenu() {
 	instance_destroy(homeBtn);
 	instance_destroy(retryBtn);
 	instance_destroy(menuText);
@@ -138,12 +139,12 @@ function DeleteGameOverMenu() {
 	instance_destroy(starEmpty2);
 	instance_destroy(starEmpty3);
 	instance_destroy(starFill);
+	instance_destroy(continueBtn);
+	instance_destroy(pauseText);
 }
 
-function DeletePauseMenu() {	
-	instance_destroy(continueBtn);
-	instance_destroy(resetBtn);
-	instance_destroy(goHomeBtn);
-	instance_destroy(pauseText);
-	instance_destroy(menuBoard);
-}
+//function DeletePauseMenu() {	
+//	instance_destroy(resetBtn);
+//	instance_destroy(goHomeBtn);
+//	instance_destroy(menuBoard);
+//}

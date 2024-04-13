@@ -13,8 +13,8 @@
     {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"obj_button","path":"objects/obj_button/obj_button.yy",},"propertyId":{"name":"button_text","path":"objects/obj_button/obj_button.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"Start",},
   ],
   "parent":{
-    "name":"GameOver",
-    "path":"folders/Objects/RestartOption/GameOver.yy",
+    "name":"RestartOption",
+    "path":"folders/Objects/RestartOption.yy",
   },
   "parentObjectId":null,
   "persistent":false,

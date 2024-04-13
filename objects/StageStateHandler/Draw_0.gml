@@ -13,9 +13,12 @@ if (room == rm_game && StageState != GAMESTATE.StageOver) {
 	physics_particle_draw(flags, LIQUIDCOLOR.YELLOW, spr_yellow, 0);
 	physics_particle_draw(flags, LIQUIDCOLOR.BITTER, spr_bitter_liquid, 0);
 	physics_particle_draw(flags, LIQUIDCOLOR.LIGHTGREEN, spr_light_green, 0);
+	physics_particle_draw(flags, LIQUIDCOLOR.ICE, spr_ice, 0);
 }
 if (StageStateHandler.StageState == GAMESTATE.AddingIngredients && !instance_exists(CustomerList)) {
-		draw_text(x+25,room_height-50, string(currentDrink.RecipeName));
+	draw_set_valign(fa_top);
+	draw_set_halign(fa_center);
+	draw_text(room_width/2,y+55, string(currentDrink.RecipeName));
 }
 
 

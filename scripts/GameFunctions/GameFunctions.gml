@@ -101,8 +101,8 @@ function ResetGameForResetHomeMenu() {
 	instance_destroy(obj_round_countdown);
 	ResetVariables();
 	ResetPreviousPour();
-	DeletePauseMenu();
-	DeleteGameOverMenu();
+	//DeletePauseMenu();
+	DeletePopupMenu();
 }
 
 
