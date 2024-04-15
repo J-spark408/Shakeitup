@@ -42,9 +42,11 @@ if (StageState == GAMESTATE.AddingIngredients && !instance_exists(CustomerList))
 		objectCheckCreate = true;
 	}
 	if (!instance_exists(CustomerList) && !instance_exists(IceBucket)) {
-		instance_create_layer(132,610,"Instances",IceBucket);	
+		instance_create_layer(132,520,"Instances",IceBucket);	
 	}
-	
+	//if (keyboard_check_pressed(ord("I"))) {
+	//	instance_create_layer(mouse_x,mouse_y,"Instances",Ice);	
+	//}
 	GoToBarSelection();
 	HoldSpaceToMix(); 
 }

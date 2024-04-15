@@ -16,6 +16,7 @@ function HoldSpaceToMix() { // AddingIngredients State
 		GetLiquidCounts();
 		StageState = GAMESTATE.ChoiceOption;	
 		objectCheckCreate = false;
+		//obj_shaker_bot.createdPhysics = false;
 		CreateShakeOrStirOption();
 		//CreateShakerMode();
 		//CreateStirringMode();

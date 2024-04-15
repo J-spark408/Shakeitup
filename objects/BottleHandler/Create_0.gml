@@ -1,4 +1,3 @@
-flags = phy_particle_flag_colormixing
 initial_position_x = 900;
 initial_position_y = 727;
 is_grabbed = false;

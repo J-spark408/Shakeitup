@@ -2,9 +2,9 @@
   "$GMSprite":"",
   "%Name":"spr_ice",
   "bboxMode":0,
-  "bbox_bottom":52,
+  "bbox_bottom":27,
   "bbox_left":0,
-  "bbox_right":47,
+  "bbox_right":24,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -16,7 +16,7 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":53,
+  "height":28,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"48cf405f-16ce-4488-8468-6bbb7064d2ec","blendMode":0,"displayName":"default","isLocked":false,"name":"48cf405f-16ce-4488-8468-6bbb7064d2ec","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"spr_liquid",
-    "path":"folders/Sprites/spr_liquid.yy",
+    "name":"Sprites",
+    "path":"folders/Sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":48,
+  "width":25,
 }

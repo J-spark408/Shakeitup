@@ -17,9 +17,11 @@ function DeleteObjsStateAddIngredients() {
 	} else {
 		instance_destroy(obj_jigger_1oz);	
 	}
+	instance_destroy(IceBucket);
+	instance_destroy(IceScoop);
+	instance_destroy(Ice);
 	instance_destroy(obj_shaker_bot);
 	instance_destroy(obj_interact_shakeit);
-	instance_destroy(IceBucket);
 }
 
 function DeleteObjsStateChoice() {

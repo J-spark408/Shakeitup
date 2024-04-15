@@ -1,0 +1,1 @@
+draw_text(x,y,"Click here\n remove scoop");

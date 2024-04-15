@@ -3,20 +3,20 @@
 function pourLeft() {
 	if (global.currentBottle == LIQUOR.BITTER) {
 		if (mouse_check_button_pressed(mb_right)) {
-			physics_particle_create(flags, x, y, x+1, x, c_white, 1, StageStateHandler.particleIndex);
+			physics_particle_create(StageStateHandler.flags, x, y, x+1, x, c_white, 1, StageStateHandler.particleIndex);
 		}
 	} else {
-		physics_particle_create(flags, x, y, x+1, x, c_white, 0.3, StageStateHandler.particleIndex);
+		physics_particle_create(StageStateHandler.flags, x, y, x+1, x, c_white, 0.3, StageStateHandler.particleIndex);
 	}
 }
 
 function pourRight() {
 	if (global.currentBottle == LIQUOR.BITTER) {
 		if (mouse_check_button_pressed(mb_right)) {
-			physics_particle_create(flags, x, y, 1-x, x, c_white, 1, StageStateHandler.particleIndex);
+			physics_particle_create(StageStateHandler.flags, x, y, 1-x, x, c_white, 1, StageStateHandler.particleIndex);
 		}
 	} else {
-		physics_particle_create(flags, x, y, 1-x, x, c_white, 0.3, StageStateHandler.particleIndex);
+		physics_particle_create(StageStateHandler.flags, x, y, 1-x, x, c_white, 0.3, StageStateHandler.particleIndex);
 	}
 }
 
@@ -56,6 +56,7 @@ function GoToBarSelection() {
 		GetLiquidCounts();
 		BottleHandler.checkedBottle = true;
 		StageState = GAMESTATE.ChoosingIngredients;
+		obj_shaker_bot.createdPhysics = false;
 		room_goto(rm_bar_selection); 
 			if (BottleHandler.bottleObj != noone) {
 				instance_destroy(BottleHandler.bottleObj);
