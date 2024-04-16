@@ -43,6 +43,7 @@ if (StageState == GAMESTATE.AddingIngredients && !instance_exists(CustomerList))
 	}
 	if (!instance_exists(CustomerList) && !instance_exists(IceBucket)) {
 		instance_create_layer(132,520,"Instances",IceBucket);	
+		instance_create_layer(1298,585,"Instances",TrashBin);
 	}
 
 	GoToBarSelection();
