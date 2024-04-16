@@ -3,20 +3,20 @@
 function pourLeft() {
 	if (global.currentBottle == LIQUOR.BITTER) {
 		if (mouse_check_button_pressed(mb_right)) {
-			physics_particle_create(StageStateHandler.flags, x, y, x+1, x, c_white, 1, StageStateHandler.particleIndex);
+			physics_particle_create(StageStateHandler.flags, x, y, 1-x, x, c_white, 1, StageStateHandler.particleIndex);
 		}
 	} else {
-		physics_particle_create(StageStateHandler.flags, x, y, x+1, x, c_white, 0.3, StageStateHandler.particleIndex);
+		physics_particle_create(StageStateHandler.flags, x, y, 1-x, x, c_white, 0.3, StageStateHandler.particleIndex);
 	}
 }
 
 function pourRight() {
 	if (global.currentBottle == LIQUOR.BITTER) {
 		if (mouse_check_button_pressed(mb_right)) {
-			physics_particle_create(StageStateHandler.flags, x, y, 1-x, x, c_white, 1, StageStateHandler.particleIndex);
+			physics_particle_create(StageStateHandler.flags, x, y, x+1, x, c_white, 1, StageStateHandler.particleIndex);
 		}
 	} else {
-		physics_particle_create(StageStateHandler.flags, x, y, 1-x, x, c_white, 0.3, StageStateHandler.particleIndex);
+		physics_particle_create(StageStateHandler.flags, x, y, x+1, x, c_white, 0.3, StageStateHandler.particleIndex);
 	}
 }
 
@@ -30,7 +30,7 @@ function TiltBottleLeft() {
 		}
 	}
 	if (image_angle <= -105 && image_angle >= -165) {
-		pourLeft();
+		pourRight();
 		LiquidTracker.isPoured = true;
 	} 
 }
@@ -44,7 +44,7 @@ function TiltBottleRight() {
 		}
 	}
 	if (image_angle >= 105 && image_angle <= 165) {
-		pourRight()
+		pourLeft();
 		LiquidTracker.isPoured = true;
 	} 
 }

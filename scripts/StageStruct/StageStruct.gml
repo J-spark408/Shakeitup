@@ -5,8 +5,6 @@ function Stage(sSprite,sLevel,sBool,sDrink) constructor {
 	stage_level = sLevel;
 	stage_unlocked = sBool;
 	stageDrinkList = sDrink;
-	
-	
 }
 
 function Stage1() {

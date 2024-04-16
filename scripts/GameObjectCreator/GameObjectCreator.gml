@@ -64,7 +64,7 @@ function DeleteAllForStageOver() {
 	DeleteObjsStateStirring();
 	DeleteObjsStateStirring();
 	DeleteObjsStateShowCasing();
-	
+	instance_destroy(CustomerList);
 	instance_destroy(PauseBtn);
 
 }
@@ -124,7 +124,7 @@ function CreateShowCasingObjects() {
 			if (currentDrink.RecipeName == "Martini") {
 				instance_create_layer(325,352,"Instances",currentRecipe.GlassType);
 			} else {
-				instance_create_layer(325,502,"Instances",currentRecipe.GlassType);
+				instance_create_layer(355,502,"Instances",currentRecipe.GlassType);
 			}
 			StageStateHandler.currentDrinkGlass = currentRecipe.GlassType;
 			StageStateHandler.currentDrinkColor = currentRecipe.LiquidColor;

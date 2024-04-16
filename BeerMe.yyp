@@ -246,6 +246,7 @@
     {"id":{"name":"Sprite49","path":"sprites/Sprite49/Sprite49.yy",},},
     {"id":{"name":"Sprite50","path":"sprites/Sprite50/Sprite50.yy",},},
     {"id":{"name":"Sprite65","path":"sprites/Sprite65/Sprite65.yy",},},
+    {"id":{"name":"spr_cursor","path":"sprites/spr_cursor/spr_cursor.yy",},},
     {"id":{"name":"wood","path":"sprites/wood/wood.yy",},},
   ],
   "resourceType":"GMProject",

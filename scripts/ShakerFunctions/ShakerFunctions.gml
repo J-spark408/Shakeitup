@@ -37,7 +37,7 @@ function MoveShakerAfterShaking(){
 	} else {
 		if (instance_exists(obj_shaker_full_no_cap) && obj_shaker_full_no_cap.image_angle >= 120) {
 			if (LiquidTracker.occurancePour != physics_particle_count()) {
-				physics_particle_create(StageStateHandler.flags, 470,260,x+1,y+1,c_white,0.7,StageStateHandler.currentDrinkColor);
+				physics_particle_create(StageStateHandler.flags,obj_shaker_full_no_cap.x-130,obj_shaker_full_no_cap.y-20,y,-x,c_white,0.7,StageStateHandler.currentDrinkColor);
 			} else {
 				objectCheckCreate = true;	
 			}
@@ -83,7 +83,7 @@ function MoveShakerAfterStirring() {
 			if (obj_shaker_full_no_cap.image_angle >= 120) {
 				obj_shaker_full_no_cap.image_angle += 0;
 				if (LiquidTracker.occurancePour != physics_particle_count()) {
-					physics_particle_create(StageStateHandler.flags, 470,260,x-1,x,c_white,0.7,StageStateHandler.currentDrinkColor);
+					physics_particle_create(StageStateHandler.flags,obj_shaker_full_no_cap.x-130,obj_shaker_full_no_cap.y-20,y,x-4,c_white,0.7,StageStateHandler.currentDrinkColor);
 				} else {
 					objectCheckCreate = true;	
 				}

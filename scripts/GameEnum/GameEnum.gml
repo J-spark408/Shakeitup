@@ -7,6 +7,7 @@ enum GAMESTATE {
 	Shaking,
 	Stirring,
 	ShowCasing,
+	AddGarnish,
 	ResetRound,
 	StageOver,
 	Pause,

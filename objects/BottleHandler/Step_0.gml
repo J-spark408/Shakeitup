@@ -6,7 +6,6 @@ if (StageStateHandler.StageState == GAMESTATE.AddingIngredients) {
 			is_grabbed = true;
 		} else {
 			instance_create_layer(IceBucket.x,IceBucket.y + 10,"Instances",PutScoopText);
-			show_debug_message("Put the scooper back")	
 		}
 	}
 	if (mouse_check_button_released(mb_left)) {

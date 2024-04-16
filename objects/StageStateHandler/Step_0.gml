@@ -44,9 +44,7 @@ if (StageState == GAMESTATE.AddingIngredients && !instance_exists(CustomerList))
 	if (!instance_exists(CustomerList) && !instance_exists(IceBucket)) {
 		instance_create_layer(132,520,"Instances",IceBucket);	
 	}
-	//if (keyboard_check_pressed(ord("I"))) {
-	//	instance_create_layer(mouse_x,mouse_y,"Instances",Ice);	
-	//}
+
 	GoToBarSelection();
 	HoldSpaceToMix(); 
 }
@@ -98,7 +96,7 @@ if (StageState == GAMESTATE.ResetRound && !objectCheckCreate) {
 if ((StageState == GAMESTATE.StageOver && global.currentState == MENUSTATE.GAME)) {
 	DeleteAllForStageOver();
 	instance_create_layer(room_width/2,room_height/2,"PopUpMenu",GameOverMenuCreate);
-	checkStagePassed();
+	//checkStagePassed();
 }
 
 //if (!new_round) {

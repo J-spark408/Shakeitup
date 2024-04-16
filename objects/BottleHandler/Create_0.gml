@@ -2,6 +2,7 @@ initial_position_x = 900;
 initial_position_y = 727;
 is_grabbed = false;
 
+
 if (StageStateHandler.StageState == GAMESTATE.ChoosingIngredients) {
 	image_alpha = 0.4;
 }

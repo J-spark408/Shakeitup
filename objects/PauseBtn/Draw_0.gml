@@ -1,5 +1,5 @@
 draw_self();
-if (gamePaused && !instance_exists(CustomerList)) {
+if (gamePaused) {
 	instance_create_layer(room_width/2,room_height/2 - 225,"PopUpMenu",pauseText);
 	instance_create_layer(room_width/2,room_height/2 - 100,"PopUpMenu",continueBtn);
 	instance_create_layer(room_width/2,room_height/2 + 20,"PopUpMenu",retryBtn);

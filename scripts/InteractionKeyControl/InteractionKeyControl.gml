@@ -5,6 +5,7 @@ function HoldSpaceToMix() { // AddingIngredients State
 		if (BottleHandler.image_angle <= 30 && BottleHandler.image_angle >= -30) {
 			timer += delta_time/1000000;
 		} else {
+			// Create text one at a time, give time to be deleted.
 			instance_create_layer(BottleHandler.bottleObj.x,BottleHandler.bottleObj.y,"Instances",placeBottleText);
 		}
 	} else {

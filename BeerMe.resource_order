@@ -206,6 +206,7 @@
     {"name":"Sprite49","order":29,"path":"sprites/Sprite49/Sprite49.yy",},
     {"name":"Sprite50","order":30,"path":"sprites/Sprite50/Sprite50.yy",},
     {"name":"Sprite65","order":15,"path":"sprites/Sprite65/Sprite65.yy",},
+    {"name":"spr_cursor","order":46,"path":"sprites/spr_cursor/spr_cursor.yy",},
     {"name":"wood","order":2,"path":"sprites/wood/wood.yy",},
   ],
 }
