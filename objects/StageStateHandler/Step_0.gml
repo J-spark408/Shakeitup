@@ -1,5 +1,6 @@
 if (room == rm_game) {
 	physics_particle_delete_region_box(room_width/2, room_height+500, room_width,500);
+	instance_create_layer(x,y,"Instances",StageDisplayTab);
 }
 
 // Intro state Dialog lady, customer, and timer is created.

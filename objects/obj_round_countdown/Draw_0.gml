@@ -1,11 +1,10 @@
 draw_set_color(c_white);
 draw_set_font(fnt_round_timer);
-draw_set_valign(fa_top);
+draw_set_valign(fa_middle);
 draw_set_halign(fa_center);
 
-
 if !(t_mil = 0 && t_sec = 0 && t_min = 0) {
-	draw_text(room_width/2,y+20,game_countdown);
+	draw_text(StageTabDescriptionBox.x,StageTabDescriptionBox.y + 70,game_countdown);
 }
 
 game_countdown = "";

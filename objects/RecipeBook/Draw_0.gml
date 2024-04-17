@@ -14,3 +14,9 @@ if (!is_flipping) {
 	draw_text(300,560,recipepage.RecipePage_name);
 	//}
 }
+
+if (current_page == 0 && instance_exists(PrevPageObj)) {
+	instance_destroy(PrevPageObj);
+} else if (current_page > 0 && !instance_exists(PrevPageObj)) {
+	instance_create_layer(x + RecipeBook.sprite_width/4,y + RecipeBook.sprite_height,"Instances",PrevPageObj);	
+}

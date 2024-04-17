@@ -32,6 +32,7 @@ if (showing_dialog) {
 	draw_set_color(c_white);
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_top);
+	draw_set_font(fnt_dialog);
 	draw_text_ext(text_x,text_y,textDisplayed,16,display_get_gui_width() - 192);
 	
 	alpha = lerp(alpha, 1, 0.06);
