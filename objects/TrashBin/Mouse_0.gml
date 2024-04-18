@@ -1,3 +1,2 @@
-instance_create_layer(x-120,y-40,"PopUpMenu",trashShaker);
-instance_create_layer(x-120,y+30,"PopUpMenu",trashJigger);
-//instance_create_layer(x-30,y,"PopUpMenu",trashMenu);
+physics_particle_delete_region_box(obj_shaker_bot.x + obj_shaker_bot.sprite_width/2,obj_shaker_bot.y + obj_shaker_bot.sprite_height/2,obj_shaker_bot.sprite_width/1.8,obj_shaker_bot.sprite_height/1.8);
+ResetPreviousPour();

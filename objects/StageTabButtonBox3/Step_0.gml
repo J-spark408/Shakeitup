@@ -1,4 +1,4 @@
-if (position_meeting(mouse_x, mouse_y,StageTabButtonBox)) {
+if (position_meeting(mouse_x, mouse_y,StageTabButtonBox3)) {
 	if (image_index <= 5) {
 		image_speed++;	
 		

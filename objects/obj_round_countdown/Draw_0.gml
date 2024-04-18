@@ -4,7 +4,11 @@ draw_set_valign(fa_middle);
 draw_set_halign(fa_center);
 
 if !(t_mil = 0 && t_sec = 0 && t_min = 0) {
-	draw_text(StageTabDescriptionBox.x,StageTabDescriptionBox.y + 70,game_countdown);
+	if (instance_exists(StageTabDescriptionBox)) {
+		draw_text(StageTabDescriptionBox.x,StageTabDescriptionBox.y + 70,game_countdown);
+	} else {
+		draw_text(room_width/2 - 180, y + 35,game_countdown);	
+	}
 }
 
 game_countdown = "";

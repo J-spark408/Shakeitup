@@ -1,6 +1,8 @@
 if (room == rm_game) {
 	physics_particle_delete_region_box(room_width/2, room_height+500, room_width,500);
-	instance_create_layer(x,y,"Instances",StageDisplayTab);
+	if (!instance_exists(StageDisplayTab) && instance_exists(obj_round_countdown)) {
+		instance_create_layer(x,y,"Instances",StageDisplayTab);
+	}
 }
 
 // Intro state Dialog lady, customer, and timer is created.
@@ -42,10 +44,10 @@ if (StageState == GAMESTATE.AddingIngredients && !instance_exists(CustomerList))
 		CustomerList.introDialog();
 		objectCheckCreate = true;
 	}
-	if (!instance_exists(CustomerList) && !instance_exists(IceBucket)) {
-		instance_create_layer(132,520,"Instances",IceBucket);	
-		instance_create_layer(1298,585,"Instances",TrashBin);
-	}
+	//if (!instance_exists(CustomerList) && !instance_exists(IceBucket)) {
+	//	instance_create_layer(132,520,"Instances",IceBucket);	
+	//	instance_create_layer(1298,585,"Instances",TrashBin);
+	//}
 
 	GoToBarSelection();
 	HoldSpaceToMix(); 
