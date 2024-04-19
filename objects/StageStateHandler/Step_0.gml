@@ -53,11 +53,11 @@ if (StageState == GAMESTATE.AddingIngredients && !instance_exists(CustomerList))
 	HoldSpaceToMix(); 
 }
 
-if (StageState == GAMESTATE.Shaking || StageState == GAMESTATE.Stirring) {
-	if (!instance_exists(MixOptionBtn)) {
-		instance_create_layer(room_width - 300,room_height - 100,"Instances",MixOptionBtn);	
-	}
-}
+//if (StageState == GAMESTATE.Shaking || StageState == GAMESTATE.Stirring) {
+//	if (!instance_exists(MixOptionBtn)) {
+//		instance_create_layer(room_width - 300,room_height - 100,"Instances",MixOptionBtn);	
+//	}
+//}
 
 if (StageState == GAMESTATE.ShowCasing && !objectCheckCreate) {
 	CreateShowCasingObjects();

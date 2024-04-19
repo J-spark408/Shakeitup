@@ -1,11 +1,11 @@
-if (position_meeting(mouse_x, mouse_y,StageTabButtonBox2)) {
+if (position_meeting(mouse_x, mouse_y,StageTabButtonBox2) && StageStateHandler.StageState != GAMESTATE.Pause && !instance_exists(CustomerList)) {
 	if (image_index <= 5) {
 		image_speed++;	
 		
 	} else {
 		image_speed = 0;
-		if (!instance_exists(TrashBin)) {
-			instance_create_layer(ds_list_find_value(StageDisplayTab.tabList,1).x,ds_list_find_value(StageDisplayTab.tabList,1).y,"Instances",TrashBin);
+		if (StageStateHandler.StageState == GAMESTATE.AddingIngredients && !instance_exists(TrashBin)) {
+			instance_create_layer(x,y,"PopUpMenu",TrashBin);
 		}
 	}
 } else {

@@ -8,6 +8,13 @@ function CreateJigAndShaker() {
 	instance_create_layer(1056,672,"Instances",obj_interact_shakeit);
 }
 
+function DeleteTabDisplayed() {
+	instance_destroy(StageTabButtonBox1);
+	instance_destroy(StageTabButtonBox2);
+	instance_destroy(StageTabButtonBox3);
+	StageDisplayTab.tabsCreated = false;
+}
+
 function DeleteObjsStateAddIngredients() {
 	if (instance_exists(BottleHandler.bottleObj)) {
 		instance_destroy(BottleHandler.bottleObj);
@@ -22,11 +29,13 @@ function DeleteObjsStateAddIngredients() {
 	instance_destroy(Ice);
 	instance_destroy(obj_shaker_bot);
 	instance_destroy(obj_interact_shakeit);
+	DeleteTabDisplayed();
 }
 
 function DeleteObjsStateChoice() {
 	instance_destroy(ShakeBtn);
 	instance_destroy(StirBtn);
+	DeleteTabDisplayed();
 }
 
 function DeleteObjsStateShaking() {
@@ -55,6 +64,16 @@ function DeleteObjsStateShowCasing() {
 	}
 }
 
+function DeleteProps() {
+	instance_destroy(StageTabDescriptionBox);
+	instance_destroy(PauseBtn);
+	instance_destroy(CustomerList);
+	instance_destroy(IceBucket);
+	instance_destroy(TrashBin);
+	instance_destroy(IceScoop);
+	instance_destroy(MixOptionBtn);
+}
+
 function DeleteAllForStageOver() {
 	instance_destroy(obj_shaker_bot_filled);
 	instance_destroy(obj_shaker_full);
@@ -64,9 +83,8 @@ function DeleteAllForStageOver() {
 	DeleteObjsStateStirring();
 	DeleteObjsStateStirring();
 	DeleteObjsStateShowCasing();
-	instance_destroy(CustomerList);
-	instance_destroy(PauseBtn);
-
+	DeleteProps();
+	DeleteTabDisplayed();
 }
 
 function ResetRoundMode() {
@@ -112,6 +130,7 @@ function CreateShowCasingObjects() {
 	if (mixChoice == MixChoiceHandler.stirring) {
 		DeleteObjsStateStirring();
 	}
+	DeleteTabDisplayed();
 	//if (currentDrink.RecipeName == "Martini" && !instance_exists(MartiniGlass)) {
 	//	instance_create_layer(320,352,"Instances",MartiniGlass);
 	//}
