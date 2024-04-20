@@ -195,6 +195,7 @@
     {"name":"spr_old_fashioned","order":1,"path":"sprites/spr_old_fashioned/spr_old_fashioned.yy",},
     {"name":"spr_orangeliqueur","order":9,"path":"sprites/spr_orangeliqueur/spr_orangeliqueur.yy",},
     {"name":"spr_pause_btn","order":41,"path":"sprites/spr_pause_btn/spr_pause_btn.yy",},
+    {"name":"spr_pause","order":61,"path":"sprites/spr_pause/spr_pause.yy",},
     {"name":"spr_recipe_flip_next","order":17,"path":"sprites/spr_recipe_flip_next/spr_recipe_flip_next.yy",},
     {"name":"spr_selection_menu_background","order":5,"path":"sprites/spr_selection_menu_background/spr_selection_menu_background.yy",},
     {"name":"spr_shaker_bot_filled","order":27,"path":"sprites/spr_shaker_bot_filled/spr_shaker_bot_filled.yy",},
@@ -227,7 +228,7 @@
     {"name":"Sprite65","order":15,"path":"sprites/Sprite65/Sprite65.yy",},
     {"name":"Sprite86","order":16,"path":"sprites/Sprite86/Sprite86.yy",},
     {"name":"Sprite89","order":60,"path":"sprites/Sprite89/Sprite89.yy",},
-    {"name":"spr_pause","order":61,"path":"sprites/spr_pause/spr_pause.yy",},
+    {"name":"Sprite91","order":62,"path":"sprites/Sprite91/Sprite91.yy",},
     {"name":"wood","order":2,"path":"sprites/wood/wood.yy",},
   ],
 }
