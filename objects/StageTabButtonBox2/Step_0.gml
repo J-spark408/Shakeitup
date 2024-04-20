@@ -1,6 +1,6 @@
 if (position_meeting(mouse_x, mouse_y,StageTabButtonBox2) && StageStateHandler.StageState != GAMESTATE.Pause && !instance_exists(CustomerList)) {
-	if (image_index <= 5) {
-		image_speed++;	
+	if (image_index <= 7) {
+		image_speed = 1;	
 		
 	} else {
 		image_speed = 0;

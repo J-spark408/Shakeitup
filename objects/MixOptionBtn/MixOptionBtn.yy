@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"Sprite89",
-    "path":"sprites/Sprite89/Sprite89.yy",
+    "name":"spr_tab_press",
+    "path":"sprites/spr_tab_press/spr_tab_press.yy",
   },
   "spriteMaskId":null,
   "visible":true,
