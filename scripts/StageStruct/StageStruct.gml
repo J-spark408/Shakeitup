@@ -19,6 +19,6 @@ function Stage2() {
 	drinkList = ds_list_create();
 	ds_list_add(drinkList, "Whiskey Sour");
 	ds_list_add(drinkList, "Moscow Mule");
-	ds_list_add(drinkList, "Paloma");
+	ds_list_add(drinkList, "Gimlet");
 	return drinkList;
 }

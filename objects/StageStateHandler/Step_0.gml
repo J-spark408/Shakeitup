@@ -29,7 +29,7 @@ if (StageState == GAMESTATE.Intro && global.currentState == MENUSTATE.GAME) {
 			instance_destroy(obj_start_countdown);
 			instance_create_layer(0,0,"Instances",obj_round_countdown);
 			StageState = GAMESTATE.AddingIngredients;
-			instance_create_layer(room_width-64, y, "Instances", PauseBtn);	
+			instance_create_layer(room_width-64-5, y+5, "Instances", PauseBtn);	
 			timerStart = false;
 		}
 	}
