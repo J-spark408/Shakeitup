@@ -22,10 +22,13 @@ currentCustomer = noone;
 currentDrink = noone;
 stageScore = 0;
 
-// 
+// Get current options for game round
 mixChoice = "";
 currentDrinkGlass = noone;
 currentDrinkColor = noone;
+
+// Check if stage is passed
+stagePassed = false;
 
 // Variable to create background for each stage
 backgroundSprite = noone;

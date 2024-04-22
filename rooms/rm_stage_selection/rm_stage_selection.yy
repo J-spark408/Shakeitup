@@ -12,6 +12,7 @@
     {"name":"inst_53F3951F","path":"rooms/rm_stage_selection/rm_stage_selection.yy",},
     {"name":"inst_38466AEB","path":"rooms/rm_stage_selection/rm_stage_selection.yy",},
     {"name":"inst_54960A06","path":"rooms/rm_stage_selection/rm_stage_selection.yy",},
+    {"name":"inst_45881B8D","path":"rooms/rm_stage_selection/rm_stage_selection.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -23,6 +24,7 @@
         {"$GMRInstance":"","%Name":"inst_53F3951F","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_53F3951F","objectId":{"name":"obj_select_right","path":"objects/obj_select_right/obj_select_right.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1088.0,"y":384.0,},
         {"$GMRInstance":"","%Name":"inst_38466AEB","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_38466AEB","objectId":{"name":"StageData","path":"objects/StageData/StageData.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1333.0,"y":825.0,},
         {"$GMRInstance":"","%Name":"inst_54960A06","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_54960A06","objectId":{"name":"StageArrowHandler","path":"objects/StageArrowHandler/StageArrowHandler.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":684.0,"y":374.0,},
+        {"$GMRInstance":"","%Name":"inst_45881B8D","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_45881B8D","objectId":{"name":"StageGuide","path":"objects/StageGuide/StageGuide.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":676.0,"y":10.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"Assets_2","assets":[
         {"$GMRSpriteGraphic":"","%Name":"graphic_2ADBF59F","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_2ADBF59F","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.34375,"scaleY":1.3902439,"spriteId":{"name":"spr_selection_menu_background","path":"sprites/spr_selection_menu_background/spr_selection_menu_background.yy",},"x":0.0,"y":0.0,},
