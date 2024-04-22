@@ -1,5 +1,6 @@
-if (global.currentState == MENUSTATE.GUIDE) {
-	draw_set_alpha(0.4);
-	draw_set_color(c_black)
-	draw_rectangle(0,0,room_width,room_height,false);
+if (global.currentState == MENUSTATE.GUIDE && StageStateHandler.stagePassed) {
+	if (!instance_exists(newRecipeArrow)) {
+		instance_create_layer(obj_btn_recipe.x,obj_btn_recipe.y + 45, "Instances", newRecipeArrow);
+	}
+	draw_text(obj_btn_recipe.x,obj_btn_recipe.y + 160, "New Recipes!");
 }

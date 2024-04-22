@@ -4,13 +4,14 @@
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"StageGuide",
   "overriddenProperties":[],
   "parent":{
-    "name":"Stages",
-    "path":"folders/Objects/Stages.yy",
+    "name":"StageSelectionProps",
+    "path":"folders/Objects/Stages/StageSelectionProps.yy",
   },
   "parentObjectId":null,
   "persistent":false,

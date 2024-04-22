@@ -106,12 +106,11 @@ function ResetGameForResetHomeMenu() {
 
 
 function checkStagePassed() {
-	StageStateHandler.stagePassed = true;
 	next = 1;
 	if (StageStateHandler.stageScore >= 7) { // Score more than 10 points
 		nextStage = (ds_list_find_value(StageData.stage_list,global.current_stage + next))
 		nextStage.stage_unlocked = true;
-		
+		StageStateHandler.stagePassed = true;
 		instance_create_layer(starEmpty1.x,starEmpty1.y,"PopUpMenu",starFill);
 		instance_create_layer(starEmpty2.x,starEmpty2.y,"PopUpMenu",starFill);
 		instance_create_layer(starEmpty3.x,starEmpty3.y,"PopUpMenu",starFill);

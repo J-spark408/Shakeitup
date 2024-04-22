@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"RateEnum",
   "parent":{
-    "name":"Dialog",
-    "path":"folders/Objects/Dialog.yy",
+    "name":"Customer",
+    "path":"folders/Objects/Customer.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

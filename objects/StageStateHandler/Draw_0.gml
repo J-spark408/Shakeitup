@@ -13,6 +13,13 @@ if (room == rm_game && StageState != GAMESTATE.StageOver) {
 	physics_particle_draw(flags, LIQUIDCOLOR.BITTER, spr_bitter_liquid, 0);
 	physics_particle_draw(flags, LIQUIDCOLOR.LIGHTGREEN, spr_light_green, 0);
 }
+
+if (room = rm_bar_selection) {
+	if (!instance_exists(ShowBottleNames)) {
+		instance_create_layer(x,y,"PopUpMenu",ShowBottleNames);	
+	}
+}
+
 if (StageState != GAMESTATE.Intro && StageState != GAMESTATE.ChoosingIngredients &&
 	StageState != GAMESTATE.StageOver && !instance_exists(CustomerList)) {
 	draw_set_halign(fa_center);

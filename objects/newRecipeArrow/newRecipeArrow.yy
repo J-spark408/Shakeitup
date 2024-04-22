@@ -1,19 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"IntroLady",
-  "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"newRecipeArrow",
+  "eventList":[],
   "managed":true,
-  "name":"IntroLady",
+  "name":"newRecipeArrow",
   "overriddenProperties":[],
   "parent":{
-    "name":"Dialog",
-    "path":"folders/Objects/Customer/Dialog.yy",
+    "name":"StageSelectionProps",
+    "path":"folders/Objects/Stages/StageSelectionProps.yy",
   },
   "parentObjectId":{
-    "name":"DialogHandler",
-    "path":"objects/DialogHandler/DialogHandler.yy",
+    "name":"objPopUpHandler",
+    "path":"objects/objPopUpHandler/objPopUpHandler.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -32,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_arrow",
+    "path":"sprites/spr_arrow/spr_arrow.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

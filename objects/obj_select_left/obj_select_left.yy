@@ -9,8 +9,8 @@
   "name":"obj_select_left",
   "overriddenProperties":[],
   "parent":{
-    "name":"Stages",
-    "path":"folders/Objects/Stages.yy",
+    "name":"StageSelectionProps",
+    "path":"folders/Objects/Stages/StageSelectionProps.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -6,7 +6,7 @@ var TabButtonOriginX = 50;
 	
 
 if (!instance_exists(StageTabDescriptionBox) && StageStateHandler.StageState != GAMESTATE.Intro) {
-	instance_create_layer(x + TabDescriptionOriginX,y + (TabDescriptionHeight/2),"Instances",StageTabDescriptionBox);
+	instance_create_layer(x + TabDescriptionOriginX + TabGap,y + (TabDescriptionHeight/2),"Instances",StageTabDescriptionBox);
 }
 	
 

@@ -99,8 +99,9 @@ if (StageState == GAMESTATE.ResetRound && !objectCheckCreate) {
 
 if ((StageState == GAMESTATE.StageOver && global.currentState == MENUSTATE.GAME)) {
 	DeleteAllForStageOver();
-	instance_create_layer(room_width/2,room_height/2,"PopUpMenu",GameOverMenuCreate);
-	//checkStagePassed();
+	if (!instance_exists(GameOverMenuCreate)) {
+		instance_create_layer(room_width/2,room_height/2,"PopUpMenu",GameOverMenuCreate);
+	}//checkStagePassed();
 }
 
 //if (!new_round) {

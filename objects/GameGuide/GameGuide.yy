@@ -1,20 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"IntroLady",
-  "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"GameGuide",
+  "eventList":[],
   "managed":true,
-  "name":"IntroLady",
+  "name":"GameGuide",
   "overriddenProperties":[],
   "parent":{
-    "name":"Dialog",
-    "path":"folders/Objects/Customer/Dialog.yy",
+    "name":"GameState",
+    "path":"folders/Objects/Stages/GameState.yy",
   },
-  "parentObjectId":{
-    "name":"DialogHandler",
-    "path":"objects/DialogHandler/DialogHandler.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

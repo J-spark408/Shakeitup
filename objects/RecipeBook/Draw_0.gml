@@ -24,5 +24,5 @@ if (current_page == 0 && instance_exists(PrevPageObj)) {
 } else if (current_page == ds_list_size(PageDetailList.RecipePage_list)-1 && instance_exists(NextPageObj)) {
 	instance_destroy(NextPageObj);	
 } else if (current_page < ds_list_size(PageDetailList.RecipePage_list)-1 && !instance_exists(NextPageObj)) {
-	instance_create_layer(room_width*3/4,room_height*7/8,"Instances",NextPageObj);	
+	instance_create_layer(room_width*2/3,room_height*7/8,"Instances",NextPageObj);	
 }

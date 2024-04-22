@@ -1,11 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"BarSyrup",
+  "%Name":"SimpleSyrup",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"BarSyrup",
+  "name":"SimpleSyrup",
   "overriddenProperties":[],
   "parent":{
     "name":"BottleObjs",

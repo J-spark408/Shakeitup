@@ -1,5 +1,5 @@
-t_min = 1;
-t_sec = 02;
+t_min = 0;
+t_sec = 45;
 t_mil = 5;
 
 alarm[0] = 6;

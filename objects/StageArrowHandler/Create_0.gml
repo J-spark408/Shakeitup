@@ -1,9 +1,9 @@
 global.current_stage = 0;
 
 left_arrow_visible = false;
-right_arrow_visible = true;
+right_arrow_visible = false;
 
-if (global.currentState == MENUSTATE.STAGE) {
+if (global.currentState == MENUSTATE.STAGE || global.currentState == MENUSTATE.GUIDE) {
 	stage_available = 0;
 	for (var i = 0; i < StageData.stage_size; i++) {
 		stage = ds_list_find_value(StageData.stage_list, i);

@@ -10,8 +10,8 @@
     {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"obj_button","path":"objects/obj_button/obj_button.yy",},"propertyId":{"name":"button_text","path":"objects/obj_button/obj_button.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"Select",},
   ],
   "parent":{
-    "name":"Stages",
-    "path":"folders/Objects/Stages.yy",
+    "name":"StageSelectionProps",
+    "path":"folders/Objects/Stages/StageSelectionProps.yy",
   },
   "parentObjectId":{
     "name":"obj_button",

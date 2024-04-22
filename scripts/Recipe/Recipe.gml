@@ -24,7 +24,7 @@ function oldFashionedRecipe(){
 	ingredients = ds_map_create();
 	ds_map_add(ingredients,LIQUOR.WHISKEY, 400);
 	ds_map_add(ingredients,LIQUOR.BITTER, 4);
-	ds_map_add(ingredients,LIQUOR.BARSYRUP, 60);
+	ds_map_add(ingredients,LIQUOR.SIMPLESYRUP, 60);
 	return new Recipe("Old Fashioned",ingredients,MixChoiceHandler.stirring,LIQUIDCOLOR.BROWN,RockGlass);
 }
 
@@ -32,7 +32,7 @@ function margaritaRecipe() {
 	ingredients = ds_map_create();
 	ds_map_add(ingredients,LIQUOR.TEQUILA, 400);
 	ds_map_add(ingredients,LIQUOR.ORANGELIQUEUR, 100);
-	ds_map_add(ingredients,LIQUOR.BARSYRUP, 100);
+	ds_map_add(ingredients,LIQUOR.SIMPLESYRUP, 100);
 	ds_map_add(ingredients,LIQUOR.LIMEJUICE, 150);
 	return new Recipe("Margarita",ingredients,MixChoiceHandler.shaking,LIQUIDCOLOR.YELLOW,RockGlass);
 }

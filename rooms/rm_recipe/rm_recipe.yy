@@ -7,7 +7,6 @@
   "inheritLayers":false,
   "instanceCreationOrder":[
     {"name":"inst_7631FF15","path":"rooms/rm_recipe/rm_recipe.yy",},
-    {"name":"inst_C2DE8F3","path":"rooms/rm_recipe/rm_recipe.yy",},
     {"name":"inst_C94E458","path":"rooms/rm_recipe/rm_recipe.yy",},
     {"name":"inst_3B1FF4EA","path":"rooms/rm_recipe/rm_recipe.yy",},
   ],
@@ -15,7 +14,6 @@
   "layers":[
     {"$GMRInstanceLayer":"","%Name":"Instances","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"","%Name":"inst_7631FF15","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7631FF15","objectId":{"name":"RecipeBook","path":"objects/RecipeBook/RecipeBook.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.593913,"scaleY":0.512,"x":0.0,"y":0.0,},
-        {"$GMRInstance":"","%Name":"inst_C2DE8F3","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_C2DE8F3","objectId":{"name":"NextPageObj","path":"objects/NextPageObj/NextPageObj.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":896.0,"y":672.0,},
         {"$GMRInstance":"","%Name":"inst_C94E458","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_C94E458","objectId":{"name":"PageDetailList","path":"objects/PageDetailList/PageDetailList.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1376.0,"y":0.0,},
         {"$GMRInstance":"","%Name":"inst_3B1FF4EA","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3B1FF4EA","objectId":{"name":"obj_back_button","path":"objects/obj_back_button/obj_back_button.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.47054547,"scaleY":0.4424243,"x":0.0,"y":0.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
