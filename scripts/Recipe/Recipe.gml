@@ -36,3 +36,27 @@ function margaritaRecipe() {
 	ds_map_add(ingredients,LIQUOR.LIMEJUICE, 150);
 	return new Recipe("Margarita",ingredients,MixChoiceHandler.shaking,LIQUIDCOLOR.YELLOW,RockGlass);
 }
+
+function whiskeySourRecipe(){
+	ingredients = ds_map_create();
+	ds_map_add(ingredients,LIQUOR.WHISKEY, 400);
+	//ds_map_add(ingredients,LIQUOR.LEMONJUICE, 150);
+	ds_map_add(ingredients,LIQUOR.SIMPLESYRUP, 150);
+	return new Recipe("Whiskey Sour",ingredients,MixChoiceHandler.shaking,LIQUIDCOLOR.CLEAR,RockGlass);
+}
+
+function moscowMuleRecipe(){
+	ingredients = ds_map_create();
+	ds_map_add(ingredients,LIQUOR.VODKA, 400);
+	ds_map_add(ingredients,LIQUOR.LIMEJUICE, 100);
+	//ds_map_add(ingredients,LIQUOR.GINGERBEER, 600);
+	return new Recipe("Moscow Mule",ingredients,MixChoiceHandler.shaking,LIQUIDCOLOR.BROWN,RockGlass);
+}
+
+function gimletRecipe() {
+	ingredients = ds_map_create();
+	ds_map_add(ingredients,LIQUOR.GIN, 400);
+	ds_map_add(ingredients,LIQUOR.SIMPLESYRUP, 150);
+	ds_map_add(ingredients,LIQUOR.LIMEJUICE, 150);
+	return new Recipe("Gimlet",ingredients,MixChoiceHandler.shaking,LIQUIDCOLOR.YELLOW,RockGlass);
+}

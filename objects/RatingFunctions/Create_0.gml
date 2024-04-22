@@ -1,3 +1,4 @@
+numOfRates = 0;
 messageState = noone;
 correctMix = false;
 wrongLiquidPoured = false;
@@ -10,7 +11,7 @@ function getRateState() {
 	} else {
 		correctMix = false;
 	}
-	for (var numOfRates = 1; numOfRates < ds_list_size(RecipeChecker.getRating); numOfRates++) {
+	for (numOfRates = 1; numOfRates < ds_list_size(RecipeChecker.getRating); numOfRates++) {
 		show_debug_message("How many rating")
 		show_debug_message(ds_list_size(RecipeChecker.getRating));
 		show_debug_message(ds_list_find_value(RecipeChecker.getRating,numOfRates))

@@ -1,8 +1,13 @@
-recipe_list = ds_list_create()
-ds_list_add(recipe_list,martiniRecipe());
-ds_list_add(recipe_list,oldFashionedRecipe());
-ds_list_add(recipe_list,margaritaRecipe());
-
+recipe_list = ds_list_create();
+if (global.current_stage == 0) {
+	ds_list_add(recipe_list,martiniRecipe());
+	ds_list_add(recipe_list,oldFashionedRecipe());
+	ds_list_add(recipe_list,margaritaRecipe());
+} else if (global.current_stage == 1) {
+	ds_list_add(recipe_list,whiskeySourRecipe());
+	ds_list_add(recipe_list,moscowMuleRecipe());
+	ds_list_add(recipe_list,gimletRecipe());
+}
 conditionMessage = "";
 getMixedRating = false;
 
