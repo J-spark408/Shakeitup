@@ -1,3 +1,6 @@
 When a drink is added:
 Add into RecipeBook/PageDetailList, Stages/StageData,
 Liquids/LiquidEnum&LiquidTracker&Recipe, Bottles/BottleHandler-Create
+
+After playing 1 game and completing a stage, go home, and play again when round over nothing appears.
+Stars showing on next stage

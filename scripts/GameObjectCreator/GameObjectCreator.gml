@@ -57,7 +57,7 @@ function DeleteObjsStateShowCasing() {
 	if (StageStateHandler.StageState == GAMESTATE.ResetRound || StageStateHandler.StageState == GAMESTATE.StageOver) {
 		for (var numOfRecipe = 0; numOfRecipe < ds_list_size(RecipeChecker.recipe_list); numOfRecipe++) {
 			currentRecipe = ds_list_find_value(RecipeChecker.recipe_list, numOfRecipe);
-			if (currentDrink.RecipeName = currentRecipe.RecipeName && instance_exists(currentRecipe.GlassType)) {
+			if (drinkToMake = currentRecipe.RecipeName && instance_exists(currentRecipe.GlassType)) {
 				instance_destroy(currentRecipe.GlassType);
 			}
 		}
@@ -106,19 +106,24 @@ function CreateShakeOrStirOption() {
 
 function CreateShakerMode(){
 	//physics_particle_delete_region_box(0,0,room_width,room_height);
-	instance_create_layer(640, 288,"Instances",obj_shaker_full);
-	instance_create_layer(22+352, 156+224,"Instances",obj_hitpoint);
-	instance_create_layer(352, 224,"Instances",obj_hitpoint_bar);
+	show_debug_message("Create")
+	if (!instance_exists(obj_shaker_full)) {
+		instance_create_layer(640, 288,"Instances",obj_shaker_full);
+		instance_create_layer(22+352, 156+224,"Instances",obj_hitpoint);
+		instance_create_layer(352, 224,"Instances",obj_hitpoint_bar);
 	//instance_create_layer(room_width-50, y+50, "Instances", obj_percentage);
+	}
 	DeleteObjsStateAddIngredients();
 	StageStateHandler.objectCheckCreate = true;
 }
 
 function CreateStirringMode() {
 	//physics_particle_delete_region_box(0,0,room_width,room_height);
-	instance_create_layer(640, 416,"Instances",obj_shaker_bot_filled);
-	instance_create_layer(726, 301,"Instances",obj_bar_spoon);
-	instance_create_layer(705, 297,"Instances",obj_stir_point);
+	if (!instance_exists(obj_shaker_bot_filled)) {
+		instance_create_layer(640, 416,"Instances",obj_shaker_bot_filled);
+		instance_create_layer(726, 301,"Instances",obj_bar_spoon);
+		instance_create_layer(705, 297,"Instances",obj_stir_point);
+	}
 	DeleteObjsStateAddIngredients();
 	StageStateHandler.objectCheckCreate = true;
 }
@@ -131,16 +136,16 @@ function CreateShowCasingObjects() {
 		DeleteObjsStateStirring();
 	}
 	DeleteTabDisplayed();
-	//if (currentDrink.RecipeName == "Martini" && !instance_exists(MartiniGlass)) {
+	//if (currentDrink == "Martini" && !instance_exists(MartiniGlass)) {
 	//	instance_create_layer(320,352,"Instances",MartiniGlass);
 	//}
-	//if (currentDrink.RecipeName == "Old Fashioned" && !instance_exists(RockGlass)) {
+	//if (currentDrink == "Old Fashioned" && !instance_exists(RockGlass)) {
 	//	instance_create_layer(370,352,"Instances",RockGlass);
 	//}
 	for (var numOfRecipe = 0; numOfRecipe < ds_list_size(RecipeChecker.recipe_list); numOfRecipe++) {
 		currentRecipe = ds_list_find_value(RecipeChecker.recipe_list, numOfRecipe);
-		if (currentDrink.RecipeName = currentRecipe.RecipeName && !instance_exists(currentRecipe.GlassType)) {
-			if (currentDrink.RecipeName == "Martini") {
+		if (drinkToMake = currentRecipe.RecipeName && !instance_exists(currentRecipe.GlassType)) {
+			if (currentDrink.GlassType == MartiniGlass) {
 				instance_create_layer(325,352,"Instances",currentRecipe.GlassType);
 			} else {
 				instance_create_layer(355,502,"Instances",currentRecipe.GlassType);

@@ -4,3 +4,8 @@ if (global.currentState == MENUSTATE.GUIDE && StageStateHandler.stagePassed) {
 	}
 	draw_text(obj_btn_recipe.x,obj_btn_recipe.y + 160, "New Recipes!");
 }
+
+//if (!global.createBeginnerGuide) {
+//	instance_create_layer(room_width/2,room_height/2,"PopUpMenu",GameGuideBox);
+//	global.createBeginnerGuide = true;
+//}

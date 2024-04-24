@@ -6,7 +6,9 @@ function HoldSpaceToMix() { // AddingIngredients State
 			timer += delta_time/1000000;
 		} else {
 			// Create text one at a time, give time to be deleted.
-			instance_create_layer(BottleHandler.bottleObj.x,BottleHandler.bottleObj.y,"Instances",placeBottleText);
+			if (!instance_exists(placeBottleText)) {
+				instance_create_layer(BottleHandler.bottleObj.x,BottleHandler.bottleObj.y,"Instances",placeBottleText);
+			}
 		}
 	} else {
 		timer = 0;

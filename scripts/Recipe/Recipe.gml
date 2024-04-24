@@ -58,5 +58,5 @@ function gimletRecipe() {
 	ds_map_add(ingredients,LIQUOR.GIN, 400);
 	ds_map_add(ingredients,LIQUOR.SIMPLESYRUP, 150);
 	ds_map_add(ingredients,LIQUOR.LIMEJUICE, 150);
-	return new Recipe("Gimlet",ingredients,MixChoiceHandler.shaking,LIQUIDCOLOR.YELLOW,RockGlass);
+	return new Recipe("Gimlet",ingredients,MixChoiceHandler.shaking,LIQUIDCOLOR.YELLOW,MartiniGlass);
 }

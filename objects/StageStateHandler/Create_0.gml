@@ -20,6 +20,7 @@ timer = 0;
 // Stage Score as set as tips for points
 currentCustomer = noone;
 currentDrink = noone;
+drinkToMake = "";
 stageScore = 0;
 
 // Get current options for game round

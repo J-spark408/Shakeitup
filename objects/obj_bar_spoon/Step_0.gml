@@ -2,7 +2,7 @@ if (StageStateHandler.StageState == GAMESTATE.Stirring) {
 	if (instance_exists(obj_bar_spoon)) {
 		timer += delta_time/1000000;	
 	}
-	if (timed_stir >= 0 && timer >= 3) {
+	if (timed_stir > 0 && timer >= 3) {
 		timed_stir -= lose_stir;
 		show_debug_message(lose_stir);
 		timer = 0;

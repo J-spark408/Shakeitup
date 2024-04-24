@@ -72,10 +72,9 @@ function ResetVariables() {
 	LiquidTracker.prevValue = 0;
 	LiquidTracker.isPoured = false;
 	if (instance_exists(RatingFunctions)) {
-		RatingFunctions.correctMix = false;
 		RatingFunctions.messageState = noone;
-		RatingFunctions.rateScore = 10000;
-		RatingFunctions.wrongLiquidPoured = false;
+		RatingFunctions.errorState = noone;
+		RatingFunctions.getScore = 0;
 	}
 }
 
@@ -107,17 +106,27 @@ function ResetGameForResetHomeMenu() {
 
 function checkStagePassed() {
 	next = 1;
+	currentStage = ds_list_find_value(StageData.stage_list,global.current_stage);
 	if (StageStateHandler.stageScore >= 7) { // Score more than 10 points
-		nextStage = (ds_list_find_value(StageData.stage_list,global.current_stage + next))
-		nextStage.stage_unlocked = true;
-		StageStateHandler.stagePassed = true;
+		nextStage = ds_list_find_value(StageData.stage_list,global.current_stage + next);
+		if (nextStage.stage_unlocked == false) {
+			nextStage.stage_unlocked = true;
+			nextStage.stage_completion = 3;
+			StageStateHandler.stagePassed = true;
+		}
 		instance_create_layer(starEmpty1.x,starEmpty1.y,"PopUpMenu",starFill);
 		instance_create_layer(starEmpty2.x,starEmpty2.y,"PopUpMenu",starFill);
 		instance_create_layer(starEmpty3.x,starEmpty3.y,"PopUpMenu",starFill);
 	} else if (StageStateHandler.stageScore >= 5 && StageStateHandler.stageScore < 7) { // Score range 5-9
+		if (currentStage.stage_completion < 3) {
+			currentStage.stage_completion = 2;
+		}
 		instance_create_layer(starEmpty1.x,starEmpty1.y,"PopUpMenu",starFill);
 		instance_create_layer(starEmpty2.x,starEmpty2.y,"PopUpMenu",starFill);
 	} else if (StageStateHandler.stageScore >= 1 && StageStateHandler.stageScore < 5) { // Score range 1-4
+		if (currentStage.stage_completion < 2) {
+			currentStage.stage_completion = 1;
+		}
 		instance_create_layer(starEmpty1.x,starEmpty1.y,"PopUpMenu",starFill);	
 	}
 }

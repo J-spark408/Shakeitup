@@ -8,8 +8,8 @@
   "name":"obj_title_text",
   "overriddenProperties":[],
   "parent":{
-    "name":"Buttons",
-    "path":"folders/Objects/Buttons.yy",
+    "name":"MainMenu",
+    "path":"folders/Objects/MainMenu.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -31,10 +31,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_title_text",
-    "path":"sprites/spr_title_text/spr_title_text.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

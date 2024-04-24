@@ -26,7 +26,7 @@ if (StageStateHandler.StageState == GAMESTATE.ChoiceOption && !tabsCreated) {
 	tabsCreated = true;
 }
 
-if (StageStateHandler.StageState == GAMESTATE.Shaking || StageStateHandler.StageState == GAMESTATE.Stirring && !tabsCreated) {
+if ((StageStateHandler.StageState == GAMESTATE.Shaking || StageStateHandler.StageState == GAMESTATE.Stirring) && !tabsCreated) {
 	var numOfTabs = 2;
 	for (var tabIndex = 0; tabIndex < numOfTabs; tabIndex++) {
 		instance_create_layer(StageTabDescriptionBox.x + TabDescriptionOriginX*(tabIndex+1) + TabButtonOriginX + TabGap*(tabIndex+1), y + (TabButtonHeight/2),"Instances",ds_list_find_value(tabList,tabIndex));

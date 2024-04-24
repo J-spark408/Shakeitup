@@ -6,8 +6,8 @@
   "name":"NextPageObj",
   "overriddenProperties":[],
   "parent":{
-    "name":"RecipeBook",
-    "path":"folders/Objects/RecipeBook.yy",
+    "name":"RecipePageProps",
+    "path":"folders/Objects/RecipeBook/RecipePageProps.yy",
   },
   "parentObjectId":null,
   "persistent":false,
