@@ -10,7 +10,8 @@ if (StageState == GAMESTATE.Intro && global.currentState == MENUSTATE.GAME) {
 	if (!gameStart) {
 		stageScore = 0;	
 		CreateStageBackground();
-		if (!instance_exists(obj_shaker_bot)) {
+		if (!instance_exists(obj_jigger_2oz)) {
+			show_debug_message("create")
 			CreateJigAndShaker();
 		}
 		instance_create_layer(0,0,"Instances",IntroLady);

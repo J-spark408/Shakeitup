@@ -28,9 +28,10 @@ if (StageStateHandler.StageState == GAMESTATE.AddingIngredients && global.curren
 			fully_tilted = false;
 		}
 	}
+	
+	if (global.currentBottle != noone) {
+		phy_position_x = position_to_x;
+		phy_position_y = position_to_y;
+	} 
 }
 
-if (global.currentBottle != noone) {
-	phy_position_x = position_to_x;
-	phy_position_y = position_to_y;
-}

@@ -9,21 +9,21 @@ function CreateJigAndShaker() {
 }
 
 function DeleteTabDisplayed() {
-	instance_destroy(StageTabButtonBox1);
-	instance_destroy(StageTabButtonBox2);
-	instance_destroy(StageTabButtonBox3);
-	StageDisplayTab.tabsCreated = false;
+	if (room = rm_game) {
+		instance_destroy(StageTabButtonBox1);
+		instance_destroy(StageTabButtonBox2);
+		instance_destroy(StageTabButtonBox3);
+		StageDisplayTab.tabsCreated = false;
+	}
 }
 
 function DeleteObjsStateAddIngredients() {
 	if (instance_exists(BottleHandler.bottleObj)) {
 		instance_destroy(BottleHandler.bottleObj);
 	}
-	if (instance_exists(obj_jigger_2oz)) {
-		instance_destroy(obj_jigger_2oz);
-	} else {
-		instance_destroy(obj_jigger_1oz);	
-	}
+	instance_destroy(obj_jigger_2oz);
+	instance_destroy(obj_jigger_1oz);	
+	
 	instance_destroy(IceBucket);
 	instance_destroy(IceScoop);
 	instance_destroy(Ice);
@@ -89,10 +89,10 @@ function DeleteAllForStageOver() {
 
 function ResetRoundMode() {
 	physics_particle_delete_region_box(0,0,room_width,room_height);
-	instance_create_layer(508,544,"Instances",obj_jigger_2oz);
-	instance_create_layer(540,416,"Instances",obj_shaker_bot);
+	//instance_create_layer(508,544,"Instances",obj_jigger_2oz);
+	//instance_create_layer(540,416,"Instances",obj_shaker_bot);
 	// if physics particle exists draw interact
-	instance_create_layer(1056,672,"Instances",obj_interact_shakeit);
+	//instance_create_layer(1056,672,"Instances",obj_interact_shakeit);
 	StageStateHandler.StageState = GAMESTATE.AddingIngredients;
 }
 
@@ -106,7 +106,6 @@ function CreateShakeOrStirOption() {
 
 function CreateShakerMode(){
 	//physics_particle_delete_region_box(0,0,room_width,room_height);
-	show_debug_message("Create")
 	if (!instance_exists(obj_shaker_full)) {
 		instance_create_layer(640, 288,"Instances",obj_shaker_full);
 		instance_create_layer(22+352, 156+224,"Instances",obj_hitpoint);

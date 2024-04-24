@@ -4,7 +4,7 @@ if (global.currentState == MENUSTATE.STAGE || global.currentState == MENUSTATE.G
 		draw_sprite(spr_select_backboard, 0, room_width/2, room_height/2);
 		if (stage.stage_unlocked) {
 			draw_sprite(stage.stage_sprite, 0, room_width/2, room_height/2)		
-			if (stage.stage_level != stage_available) {
+			if (stage.stage_level != StageData.stage_size) {
 				createStarCompletion();
 			}
 		} else {

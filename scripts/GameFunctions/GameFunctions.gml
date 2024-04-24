@@ -56,12 +56,12 @@ function ResetPreviousPour() {
 // After making a drink, reset drink variables to default
 function ResetVariables() {
 	randomize();
-	objectCheckCreate = false;
+	StageStateHandler.objectCheckCreate = false;
 	global.currentBottle = noone;
 	BottleHandler.bottleObj = noone;
-	waitTimer = 0;
-	timer = 0;
-	timerStart = false;
+	StageStateHandler.waitTimer = 0;
+	StageStateHandler.timer = 0;
+	StageStateHandler.timerStart = false;
 
 	BottleHandler.checkedBottle = false;
 	BottleHandler.bottle_selected = noone;
@@ -107,13 +107,13 @@ function ResetGameForResetHomeMenu() {
 function checkStagePassed() {
 	next = 1;
 	currentStage = ds_list_find_value(StageData.stage_list,global.current_stage);
+	nextStage = ds_list_find_value(StageData.stage_list,global.current_stage + next);
 	if (StageStateHandler.stageScore >= 7) { // Score more than 10 points
-		nextStage = ds_list_find_value(StageData.stage_list,global.current_stage + next);
 		if (nextStage.stage_unlocked == false) {
 			nextStage.stage_unlocked = true;
-			nextStage.stage_completion = 3;
 			StageStateHandler.stagePassed = true;
 		}
+		currentStage.stage_completion = 3;
 		instance_create_layer(starEmpty1.x,starEmpty1.y,"PopUpMenu",starFill);
 		instance_create_layer(starEmpty2.x,starEmpty2.y,"PopUpMenu",starFill);
 		instance_create_layer(starEmpty3.x,starEmpty3.y,"PopUpMenu",starFill);
