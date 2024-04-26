@@ -1,4 +1,4 @@
-if (!obj_hitpoint_bar.shaking_done && StageStateHandler.StageState != GAMESTATE.Pause && StageStateHandler.StageState != GAMESTATE.CheckingRecipe) {
+if (!obj_hitpoint_bar.shaking_done && StageStateHandler.StageState != GAMESTATE.Pause) {
 	y += vertical_speed * dir;
 }
 

@@ -22,14 +22,15 @@ if (room = rm_bar_selection) {
 
 if (StageState != GAMESTATE.Intro && StageState != GAMESTATE.ChoosingIngredients 
 && StageState != GAMESTATE.Pause && StageState != GAMESTATE.StageOver && !instance_exists(CustomerList)) {
-	draw_set_halign(fa_center);
-	draw_set_valign(fa_middle);
-	draw_text(StageTabDescriptionBox.x,StageTabDescriptionBox.y, string(drinkToMake));
 	if (instance_exists(StageTabDescriptionBox)) {
 		draw_set_halign(fa_right);
 		draw_set_valign(fa_top);
 		draw_text(StageTabDescriptionBox.x,StageTabDescriptionBox.y + 75/2, "Tips $" + string(stageScore));
 	}
+		draw_set_halign(fa_center);
+	draw_set_valign(fa_middle);
+	draw_set_color(c_maroon);
+	draw_text(StageTabDescriptionBox.x,StageTabDescriptionBox.y, string(drinkToMake));
 }
 
 
