@@ -9,8 +9,10 @@ if (room == rm_game) {
 if (StageState == GAMESTATE.Intro && global.currentState == MENUSTATE.GAME) {
 	if (!gameStart) {
 		stageScore = 0;	
+		physics_particle_delete_region_box(0,0,room_width,room_height);
 		CreateStageBackground();
-		if (!instance_exists(obj_jigger_2oz)) {
+		CheckResetClickedFromBarMenu();
+		if (!instance_exists(obj_shaker_bot)) {
 			show_debug_message("create")
 			CreateJigAndShaker();
 		}
@@ -49,7 +51,9 @@ if (StageState == GAMESTATE.AddingIngredients && !instance_exists(CustomerList))
 	//	instance_create_layer(132,520,"Instances",IceBucket);	
 	//	instance_create_layer(1298,585,"Instances",TrashBin);
 	//}
-
+	if (!instance_exists(obj_interact_shakeit)) {
+		instance_create_layer(1056,672,"Instances",obj_interact_shakeit);
+	} 
 	GoToBarSelection();
 	HoldSpaceToMix(); 
 }

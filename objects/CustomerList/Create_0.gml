@@ -32,6 +32,10 @@ function introDialog() {
 	StageStateHandler.currentCustomer = getDialog;
 	numOfDialogs = ds_list_size(StageStateHandler.currentCustomer.introCustomerMessage);
 	StageStateHandler.currentCustomer.drawDialogBoxForIntro();
+	show_debug_message("Drink to make")
+	show_debug_message(StageStateHandler.drinkToMake)
+	show_debug_message("Current drink")
+	show_debug_message(StageStateHandler.currentDrink)
 }
 
 function satisfactionDialog() {

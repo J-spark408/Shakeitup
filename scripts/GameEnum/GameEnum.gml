@@ -2,6 +2,7 @@
 enum GAMESTATE {
 	Intro,
 	AddingIngredients,
+	CheckingRecipe,
 	ChoosingIngredients,
 	ChoiceOption,
 	Shaking,

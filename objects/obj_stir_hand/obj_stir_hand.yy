@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"Sprite49",
-    "path":"sprites/Sprite49/Sprite49.yy",
+    "name":"spr_stir_hand",
+    "path":"sprites/spr_stir_hand/spr_stir_hand.yy",
   },
   "spriteMaskId":null,
   "visible":true,

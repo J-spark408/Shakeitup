@@ -3,6 +3,7 @@
   "%Name":"obj_btn_control",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":10,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_btn_control",
@@ -10,8 +11,8 @@
     {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"obj_button","path":"objects/obj_button/obj_button.yy",},"propertyId":{"name":"button_text","path":"objects/obj_button/obj_button.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"Controls",},
   ],
   "parent":{
-    "name":"ControlMenu",
-    "path":"folders/Objects/Stages/ControlMenu.yy",
+    "name":"GuideBox",
+    "path":"folders/Objects/Stages/GuideBox.yy",
   },
   "parentObjectId":{
     "name":"obj_button",

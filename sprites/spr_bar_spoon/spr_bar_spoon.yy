@@ -44,8 +44,8 @@
   },
   "origin":9,
   "parent":{
-    "name":"Sprites",
-    "path":"folders/Sprites.yy",
+    "name":"spr_mix_option",
+    "path":"folders/Sprites/spr_mix_option.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

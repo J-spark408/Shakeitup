@@ -10,7 +10,7 @@ RecipeChecker.listCreated = false;
 ResetGameForResetHomeMenu();
 
 if (StageStateHandler.stagePassed) {
-	global.currentState = MENUSTATE.GUIDE;
+	global.currentState = MENUSTATE.RECIPE;
 }
 
 room_goto(rm_stage_selection);

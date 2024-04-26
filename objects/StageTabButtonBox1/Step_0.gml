@@ -3,17 +3,13 @@ if (position_meeting(mouse_x, mouse_y,StageTabButtonBox1) && StageStateHandler.S
 		image_speed = 5;	
 	} else {
 		image_speed = 0;
-		if (StageStateHandler.StageState == GAMESTATE.AddingIngredients && !instance_exists(IceBucket)) {
-			instance_create_layer(x,y,"PopUpMenu",IceBucket);		
-		}
-		if (StageStateHandler.StageState == GAMESTATE.Shaking || StageStateHandler.StageState == GAMESTATE.Stirring) {
-			if (!instance_exists(MixOptionBtn)) {
-				instance_create_layer(x,y,"PopUpMenu",MixOptionBtn);	
-			}
+		if ((StageStateHandler.StageState == GAMESTATE.AddingIngredients || StageStateHandler.StageState == GAMESTATE.CheckingRecipe 
+		|| StageStateHandler.StageState == GAMESTATE.ChoiceOption || StageStateHandler.StageState == GAMESTATE.Shaking 
+		|| StageStateHandler.StageState == GAMESTATE.Stirring) && !instance_exists(CheatBook)) {
+			instance_create_layer(x,y,"PopUpMenu",CheatBook);		
 		}
 	}
 } else {
 	image_index = 0;	
-	instance_destroy(IceBucket);
-	instance_destroy(MixOptionBtn);
+	instance_destroy(CheatBook);
 }

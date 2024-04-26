@@ -25,6 +25,14 @@ function CreateStageBackground() {
 	}	
 }
 
+function CheckResetClickedFromBarMenu() {
+	if (instance_exists(obj_jigger_1oz)) {
+		DeleteObjsStateAddIngredients();
+	} else if (instance_exists(obj_jigger_2oz)) {
+		DeleteObjsStateAddIngredients();
+	}
+}
+
 // Updates the particle count into map everytime pour has been made into the shaker
 function GetLiquidCounts(){
 	if (physics_particle_count() > 0 && BottleHandler.bottle_selected != noone && LiquidTracker.isPoured) {
@@ -114,19 +122,24 @@ function checkStagePassed() {
 			StageStateHandler.stagePassed = true;
 		}
 		currentStage.stage_completion = 3;
+		StageStateHandler.completionMessage = "Fantastic! You made $" + string(StageStateHandler.stageScore);
 		instance_create_layer(starEmpty1.x,starEmpty1.y,"PopUpMenu",starFill);
 		instance_create_layer(starEmpty2.x,starEmpty2.y,"PopUpMenu",starFill);
 		instance_create_layer(starEmpty3.x,starEmpty3.y,"PopUpMenu",starFill);
 	} else if (StageStateHandler.stageScore >= 5 && StageStateHandler.stageScore < 7) { // Score range 5-9
 		if (currentStage.stage_completion < 3) {
 			currentStage.stage_completion = 2;
+			StageStateHandler.completionMessage = "Goob Job, You made $" + string(StageStateHandler.stageScore);
 		}
 		instance_create_layer(starEmpty1.x,starEmpty1.y,"PopUpMenu",starFill);
 		instance_create_layer(starEmpty2.x,starEmpty2.y,"PopUpMenu",starFill);
 	} else if (StageStateHandler.stageScore >= 1 && StageStateHandler.stageScore < 5) { // Score range 1-4
 		if (currentStage.stage_completion < 2) {
 			currentStage.stage_completion = 1;
+			StageStateHandler.completionMessage = "Nice try, You made $" + string(StageStateHandler.stageScore);
 		}
 		instance_create_layer(starEmpty1.x,starEmpty1.y,"PopUpMenu",starFill);	
+	} else {
+		StageStateHandler.completionMessage = "Try again, You made $" + string(StageStateHandler.stageScore);	
 	}
 }

@@ -1,4 +1,4 @@
-if (global.currentState == MENUSTATE.STAGE || global.currentState == MENUSTATE.GUIDE) {
+if (global.currentState == MENUSTATE.STAGE || global.currentState == MENUSTATE.RECIPE) {
 	if (0 < stage_available) {
 		stage = ds_list_find_value(StageData.stage_list,global.current_stage);
 		draw_sprite(spr_select_backboard, 0, room_width/2, room_height/2);

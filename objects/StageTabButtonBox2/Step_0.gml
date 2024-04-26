@@ -4,12 +4,18 @@ if (position_meeting(mouse_x, mouse_y,StageTabButtonBox2) && StageStateHandler.S
 		
 	} else {
 		image_speed = 0;
-		if (StageStateHandler.StageState == GAMESTATE.AddingIngredients && !instance_exists(TrashBin)) {
-			instance_create_layer(x,y,"PopUpMenu",TrashBin);
+		if (StageStateHandler.StageState == GAMESTATE.AddingIngredients && !instance_exists(IceBucket)) {
+			instance_create_layer(x,y,"PopUpMenu",IceBucket);		
+		}
+		if (StageStateHandler.StageState == GAMESTATE.Shaking || StageStateHandler.StageState == GAMESTATE.Stirring) {
+			if (!instance_exists(MixOptionBtn)) {
+				instance_create_layer(x,y,"PopUpMenu",MixOptionBtn);	
+			}
 		}
 	}
 } else {
 	image_index = 0;	
-	instance_destroy(TrashBin);
+	instance_destroy(IceBucket);
+	instance_destroy(MixOptionBtn);
 }
 

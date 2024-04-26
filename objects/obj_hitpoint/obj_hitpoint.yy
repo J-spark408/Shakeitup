@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_hitpoint",
-    "path":"sprites/spr_hitpoint/spr_hitpoint.yy",
+    "name":"spr_hitpoint116",
+    "path":"sprites/spr_hitpoint116/spr_hitpoint116.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -11,7 +11,7 @@ if (!instance_exists(StageTabDescriptionBox) && StageStateHandler.StageState == 
 	
 
 if (StageStateHandler.StageState == GAMESTATE.AddingIngredients && !tabsCreated) {
-	var numOfTabs = 2;
+	var numOfTabs = 3;
 	for (var tabIndex = 0; tabIndex < numOfTabs; tabIndex++) {
 		instance_create_layer(StageTabDescriptionBox.x + TabDescriptionOriginX*(tabIndex+1) + TabButtonOriginX + TabGap*(tabIndex+1), y + (TabButtonHeight/2),"Instances",ds_list_find_value(tabList,tabIndex));
 	}

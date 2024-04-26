@@ -1,4 +1,4 @@
-RecipePage_list = ds_list_create()
+RecipePage_list = ds_list_create();
 
 for (var stageIndex = 0; stageIndex < StageData.stage_size; stageIndex++) {
 	getStage = ds_list_find_value(StageData.stage_list, stageIndex);
@@ -30,4 +30,3 @@ for (var stageIndex = 0; stageIndex < StageData.stage_size; stageIndex++) {
 		}
 	}
 }
-

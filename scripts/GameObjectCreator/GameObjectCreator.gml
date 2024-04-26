@@ -4,8 +4,6 @@
 function CreateJigAndShaker() {
 	instance_create_layer(508,544,"Instances",obj_jigger_2oz);
 	instance_create_layer(540,416,"Instances",obj_shaker_bot);
-	// if physics particle exists draw interact
-	instance_create_layer(1056,672,"Instances",obj_interact_shakeit);
 }
 
 function DeleteTabDisplayed() {
@@ -54,14 +52,15 @@ function DeleteObjsStateShowCasing() {
 	instance_destroy(obj_shaker_full_no_cap);
 	instance_destroy(obj_shaker_cap);
 	instance_destroy(MixOptionBtn);
-	if (StageStateHandler.StageState == GAMESTATE.ResetRound || StageStateHandler.StageState == GAMESTATE.StageOver) {
-		for (var numOfRecipe = 0; numOfRecipe < ds_list_size(RecipeChecker.recipe_list); numOfRecipe++) {
-			currentRecipe = ds_list_find_value(RecipeChecker.recipe_list, numOfRecipe);
-			if (drinkToMake = currentRecipe.RecipeName && instance_exists(currentRecipe.GlassType)) {
-				instance_destroy(currentRecipe.GlassType);
-			}
-		}
-	}
+	instance_destroy(StageStateHandler.currentDrink.GlassType);
+	//if (StageStateHandler.StageState == GAMESTATE.ResetRound || StageStateHandler.StageState == GAMESTATE.StageOver) {
+	//	for (var numOfRecipe = 0; numOfRecipe < ds_list_size(RecipeChecker.recipe_list); numOfRecipe++) {
+	//		currentRecipe = ds_list_find_value(RecipeChecker.recipe_list, numOfRecipe);
+	//		if (drinkToMake = currentRecipe.RecipeName && instance_exists(currentRecipe.GlassType)) {
+	//			instance_destroy(currentRecipe.GlassType);
+	//		}
+	//	}
+	//}
 }
 
 function DeleteProps() {
@@ -72,6 +71,8 @@ function DeleteProps() {
 	instance_destroy(TrashBin);
 	instance_destroy(IceScoop);
 	instance_destroy(MixOptionBtn);
+	instance_destroy(CheatBook);
+	instance_destroy(CheatSheet);
 }
 
 function DeleteAllForStageOver() {
@@ -89,10 +90,10 @@ function DeleteAllForStageOver() {
 
 function ResetRoundMode() {
 	physics_particle_delete_region_box(0,0,room_width,room_height);
-	//instance_create_layer(508,544,"Instances",obj_jigger_2oz);
-	//instance_create_layer(540,416,"Instances",obj_shaker_bot);
+	instance_create_layer(508,544,"Instances",obj_jigger_2oz);
+	instance_create_layer(540,416,"Instances",obj_shaker_bot);
 	// if physics particle exists draw interact
-	//instance_create_layer(1056,672,"Instances",obj_interact_shakeit);
+	instance_create_layer(1056,672,"Instances",obj_interact_shakeit);
 	StageStateHandler.StageState = GAMESTATE.AddingIngredients;
 }
 
@@ -100,16 +101,16 @@ function CreateShakeOrStirOption() {
 	DeleteObjsStateAddIngredients();
 	physics_particle_delete_region_box(0,0,room_width,room_height);
 	StageState = GAMESTATE.ChoiceOption;
-	instance_create_layer(288, 234,"Instances",ShakeBtn);
-	instance_create_layer(758, 234,"Instances",StirBtn);
+	instance_create_layer(room_width*1/3, room_height/2,"Instances",ShakeBtn);
+	instance_create_layer(room_width*2/3, room_height/2,"Instances",StirBtn);
 }
 
 function CreateShakerMode(){
 	//physics_particle_delete_region_box(0,0,room_width,room_height);
 	if (!instance_exists(obj_shaker_full)) {
 		instance_create_layer(640, 288,"Instances",obj_shaker_full);
-		instance_create_layer(22+352, 156+224,"Instances",obj_hitpoint);
-		instance_create_layer(352, 224,"Instances",obj_hitpoint_bar);
+		instance_create_layer(room_width*1/4, room_height/2,"Instances",obj_hitpoint_bar);
+		instance_create_layer(obj_hitpoint_bar.x,obj_hitpoint_bar.y,"Instances",obj_hitpoint);
 	//instance_create_layer(room_width-50, y+50, "Instances", obj_percentage);
 	}
 	DeleteObjsStateAddIngredients();
@@ -166,6 +167,7 @@ function DeletePopupMenu() {
 	instance_destroy(starFill);
 	instance_destroy(continueBtn);
 	instance_destroy(pauseText);
+	instance_destroy(GameOverMenuCreate);
 }
 
 //function DeletePauseMenu() {	

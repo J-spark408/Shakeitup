@@ -6,14 +6,14 @@ shaking_done = false;
 set_goal_shake = random_range(30,45);
 
 function CheckHitPoint() {
-	if (position_meeting(x + 22, y + 13, obj_hitpoint) ||
-		position_meeting(x + 22, y + 298, obj_hitpoint)) {
+	if (position_meeting(x, y - 265, obj_hitpoint) ||
+		position_meeting(x, y + 265, obj_hitpoint)) {
 		//is_shaking = true;
 		obj_shaker_full.vertical_speed += 4;
 		obj_shaker_full.rotate_speed = 1;
 		check_hitpoint = 0;
-	} else if (position_meeting(x + 22, y + 31, obj_hitpoint) ||
-		position_meeting(x + 22, y + 280, obj_hitpoint)) {
+	} else if (position_meeting(x, y - 222, obj_hitpoint) ||
+		position_meeting(x, y + 222, obj_hitpoint)) {
 		//is_shaking = true;
 		obj_shaker_full.vertical_speed += 2;
 		obj_shaker_full.rotate_speed = 1;

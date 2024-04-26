@@ -1,2 +1,5 @@
-/// @description Insert description here
-// You can write your code in this editor
+if (global.currentState == MENUSTATE.STAGE) {
+	global.currentState = MENUSTATE.GUIDE
+	global.menuOpened = true;
+	global.guidePage = 2;
+}

@@ -5,7 +5,7 @@ if (StageStateHandler.StageState == GAMESTATE.AddingIngredients) {
 		if (!instance_exists(IceScoop)) {
 			is_grabbed = true;
 		} else {
-			instance_create_layer(StageTabButtonBox1.x,StageTabButtonBox1.y + 10,"Instances",PutScoopText);
+			instance_create_layer(StageTabButtonBox2.x,StageTabButtonBox2.y + 30,"Instances",PutScoopText);
 		}
 	}
 	if (mouse_check_button_released(mb_left)) {

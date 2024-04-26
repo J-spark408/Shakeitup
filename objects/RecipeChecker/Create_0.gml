@@ -18,7 +18,7 @@ function checkRecipe() {
 	getRating = ds_list_create();
 	getError = ds_list_create();
 	// Get Customer request and find the matching recipe
-	for (var recipe_index = 0; recipe_index < ds_list_size(recipe_list) - 1; recipe_index++) {
+	for (var recipe_index = 0; recipe_index < ds_list_size(recipe_list); recipe_index++) {
 		matchingRecipe = ds_list_find_value(recipe_list, recipe_index);
 		//Recipe Found
 		if (StageStateHandler.currentDrink.RecipeName == matchingRecipe.RecipeName) {	
