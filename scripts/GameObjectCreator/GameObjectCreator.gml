@@ -52,7 +52,9 @@ function DeleteObjsStateShowCasing() {
 	instance_destroy(obj_shaker_full_no_cap);
 	instance_destroy(obj_shaker_cap);
 	instance_destroy(MixOptionBtn);
-	instance_destroy(StageStateHandler.currentDrink.GlassType);
+	//instance_destroy(StageStateHandler.currentDrink.GlassType);
+	
+	
 	//if (StageStateHandler.StageState == GAMESTATE.ResetRound || StageStateHandler.StageState == GAMESTATE.StageOver) {
 	//	for (var numOfRecipe = 0; numOfRecipe < ds_list_size(RecipeChecker.recipe_list); numOfRecipe++) {
 	//		currentRecipe = ds_list_find_value(RecipeChecker.recipe_list, numOfRecipe);

@@ -13,7 +13,6 @@ if (StageState == GAMESTATE.Intro && global.currentState == MENUSTATE.GAME) {
 		CreateStageBackground();
 		CheckResetClickedFromBarMenu();
 		if (!instance_exists(obj_shaker_bot)) {
-			show_debug_message("create")
 			CreateJigAndShaker();
 		}
 		instance_create_layer(0,0,"Instances",IntroLady);
@@ -74,21 +73,39 @@ if (StageState == GAMESTATE.ShowCasing && !objectCheckCreate) {
 	}
 }
 
+//if (StageState == GAMESTATE.ShowCasing && objectCheckCreate) {
+//	if (!timerStart) {
+//		waitTimer += delta_time/1000000;
+//	}
+//	if (waitTimer >= 3) {
+//		instance_create_layer(0,0,"Instances",CustomerList);
+//		RecipeChecker.checkRecipe();
+//		CustomerList.satisfactionDialog();
+//		timerStart = true;
+//		StageState = GAMESTATE.ResetRound;
+//		objectCheckCreate = false;
+//	} else if (waitTimer >= 2) {
+//		physics_particle_delete_region_box(0,0,room_width,room_height);
+//	}
+//}
+
 if (StageState == GAMESTATE.ShowCasing && objectCheckCreate) {
 	if (!timerStart) {
-		waitTimer += delta_time/1000000;
+		waitTimer += delta_time/1000000;	
 	}
-	if (waitTimer >= 3) {
-		instance_create_layer(0,0,"Instances",CustomerList);
-		RecipeChecker.checkRecipe();
-		CustomerList.satisfactionDialog();
-		//check_martini();
-		timerStart = true;
-		StageState = GAMESTATE.ResetRound;
-		objectCheckCreate = false;
-	} else if (waitTimer >= 2) {
-		physics_particle_delete_region_box(0,0,room_width,room_height);
+	if (waitTimer >= 2) {
+		DeleteObjsStateShowCasing();
+		timerStart= true;
+		waitTimer = 0;
+		StageState = GAMESTATE.AddGarnish;
 	}
+}
+
+if (StageState == GAMESTATE.AddGarnish && objectCheckCreate) {
+	show_debug_message("current drink")
+	show_debug_message(currentDrink)
+	show_debug_message("drink glass")
+	show_debug_message(currentDrinkGlass)
 }
 
 if (StageState == GAMESTATE.ResetRound && !objectCheckCreate) {

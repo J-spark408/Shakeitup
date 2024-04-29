@@ -47,7 +47,7 @@ function gradeRatingSwitchCase(rates) {
 function setRateState() {
 	if (scoreToCompare > 0.9) {
 		messageState = MESSAGE.PERFECT;
-		StageStateHandler.stageScore += irandom_range(7,9);
+		StageStateHandler.stageScore += irandom_range(6,8);
 	} else if (scoreToCompare <= 0.9 && scoreToCompare > 0.8) {
 		messageState = MESSAGE.GOOD;
 		StageStateHandler.stageScore += irandom_range(4,5);

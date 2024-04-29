@@ -116,7 +116,7 @@ function checkStagePassed() {
 	next = 1;
 	currentStage = ds_list_find_value(StageData.stage_list,global.current_stage);
 	nextStage = ds_list_find_value(StageData.stage_list,global.current_stage + next);
-	if (StageStateHandler.stageScore >= 7) { // Score more than 10 points
+	if (StageStateHandler.stageScore >= 12) { // Score more than 10 points
 		if (nextStage.stage_unlocked == false) {
 			nextStage.stage_unlocked = true;
 			StageStateHandler.stagePassed = true;
@@ -126,20 +126,20 @@ function checkStagePassed() {
 		instance_create_layer(starEmpty1.x,starEmpty1.y,"PopUpMenu",starFill);
 		instance_create_layer(starEmpty2.x,starEmpty2.y,"PopUpMenu",starFill);
 		instance_create_layer(starEmpty3.x,starEmpty3.y,"PopUpMenu",starFill);
-	} else if (StageStateHandler.stageScore >= 5 && StageStateHandler.stageScore < 7) { // Score range 5-9
+	} else if (StageStateHandler.stageScore >= 7 && StageStateHandler.stageScore < 12) { // Score range 5-9
 		if (currentStage.stage_completion < 3) {
 			currentStage.stage_completion = 2;
 			StageStateHandler.completionMessage = "Goob Job, You made $" + string(StageStateHandler.stageScore);
 		}
 		instance_create_layer(starEmpty1.x,starEmpty1.y,"PopUpMenu",starFill);
 		instance_create_layer(starEmpty2.x,starEmpty2.y,"PopUpMenu",starFill);
-	} else if (StageStateHandler.stageScore >= 1 && StageStateHandler.stageScore < 5) { // Score range 1-4
+	} else if (StageStateHandler.stageScore >= 1 && StageStateHandler.stageScore < 7) { // Score range 1-4
 		if (currentStage.stage_completion < 2) {
 			currentStage.stage_completion = 1;
 			StageStateHandler.completionMessage = "Nice try, You made $" + string(StageStateHandler.stageScore);
 		}
 		instance_create_layer(starEmpty1.x,starEmpty1.y,"PopUpMenu",starFill);	
 	} else {
-		StageStateHandler.completionMessage = "Try again, You made $" + string(StageStateHandler.stageScore);	
+		StageStateHandler.completionMessage = "Try again..";	
 	}
 }

@@ -5,7 +5,7 @@ deleteParticles = physics_particle_delete_region_box(0,0,room_width,room_height)
 
 physics_particle_set_radius(4);
 physics_particle_set_density(1);
-physics_particle_set_gravity_scale(10);
+physics_particle_set_gravity_scale(12);
 
 objectCheckCreate = false;
 particleIndex = noone;
