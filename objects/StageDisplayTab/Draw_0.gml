@@ -34,6 +34,14 @@ if ((StageStateHandler.StageState == GAMESTATE.Shaking || StageStateHandler.Stag
 	tabsCreated = true;
 }
 
+if (StageStateHandler.StageState == GAMESTATE.AddGarnish && !tabsCreated) {
+	var numOfTabs = 2;
+	for (var tabIndex = 0; tabIndex < numOfTabs; tabIndex++) {
+		instance_create_layer(StageTabDescriptionBox.x + TabDescriptionOriginX*(tabIndex+1) + TabButtonOriginX + TabGap*(tabIndex+1), y + (TabButtonHeight/2),"Instances",ds_list_find_value(tabList,tabIndex));
+	}
+	tabsCreated = true;
+}
+
 //if (!instance_exists(StageTabButtonBox)) {
 //	instance_create_layer(StageTabDescriptionBox.x + TabDescriptionOriginX + TabButtonOriginX + TabGap, y + (TabButtonHeight/2),"Instances",StageTabButtonBox);	
 //}

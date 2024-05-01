@@ -22,7 +22,7 @@ function pourRight() {
 
 // Key controls for bottleObj tilting 
 function TiltBottleLeft() {
-	if (is_grabbed && keyboard_check(ord("Q"))) {
+	if (is_grabbed && keyboard_check(ord("E"))) {
 		if (image_angle == -165) {
 			image_angle -= 0;	
 		} else {
@@ -36,7 +36,7 @@ function TiltBottleLeft() {
 }
 
 function TiltBottleRight() {
-	if (is_grabbed && keyboard_check(ord("E"))) {
+	if (is_grabbed && keyboard_check(ord("Q"))) {
 		if (image_angle == 165) {
 			image_angle += 0;	
 		} else {

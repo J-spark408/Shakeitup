@@ -5,7 +5,8 @@ if (position_meeting(mouse_x, mouse_y,StageTabButtonBox1) && StageStateHandler.S
 		image_speed = 0;
 		if ((StageStateHandler.StageState == GAMESTATE.AddingIngredients || StageStateHandler.StageState == GAMESTATE.CheckingRecipe 
 		|| StageStateHandler.StageState == GAMESTATE.ChoiceOption || StageStateHandler.StageState == GAMESTATE.Shaking 
-		|| StageStateHandler.StageState == GAMESTATE.Stirring) && !instance_exists(CheatBook)) {
+		|| StageStateHandler.StageState == GAMESTATE.Stirring) || StageStateHandler.StageState == GAMESTATE.AddGarnish
+		&& !instance_exists(CheatBook)) {
 			instance_create_layer(x,y,"PopUpMenu",CheatBook);		
 		}
 	}
