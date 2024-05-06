@@ -65,6 +65,24 @@ function DeleteObjsStateShowCasing() {
 	//}
 }
 
+function DeleteObjsStateAddGarnish() {
+	instance_destroy(ModeGarnish);	
+	instance_destroy(GarnishIce);
+	instance_destroy(GarnishLemon);
+	instance_destroy(GarnishLime);
+	instance_destroy(GarnishOrange);
+	instance_destroy(GarnishCherry);
+	instance_destroy(GarnishOlive);
+	instance_destroy(Ice);
+	instance_destroy(Lemon);
+	instance_destroy(Lime);
+	instance_destroy(Orange);
+	instance_destroy(Cherry);
+	instance_destroy(Olive);
+	instance_destroy(StageStateHandler.currentDrinkGlass);
+	instance_destroy(ServeBtn);
+}
+
 function DeleteProps() {
 	instance_destroy(StageTabDescriptionBox);
 	instance_destroy(PauseBtn);
@@ -86,6 +104,7 @@ function DeleteAllForStageOver() {
 	DeleteObjsStateStirring();
 	DeleteObjsStateStirring();
 	DeleteObjsStateShowCasing();
+	DeleteObjsStateAddGarnish();
 	DeleteProps();
 	DeleteTabDisplayed();
 }

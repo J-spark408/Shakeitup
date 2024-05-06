@@ -3,7 +3,7 @@ previousState = noone;
 flags = phy_particle_flag_spring | phy_particle_flag_colormixing;
 deleteParticles = physics_particle_delete_region_box(0,0,room_width,room_height);
 
-physics_particle_set_radius(4);
+physics_particle_set_radius(4.2);
 physics_particle_set_density(1);
 physics_particle_set_gravity_scale(12);
 
@@ -24,6 +24,9 @@ currentDrink = noone;
 drinkToMake = "";
 stageScore = 0;
 completionMessage = "";
+// Get current garnish
+chosenGarnish = noone;
+serving = false;
 
 // Get current options for game round
 mixChoice = "";

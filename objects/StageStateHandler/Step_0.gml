@@ -3,8 +3,11 @@ if (room == rm_game) {
 	if (!instance_exists(StageDisplayTab) && instance_exists(obj_round_countdown)) {
 		instance_create_layer(x,y,"Instances",StageDisplayTab);
 	}
+	if(collision_line(x,room_height + 15,room_width,room_height,GarnishHandler.garnishObj,false,false)) {
+		instance_destroy(GarnishHandler.garnishObj);	
+		GarnishHandler.chooseGarnish = false;
+	}
 }
-
 // Intro state Dialog lady, customer, and timer is created.
 if (StageState == GAMESTATE.Intro && global.currentState == MENUSTATE.GAME) {
 	if (!gameStart) {
@@ -63,7 +66,7 @@ if (StageState == GAMESTATE.AddingIngredients && !instance_exists(CustomerList))
 //	}
 //}
 
-if (StageState == GAMESTATE.ShowCasing && !objectCheckCreate) {
+if (StageState == GAMESTATE.ShowCasing && !objectCheckCreate && !serving) {
 	CreateShowCasingObjects();
 	if (mixChoice == MixChoiceHandler.shaking) {
 		MoveShakerAfterShaking();
@@ -95,23 +98,45 @@ if (StageState == GAMESTATE.ShowCasing && objectCheckCreate) {
 	}
 	if (waitTimer >= 2) {
 		DeleteObjsStateShowCasing();
-		timerStart= true;
 		waitTimer = 0;
 		StageState = GAMESTATE.AddGarnish;
 	}
 }
 
 if (StageState == GAMESTATE.AddGarnish && objectCheckCreate) {
-	show_debug_message("current drink")
-	show_debug_message(currentDrink)
-	show_debug_message("drink glass")
-	show_debug_message(currentDrinkGlass)
+	if (currentDrinkGlass == MartiniGlass && (currentDrinkGlass.phy_position_x <= (room_width/2 - 280/2)
+	|| currentDrinkGlass.phy_position_y <= room_height/2)) {
+		currentDrinkGlass.phy_position_x += 2;
+		currentDrinkGlass.phy_position_y += 1;
+		show_debug_message(currentDrinkGlass.phy_position_y)
+	}
+	if (currentDrinkGlass == RockGlass && currentDrinkGlass.phy_position_x <= (room_width/2 - 205/2)) {
+		currentDrinkGlass.phy_position_x += 2;
+	}
+	if (!instance_exists(ServeBtn)) {
+		instance_create_layer(1056,672,"Instances",ServeBtn);	
+	}
+}
+
+if (StageState == GAMESTATE.ShowCasing && serving) {
+	if (!timerStart) {
+		waitTimer += delta_time/1000000;
+	}
+	if (waitTimer >= 3) {
+		instance_create_layer(0,0,"Instances",CustomerList);
+		RecipeChecker.checkRecipe();
+		CustomerList.satisfactionDialog();
+		StageState = GAMESTATE.ResetRound;
+	} else if (waitTimer >= 2) {
+		physics_particle_delete_region_box(0,0,room_width,room_height);
+	}
 }
 
 if (StageState == GAMESTATE.ResetRound && !objectCheckCreate) {
-	//instance_destroy(obj_shaker_full);
-	//instance_destroy(MartiniGlass);
-	DeleteObjsStateShowCasing();
+	waitTimer += delta_time/1000000;
+	if (waitTimer >= 4) {
+		DeleteObjsStateAddGarnish();
+	}
 	if (!instance_exists(CustomerList)) {
 		ResetVariables();
 		ResetPreviousPour();

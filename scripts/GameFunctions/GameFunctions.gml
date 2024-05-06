@@ -70,6 +70,7 @@ function ResetVariables() {
 	StageStateHandler.waitTimer = 0;
 	StageStateHandler.timer = 0;
 	StageStateHandler.timerStart = false;
+	StageStateHandler.serving = false;
 
 	BottleHandler.checkedBottle = false;
 	BottleHandler.bottle_selected = noone;
@@ -79,6 +80,9 @@ function ResetVariables() {
 	LiquidTracker.occurancePour = 0;
 	LiquidTracker.prevValue = 0;
 	LiquidTracker.isPoured = false;
+	
+	GarnishHandler.removeGarnish = false;
+	GarnishHandler.chooseGarnish = false;
 	if (instance_exists(RatingFunctions)) {
 		RatingFunctions.messageState = noone;
 		RatingFunctions.errorState = noone;

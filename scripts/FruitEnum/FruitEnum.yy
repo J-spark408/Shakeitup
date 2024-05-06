@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"FruitEnum",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"FruitEnum",
+  "parent":{
+    "name":"GarnishFruit",
+    "path":"folders/Objects/Garnish/GarnishFruit.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

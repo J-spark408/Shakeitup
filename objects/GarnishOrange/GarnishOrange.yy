@@ -1,15 +1,20 @@
 {
   "$GMObject":"",
   "%Name":"GarnishOrange",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"GarnishOrange",
   "overriddenProperties":[],
   "parent":{
-    "name":"Garnish",
-    "path":"folders/Objects/Garnish.yy",
+    "name":"GarnishTray",
+    "path":"folders/Objects/Garnish/GarnishTray.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"GarnishToggle",
+    "path":"objects/GarnishToggle/GarnishToggle.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -28,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_orange",
-    "path":"sprites/spr_orange/spr_orange.yy",
+    "name":"spr_tray_orange",
+    "path":"sprites/spr_tray_orange/spr_tray_orange.yy",
   },
   "spriteMaskId":null,
   "visible":true,

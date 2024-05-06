@@ -1,15 +1,20 @@
 {
   "$GMObject":"",
   "%Name":"GarnishLime",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":4,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"GarnishLime",
   "overriddenProperties":[],
   "parent":{
-    "name":"Garnish",
-    "path":"folders/Objects/Garnish.yy",
+    "name":"GarnishTray",
+    "path":"folders/Objects/Garnish/GarnishTray.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"GarnishToggle",
+    "path":"objects/GarnishToggle/GarnishToggle.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -28,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_lime",
-    "path":"sprites/spr_lime/spr_lime.yy",
+    "name":"spr_tray_ime",
+    "path":"sprites/spr_tray_ime/spr_tray_ime.yy",
   },
   "spriteMaskId":null,
   "visible":true,
