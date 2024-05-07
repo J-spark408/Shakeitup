@@ -22,3 +22,4 @@ ds_map_add(liquidList, LIQUOR.BITTER, Bitter);
 ds_map_add(liquidList, LIQUOR.SIMPLESYRUP, SimpleSyrup);
 ds_map_add(liquidList, LIQUOR.ORANGELIQUEUR, OrangeLiqueur);
 ds_map_add(liquidList, LIQUOR.LIMEJUICE, LimeJuice);
+ds_map_add(liquidList, LIQUOR.LEMONJUICE, LemonJuice);

@@ -15,4 +15,4 @@ ds_map_add(liquid_particles_map, LIQUOR.BITTER, 0);
 ds_map_add(liquid_particles_map, LIQUOR.SIMPLESYRUP, 0);
 ds_map_add(liquid_particles_map, LIQUOR.ORANGELIQUEUR, 0);
 ds_map_add(liquid_particles_map, LIQUOR.LIMEJUICE, 0);
-
+ds_map_add(liquid_particles_map, LIQUOR.LEMONJUICE, 0);

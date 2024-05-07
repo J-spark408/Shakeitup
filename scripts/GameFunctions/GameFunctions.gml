@@ -71,6 +71,7 @@ function ResetVariables() {
 	StageStateHandler.timer = 0;
 	StageStateHandler.timerStart = false;
 	StageStateHandler.serving = false;
+	StageStateHandler.currentDrinkGlass = noone;
 
 	BottleHandler.checkedBottle = false;
 	BottleHandler.bottle_selected = noone;
@@ -81,8 +82,10 @@ function ResetVariables() {
 	LiquidTracker.prevValue = 0;
 	LiquidTracker.isPoured = false;
 	
-	GarnishHandler.removeGarnish = false;
-	GarnishHandler.chooseGarnish = false;
+	if (instance_exists(GarnishHandler)) {
+		GarnishHandler.removeGarnish = false;
+		GarnishHandler.chooseGarnish = false;
+	}
 	if (instance_exists(RatingFunctions)) {
 		RatingFunctions.messageState = noone;
 		RatingFunctions.errorState = noone;
